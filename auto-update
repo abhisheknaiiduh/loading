@@ -11088,7 +11088,6 @@ Name = "tp to middle(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
-MidTp["ToggleButton"](false)
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 sex =game.Players.LocalPlayer.CharacterAdded:Connect(function()
 if not hasTeleported then
@@ -11103,8 +11102,9 @@ local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRoo
 tween:Play()
 end
 end
-hasTeleported = false
 end)
+hasTeleported = false
+MidTp["ToggleButton"](false)
 end
 end
 end
