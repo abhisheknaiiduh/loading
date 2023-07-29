@@ -11089,7 +11089,7 @@ Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-sex =game.Players.LocalPlayer.CharacterAdded:Connect(function()
+local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
 if not hasTeleported then
 hasTeleported = true
 for i,v in pairs(workspace.Map.Worlds:GetChildren()) do
@@ -11106,6 +11106,7 @@ hasTeleported = false
 end)
 hasTeleported = false
 MidTp["ToggleButton"](false)
+sex:Disconnect()
 end
 end
 end
