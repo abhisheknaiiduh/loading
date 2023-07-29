@@ -10744,12 +10744,13 @@ Name = "tp to green bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
+local tweenService = game:GetService("TweenService")
 b = workspace.MapCFrames["3_bed"].Value
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
-local tween = TweenService:Create(lplr.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 2, 0)})
+local tween = tweenService:Create(lplr.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 2, 0)})
 tween:Play()
 end)
 hasTeleported = false
