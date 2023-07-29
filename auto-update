@@ -10740,7 +10740,7 @@ runFunction(function()
 local gbedtp = {Enabled = false}
 gbedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to green bed(old)",
+Name = "tp to green bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
