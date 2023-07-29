@@ -11080,7 +11080,7 @@ runFunction(function()
 end)	
 
 function mid()
-if not hasTeleported then
+if hasTeleported = false then
 hasTeleported = true
 local TweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
@@ -11096,7 +11096,7 @@ end
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 					wait(0.3) 
-					mid()
+mid()
 				end)
 				hasTeleported = false
 				midTp["ToggleButton"](false)
