@@ -11103,9 +11103,9 @@ tween:Play()
 end
 end
 hasTeleported = false
-end)
 MidTp["ToggleButton"](false)
-  end
+end)
+end
 end
 end
 })
