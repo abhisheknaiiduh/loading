@@ -10690,20 +10690,21 @@ runFunction(function()
 local bbedtp = {Enabled = false}
 bbedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to blue bed(old)",
+Name = "tp to blue bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 c = workspace.MapCFrames["1_bed"].Value
-entityLibrary.character.HumanoidRootPart.CFrame += Vector3.new(0, 70, 0)
-wait(0.1)
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(20, Enum.EasingStyle.Linear)
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = c+ Vector3.new(0,65,0)})
+local tweenService = game:GetService("TweenService")
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = c + Vector3.new(0, 10, 0)})
 tween:Play()
+end)
+hasTeleported = false
 	 bbedtp["ToggleButton"](false)
-if game.Players.LocalPlayer.Name ~= REV then
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Bed tp by rev!")
-end
   end
 end
 end
@@ -10715,19 +10716,20 @@ runFunction(function()
 local rbedtp = {Enabled = false}
 rbedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to red bed(old)",
+Name = "tp to red bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 b = workspace.MapCFrames["2_bed"].Value
-entityLibrary.character.HumanoidRootPart.CFrame += Vector3.new(0, 70, 0)
-wait(0.1)
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(20, Enum.EasingStyle.Linear)
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = b+ Vector3.new(0,65,0)})
+local tweenService = game:GetService("TweenService")
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
 tween:Play()
-if game.Players.LocalPlayer.Name ~= REV then
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Bed tp by rev!")
-end
+end)
+hasTeleported = false
 	 rbedtp["ToggleButton"](false)
   end
 end
@@ -10744,13 +10746,13 @@ Name = "tp to green bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
-local tweenService = game:GetService("TweenService")
 b = workspace.MapCFrames["3_bed"].Value
+local tweenService = game:GetService("TweenService")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
-local tween = tweenService:Create(lplr.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 2, 0)})
+local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
 tween:Play()
 end)
 hasTeleported = false
@@ -10766,19 +10768,20 @@ runFunction(function()
 local ybedtp = {Enabled = false}
 ybedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to yellow bed(old)",
+Name = "tp to yellow bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 b = workspace.MapCFrames["4_bed"].Value
-entityLibrary.character.HumanoidRootPart.CFrame += Vector3.new(0, 70, 0)
-wait(0.1)
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(20, Enum.EasingStyle.Linear)
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = b+ Vector3.new(0,65,0)})
+local tweenService = game:GetService("TweenService")
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
 tween:Play()
-if game.Players.LocalPlayer.Name ~= REV then
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Bed tp by rev!")
-end
+end)
+hasTeleported = false
 	 ybedtp["ToggleButton"](false)
   end
 end
@@ -10791,19 +10794,20 @@ runFunction(function()
 local obedtp = {Enabled = false}
 obedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to orange bed(old)",
+Name = "tp to orange bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 b = workspace.MapCFrames["5_bed"].Value
-entityLibrary.character.HumanoidRootPart.CFrame += Vector3.new(0, 70, 0)
-wait(0.1)
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(20, Enum.EasingStyle.Linear)
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = b+ Vector3.new(0,65,0)})
+local tweenService = game:GetService("TweenService")
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
 tween:Play()
-if game.Players.LocalPlayer.Name ~= REV then
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Bed tp by rev!")
-end
+end)
+hasTeleported = false
 	 obedtp["ToggleButton"](false)
   end
 end
@@ -10818,19 +10822,20 @@ runFunction(function()
 local pibedtp = {Enabled = false}
 pibedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to pink bed(old)",
+Name = "tp to pink bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 b = workspace.MapCFrames["6_bed"].Value
-entityLibrary.character.HumanoidRootPart.CFrame += Vector3.new(0, 70, 0)
-wait(0.1)
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(20, Enum.EasingStyle.Linear)
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = b+ Vector3.new(0,65,0)})
+local tweenService = game:GetService("TweenService")
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
 tween:Play()
-if game.Players.LocalPlayer.Name ~= REV then
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Bed tp by rev!")
-end
+end)
+hasTeleported = false
 	 pibedtp["ToggleButton"](false)
   end
 end
@@ -10845,19 +10850,20 @@ runFunction(function()
 local pubedtp = {Enabled = false}
 pubedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to purple bed(old)",
+Name = "tp to purple bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 b = workspace.MapCFrames["8_bed"].Value
-entityLibrary.character.HumanoidRootPart.CFrame += Vector3.new(0, 70, 0)
-wait(0.1)
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(20, Enum.EasingStyle.Linear)
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = b+ Vector3.new(0,65,0)})
+local tweenService = game:GetService("TweenService")
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
 tween:Play()
-if game.Players.LocalPlayer.Name ~= REV then
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Bed tp by rev!")
-end
+end)
+hasTeleported = false
 	 pubedtp["ToggleButton"](false)
   end
 end
@@ -10870,19 +10876,20 @@ runFunction(function()
 local cybedtp = {Enabled = false}
 cybedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to cyan bed(old)",
+Name = "tp to cyan bed(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 b = workspace.MapCFrames["7_bed"].Value
-entityLibrary.character.HumanoidRootPart.CFrame += Vector3.new(0, 70, 0)
-wait(0.1)
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(20, Enum.EasingStyle.Linear)
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = b+ Vector3.new(0,65,0)})
+local tweenService = game:GetService("TweenService")
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
 tween:Play()
-if game.Players.LocalPlayer.Name ~= REV then
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Bed tp by rev!")
-end
+end)
+hasTeleported = false
 	 cybedtp["ToggleButton"](false)
   end
 end
@@ -10894,7 +10901,7 @@ runFunction(function()
 local tprandom = {Enabled = false}
 tprandom = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe,try to make sure they are accross the map from you.",
-Name = "tp to random(old)",
+Name = "tp to random(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -10932,9 +10939,15 @@ local target2lv = ratiothisplayer.Character.HumanoidRootPart.CFrame.LookVector *
 local target2 = ratiothisplayer.Character.HumanoidRootPart.CFrame + target2lv
 entityLibrary.character.HumanoidRootPart.CFrame += Vector3.new(0, 70, 0)
 wait(0.1)
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(26, Enum.EasingStyle.Linear)
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = target2+ Vector3.new(0,65,0)})
+local tweenService = game:GetService("TweenService")
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = target2 + Vector3.new(0, 10, 0)})
 tween:Play()
+end)
+hasTeleported = false
      tprandom["ToggleButton"](false)
   end
 end
