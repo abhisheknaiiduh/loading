@@ -11079,3 +11079,35 @@ runFunction(function()
 	})
 end)	
 
+
+runFunction(function()
+local MidTp = {Enabled = false}
+cybedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
+["HoverText"] = "must be holding scythe",
+Name = "tp to middle(working)",
+Function = function(callback)
+if callback then
+  if entityLibrary.isAlive then
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+local sex =game.Players.LocalPlayer.CharacterAdded:Connect(function()
+if not hasTeleported then
+hasTeleported = true
+for i,v in pairs(workspace.Map.Worlds:GetChildren()) do
+local map = v.Name
+local b = workspace.Map.Worlds[map].Blocks.emerald_block.CFrame + Vector3.new(0,10,0)
+wait(0.3)
+local TweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRootPart, TweenInfo.new(0.64), {CFrame = b})
+tween:Play()
+sex:Disconnect()
+end
+end
+hasTeleported = false
+end)
+	 MidTp["ToggleButton"](false)
+  end
+end
+end
+})
+end)
