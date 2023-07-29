@@ -11089,7 +11089,7 @@ Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-local sex =game.Players.LocalPlayer.CharacterAdded:Connect(function()
+sex =game.Players.LocalPlayer.CharacterAdded:Connect(function()
 if not hasTeleported then
 hasTeleported = true
 for i,v in pairs(workspace.Map.Worlds:GetChildren()) do
@@ -11100,7 +11100,6 @@ local TweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRootPart, TweenInfo.new(0.64), {CFrame = b})
 tween:Play()
-sex:Disconnect()
 end
 end
 hasTeleported = false
