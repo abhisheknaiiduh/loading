@@ -11014,3 +11014,53 @@ runFunction(function()
 		["HoverText"] = "Teleports you to the closest player that is not on your team (BETA)"
 	})
 end)
+
+
+
+
+runFunction(function()
+	local hasTeleported = false
+	local TweenService = game:GetService("TweenService")
+
+	function findNearestBed()
+		local nearestBed = nil
+		local minDistance = math.huge
+
+		for _,v in pairs(game.Workspace:GetDescendants()) do
+			if v.Name:lower() == "bed" and v:FindFirstChild("Covers") and v:FindFirstChild("Covers").BrickColor ~= lplr.Team.TeamColor then
+				local distance = (v.Position - lplr.Character.HumanoidRootPart.Position).magnitude
+				if distance < minDistance then
+					nearestBed = v
+					minDistance = distance
+				end
+			end
+		end
+		return nearestBed
+	end
+	function tweenToNearestBed()
+		local nearestBed = findNearestBed()
+		if nearestBed and not hasTeleported then
+			hasTeleported = true
+
+			local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+
+			local tween = TweenService:Create(lplr.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = nearestBed.CFrame + Vector3.new(0, 2, 0)})
+			tween:Play()
+		end
+	end
+	BedTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
+		Name = "BedTp (WORKING)",
+		Function = function(callback)
+			if callback then
+				lplr.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+				lplr.CharacterAdded:Connect(function()
+					wait(0.3) 
+					tweenToNearestBed()
+				end)
+				hasTeleported = false
+				BedTp["ToggleButton"](false)
+			end
+		end,
+		["HoverText"] = "Tp To Closest Bed | Works in 30v30 😱"
+	})
+end)	
