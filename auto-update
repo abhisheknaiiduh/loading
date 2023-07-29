@@ -11102,6 +11102,7 @@ local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRoo
 tween:Play()
 end
 end
+hasTeleported = false
 end)
 hasTeleported = false
 MidTp["ToggleButton"](false)
