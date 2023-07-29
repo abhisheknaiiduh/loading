@@ -10745,15 +10745,15 @@ Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
 b = workspace.MapCFrames["3_bed"].Value
-entityLibrary.character.HumanoidRootPart.CFrame += Vector3.new(0, 70, 0)
-wait(0.1)
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(20, Enum.EasingStyle.Linear)
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = b+ Vector3.new(0,65,0)})
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween = TweenService:Create(lplr.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 2, 0)})
 tween:Play()
-if game.Players.LocalPlayer.Name ~= REV then
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Bed tp by rev!")
-end
-	 gbedtp["ToggleButton"](false)
+end)
+hasTeleported = false
+gbedtp["ToggleButton"](false)
   end
 end
 end
