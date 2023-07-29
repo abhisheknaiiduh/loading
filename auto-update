@@ -10690,7 +10690,7 @@ runFunction(function()
 local bbedtp = {Enabled = false}
 bbedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to blue bed",
+Name = "tp to blue bed(old)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -10715,7 +10715,7 @@ runFunction(function()
 local rbedtp = {Enabled = false}
 rbedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to red bed",
+Name = "tp to red bed(old)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -10740,7 +10740,7 @@ runFunction(function()
 local gbedtp = {Enabled = false}
 gbedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to green bed",
+Name = "tp to green bed(old)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -10765,7 +10765,7 @@ runFunction(function()
 local ybedtp = {Enabled = false}
 ybedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to yellow bed",
+Name = "tp to yellow bed(old)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -10790,7 +10790,7 @@ runFunction(function()
 local obedtp = {Enabled = false}
 obedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to orange bed",
+Name = "tp to orange bed(old)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -10817,7 +10817,7 @@ runFunction(function()
 local pibedtp = {Enabled = false}
 pibedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to pink bed",
+Name = "tp to pink bed(old)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -10844,7 +10844,7 @@ runFunction(function()
 local pubedtp = {Enabled = false}
 pubedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to purple bed",
+Name = "tp to purple bed(old)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -10869,7 +10869,7 @@ runFunction(function()
 local cybedtp = {Enabled = false}
 cybedtp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to cyan bed",
+Name = "tp to cyan bed(old)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -10893,7 +10893,7 @@ runFunction(function()
 local tprandom = {Enabled = false}
 tprandom = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe,try to make sure they are accross the map from you.",
-Name = "tp to random",
+Name = "tp to random(old)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
