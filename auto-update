@@ -11079,29 +11079,3 @@ runFunction(function()
 	})
 end)	
 
-function mid()
-if hasTeleported = false then
-hasTeleported = true
-local TweenService = game:GetService("TweenService")
-local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
-local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRootPart, TweenInfo.new(0.64), {CFrame = CFrame.new(303, 45, 267, 1, 0, 0, 0, 1, 0, 0, 0, 1)})
-tween:Play()
-end
-end
-
-	midTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
-		Name = "Tp Middle (WORKING)",
-		Function = function(callback)
-			if callback then
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
-					wait(0.3) 
-mid()
-				end)
-				hasTeleported = false
-				midTp["ToggleButton"](false)
-			end
-		end,
-		["HoverText"] = "Tp To middle"
-	})
-end)	
