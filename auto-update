@@ -10645,6 +10645,27 @@ end
 end)
 
 
+runFunction(function()
+local barb = {Enabled = false}
+barb = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+["HoverText"] = "sings barbie girl",
+Name = "sing barbie",
+Function = function(callback)
+if callback then
+barb["ToggleButton"](false)
+textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("I'm a Barbie girl, in the Barbie world")
+wait(0)
+textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Life in plastic, it's fantastic")
+wait(0)
+textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("You can brush my hair, unjdjrjesjs me everywhere")
+wait(0)
+textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Imagination, life is your creation")
+end
+end
+})
+end)
+
+
 
 runFunction(function()
 local diev = {Enabled = false}
