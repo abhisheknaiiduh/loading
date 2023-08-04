@@ -2025,6 +2025,11 @@ end
 
 --KEY SYSTEM--
 function key()
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local Auth = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local TextBox = Instance.new("TextBox")
@@ -2073,7 +2078,7 @@ TextButton.TextSize = 14.000
 
 TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BackgroundTransparency = 0.500
+TextLabel.BackgroundTransparency = 0.900
 TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(0, 0, 0.818181813, 0)
@@ -2085,7 +2090,7 @@ TextLabel.TextSize = 14.000
 
 TextLabel_2.Parent = Frame
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.BackgroundTransparency = 0.500
+TextLabel_2.BackgroundTransparency = 0.900
 TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_2.BorderSizePixel = 0
 TextLabel_2.Size = UDim2.new(0, 506, 0, 50)
@@ -2099,7 +2104,7 @@ TextLabel_2.TextWrapped = true
 LeftSide.Name = "Left Side"
 LeftSide.Parent = Frame
 LeftSide.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-LeftSide.BackgroundTransparency = 0.500
+LeftSide.BackgroundTransparency = 0.900
 LeftSide.BorderColor3 = Color3.fromRGB(0, 0, 0)
 LeftSide.BorderSizePixel = 0
 LeftSide.Position = UDim2.new(0, 0, 0.181818187, 0)
@@ -2110,19 +2115,20 @@ LeftSide.TextColor3 = Color3.fromRGB(0, 0, 0)
 LeftSide.TextSize = 14.000
 
 RightSide.Name = "Right Side"
-RightSide.Parent = LeftSide
+RightSide.Parent = Frame
 RightSide.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-RightSide.BackgroundTransparency = 0.500
+RightSide.BackgroundTransparency = 0.900
 RightSide.BorderColor3 = Color3.fromRGB(0, 0, 0)
 RightSide.BorderSizePixel = 0
-RightSide.Position = UDim2.new(7.72413778, 0, -0.00103899278, 0)
+RightSide.Position = UDim2.new(0.8853755, 0, 0.1808182, 0)
 RightSide.Size = UDim2.new(0, 58, 0, 175)
 RightSide.Font = Enum.Font.SourceSans
 RightSide.Text = ""
 RightSide.TextColor3 = Color3.fromRGB(0, 0, 0)
 RightSide.TextSize = 14.000
+
 -- Scripts:
-local function XKPBQCL_fake_script() -- TextButton.Script 
+local function PMFLS_fake_script() -- TextButton.Script 
 local script = Instance.new('Script', TextButton)
 script.Parent.MouseButton1Click:Connect(function()
 key = script.Parent.Parent.Text
@@ -2135,7 +2141,7 @@ elseif key ~= ck then print("WRONG KEY")
 end
 end)
 end
-coroutine.wrap(XKPBQCL_fake_script)()
+coroutine.wrap(PMFLS_fake_script)()
 end
 
 
