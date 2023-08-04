@@ -2139,7 +2139,9 @@ Auth:Destroy()
 load()
 elseif key ~= ck then
 print("WRONG KEY")
-script.Parent.Parent.Text = "WRONG KEY"
+script.Parent.Parent.Text = "wrong,try again"
+wait(0.5)
+script.Parent.Parent.Text = ""
 end
 end)
 end
