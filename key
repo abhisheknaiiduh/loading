@@ -2138,6 +2138,7 @@ writefile("key.lua",ck)
 Auth:Destroy()
 load()
 elseif key ~= ck then print("WRONG KEY")
+script.Parent.Parent.Text = "WRONG KEY"
 end
 end)
 end
