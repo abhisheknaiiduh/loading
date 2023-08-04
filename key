@@ -2084,6 +2084,7 @@ TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(0, 0, 0.818181813, 0)
 TextLabel.Size = UDim2.new(0, 506, 0, 50)
 TextLabel.Font = Enum.Font.SourceSans
+TextLabel.TextScaled = true
 TextLabel.Text = "This prevents errors, and protects the config!"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 14.000
