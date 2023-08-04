@@ -1,4 +1,4 @@
-local ck = "SDFKGHSDKESUIHC"
+local ck = "SPEHLKKXWQLCPLHAKJEUGNYUS"
 
 function load()
 repeat task.wait() until game:IsLoaded()
