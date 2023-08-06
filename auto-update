@@ -11141,3 +11141,260 @@ end
 end
 })
 end)
+
+
+runFunction(function()
+local openforge = {Enabled = false}
+openforge = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+Name = "Open Forge menu",
+Function = function(callback)
+if callback then 
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local forgegui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Close = Instance.new("TextButton")
+local Sword = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel2 = Instance.new("TextLabel")
+local Dagger = Instance.new("TextButton")
+local Scythe = Instance.new("TextButton")
+local Hammer = Instance.new("TextButton")
+local Bow = Instance.new("TextButton")
+local Armor = Instance.new("TextButton")
+--Properties:
+
+forgegui.Name = "forge gui"
+forgegui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+forgegui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = forgegui
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 0.500
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.565267324, 0, 0.529853284, 0)
+Frame.Size = UDim2.new(0, 766, 0, 354)
+
+Close.Name = "Close"
+Close.Parent = Frame
+Close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Close.BackgroundTransparency = 0.500
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.927472532, 0, 0, 0)
+Close.Size = UDim2.new(0, 55, 0, 50)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+
+Sword.Name = "Sword"
+Sword.Parent = Frame
+Sword.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Sword.BackgroundTransparency = 0.500
+Sword.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Sword.BorderSizePixel = 0
+Sword.Position = UDim2.new(0, 0, 0.302259892, 0)
+Sword.Size = UDim2.new(0, 200, 0, 50)
+Sword.Font = Enum.Font.SourceSans
+Sword.Text = "Sword"
+Sword.TextColor3 = Color3.fromRGB(255, 255, 255)
+Sword.TextScaled = true
+Sword.TextSize = 14.000
+Sword.TextWrapped = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BackgroundTransparency = 0.500
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(3.98401809e-08, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 710, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Forge Gui"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel2.Parent = Frame
+TextLabel2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel2.BackgroundTransparency = 0.500
+TextLabel2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel2.BorderSizePixel = 0
+TextLabel2.Position = UDim2.new(3.98401809e-08, 0, 0.859, 0)
+TextLabel2.Size = UDim2.new(0, 765, 0, 50)
+TextLabel2.Font = Enum.Font.SourceSans
+TextLabel2.Text = "Stand still and let it forge!"
+TextLabel2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel2.TextScaled = true
+TextLabel2.TextSize = 14.000
+TextLabel2.TextWrapped = true
+
+Dagger.Name = "Dagger"
+Dagger.Parent = Frame
+Dagger.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Dagger.BackgroundTransparency = 0.500
+Dagger.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Dagger.BorderSizePixel = 0
+Dagger.Position = UDim2.new(0, 0, 0.548022628, 0)
+Dagger.Size = UDim2.new(0, 200, 0, 50)
+Dagger.Font = Enum.Font.SourceSans
+Dagger.Text = "Dagger"
+Dagger.TextColor3 = Color3.fromRGB(255, 255, 255)
+Dagger.TextScaled = true
+Dagger.TextSize = 14.000
+Dagger.TextWrapped = true
+
+Scythe.Name = "Scythe"
+Scythe.Parent = Frame
+Scythe.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Scythe.BackgroundTransparency = 0.500
+Scythe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Scythe.BorderSizePixel = 0
+Scythe.Position = UDim2.new(0.343075991, 0, 0.299435109, 0)
+Scythe.Size = UDim2.new(0, 200, 0, 50)
+Scythe.Font = Enum.Font.SourceSans
+Scythe.Text = "Scythe"
+Scythe.TextColor3 = Color3.fromRGB(255, 255, 255)
+Scythe.TextScaled = true
+Scythe.TextSize = 14.000
+Scythe.TextWrapped = true
+
+Hammer.Name = "Hammer"
+Hammer.Parent = Frame
+Hammer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Hammer.BackgroundTransparency = 0.500
+Hammer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Hammer.BorderSizePixel = 0
+Hammer.Position = UDim2.new(0.343075991, 0, 0.548022687, 0)
+Hammer.Size = UDim2.new(0, 200, 0, 50)
+Hammer.Font = Enum.Font.SourceSans
+Hammer.Text = "Hammer"
+Hammer.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hammer.TextScaled = true
+Hammer.TextSize = 14.000
+Hammer.TextWrapped = true
+
+Bow.Name = "Bow"
+Bow.Parent = Frame
+Bow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Bow.BackgroundTransparency = 0.500
+Bow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Bow.BorderSizePixel = 0
+Bow.Position = UDim2.new(0.678822339, 0, 0.299435109, 0)
+Bow.Size = UDim2.new(0, 200, 0, 50)
+Bow.Font = Enum.Font.SourceSans
+Bow.Text = "Bow"
+Bow.TextColor3 = Color3.fromRGB(255, 255, 255)
+Bow.TextScaled = true
+Bow.TextSize = 14.000
+Bow.TextWrapped = true
+
+Armor.Name = "Armor"
+Armor.Parent = Frame
+Armor.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Armor.BackgroundTransparency = 0.500
+Armor.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Armor.BorderSizePixel = 0
+Armor.Position = UDim2.new(0.678822339, 0, 0.548022687, 0)
+Armor.Size = UDim2.new(0, 200, 0, 50)
+Armor.Font = Enum.Font.SourceSans
+Armor.Text = "Armor"
+Armor.TextColor3 = Color3.fromRGB(255, 255, 255)
+Armor.TextScaled = true
+Armor.TextSize = 14.000
+Armor.TextWrapped = true
+
+-- Scripts:
+
+local function XCQQWA_fake_script() -- Close.Script 
+	local script = Instance.new('Script', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(XCQQWA_fake_script)()
+local function BJCUZ_fake_script() -- Sword.Script 
+	local script = Instance.new('Script', Sword)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local args = {
+			[1] = 0
+		}
+	
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+	end)
+end
+coroutine.wrap(BJCUZ_fake_script)()
+local function RPJTRXX_fake_script() -- Dagger.Script 
+	local script = Instance.new('Script', Dagger)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local args = {
+			[1] = 1
+		}
+	
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+	end)
+end
+coroutine.wrap(RPJTRXX_fake_script)()
+local function WECCWH_fake_script() -- Scythe.Script 
+	local script = Instance.new('Script', Scythe)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local args = {
+			[1] = 2
+		}
+	
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+	end)
+end
+coroutine.wrap(WECCWH_fake_script)()
+local function NFMLW_fake_script() -- Hammer.Script 
+	local script = Instance.new('Script', Hammer)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local args = {
+			[1] = 3
+		}
+	
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+	end)
+end
+coroutine.wrap(NFMLW_fake_script)()
+local function JTHY_fake_script() -- Bow.Script 
+	local script = Instance.new('Script', Bow)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local args = {
+			[1] = 4
+		}
+	
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+	end)
+end
+coroutine.wrap(JTHY_fake_script)()
+local function HEYAQ_fake_script() -- Armor.Script 
+	local script = Instance.new('Script', Armor)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local args = {
+			[1] = 5
+		}
+	
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+	end)
+end
+coroutine.wrap(HEYAQ_fake_script)()
+openforge["ToggleButton"](false)
+})
+end)
