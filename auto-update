@@ -11396,7 +11396,7 @@ local function HEYAQ_fake_script() -- Armor.Script
 	end)
 end
 coroutine.wrap(HEYAQ_fake_script)()
-
+print("OPENED!")
 oforge["ToggleButton"](false)
 end
 end
