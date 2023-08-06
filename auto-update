@@ -11345,7 +11345,7 @@ local function BJCUZ_fake_script() -- Sword.Script
 	local script = Instance.new('Script', Sword)
 
 	script.Parent.MouseButton1Click:Connect(function()
-warningNotification("forge gui", "forging sword", 10)
+warningNotification("forge gui", "forging sword", 5)
 		local args = {
 			[1] = 0
 		}
@@ -11361,7 +11361,7 @@ local function RPJTRXX_fake_script() -- Dagger.Script
 	local script = Instance.new('Script', Dagger)
 
 	script.Parent.MouseButton1Click:Connect(function()
-warningNotification("forge gui", "forging dagger", 10)
+warningNotification("forge gui", "forging dagger", 5)
 		local args = {
 			[1] = 1
 		}
@@ -11377,7 +11377,7 @@ local function WECCWH_fake_script() -- Scythe.Script
 	local script = Instance.new('Script', Scythe)
 
 	script.Parent.MouseButton1Click:Connect(function()
-warningNotification("forge gui", "forging scythe", 10)
+warningNotification("forge gui", "forging scythe", 5)
 		local args = {
 			[1] = 2
 		}
@@ -11393,7 +11393,7 @@ local function NFMLW_fake_script() -- Hammer.Script
 	local script = Instance.new('Script', Hammer)
 
 	script.Parent.MouseButton1Click:Connect(function()
-warningNotification("forge gui", "forging hammer", 10)
+warningNotification("forge gui", "forging hammer", 5)
 		local args = {
 			[1] = 3
 		}
@@ -11409,7 +11409,7 @@ local function JTHY_fake_script() -- Bow.Script
 	local script = Instance.new('Script', Bow)
 
 	script.Parent.MouseButton1Click:Connect(function()
-warningNotification("forge gui", "forging bow", 10)
+warningNotification("forge gui", "forging bow", 5)
 		local args = {
 			[1] = 4
 		}
@@ -11425,7 +11425,7 @@ local function HEYAQ_fake_script() -- Armor.Script
 	local script = Instance.new('Script', Armor)
 
 	script.Parent.MouseButton1Click:Connect(function()
-warningNotification("forge gui", "forging armor", 10)
+warningNotification("forge gui", "forging armor", 5)
 		local args = {
 			[1] = 5
 		}
