@@ -2162,7 +2162,7 @@ end
 -- CHECK IF KEY IS ALREADY ENTERED --
 if isfile("key.lua") then
 local hi = readfile('key.lua')
-if hi == pk then load() 
+if hi == pk then print("PERM KEY DETECTED, LOADING") load() 
 elseif hi == ck then load()
 elseif hi ~= ck  then key()
 elseif hi ~= pk then key()
