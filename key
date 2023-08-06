@@ -1,5 +1,5 @@
+local pk = "PERM KEY"
 local ck = "RYLDBZVHXKOECFPNMTWAJQUSG"
-local pk = "PERMKEY"
 function load()
 repeat task.wait() until game:IsLoaded()
 local GuiLibrary
@@ -2137,6 +2137,16 @@ print("CORRECT KEY LOADING!")
 writefile("key.lua",ck)
 Auth:Destroy()
 load()
+elseif key == pk then
+print("CORRECT KEY LOADING!")
+writefile("key.lua",pk)
+Auth:Destroy()
+load()
+elseif key ~= pk then
+print("WRONG KEY")
+script.Parent.Parent.Text = "wrong,try again"
+wait(0.5)
+script.Parent.Parent.Text = ""
 elseif key ~= ck then
 print("WRONG KEY")
 script.Parent.Parent.Text = "wrong,try again"
@@ -2152,8 +2162,10 @@ end
 -- CHECK IF KEY IS ALREADY ENTERED --
 if isfile("key.lua") then
 local hi = readfile('key.lua')
-if hi == ck then load() 
+if hi == pk then load() 
+elseif hi == ck then load()
 elseif hi ~= ck  then key()
+elseif hi ~= pk then key()
 end
 else
 key()
