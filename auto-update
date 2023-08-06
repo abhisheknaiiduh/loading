@@ -11636,3 +11636,22 @@ end
 end
 })
 end)
+
+runFunction(function()
+local instant = {Enabled = false}
+instant = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+["HoverText"] = "instantly fixes ur enchant table (need 8 diamonds)",
+Name = "inst fix enchant table",
+Function = function(callback)
+if callback then
+local args = {
+    [1] = workspace.broken_enchant_table
+}
+
+game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.RepairEnchantTable:InvokeServer(unpack(args))
+instant["ToggleButton"](false)
+end
+end
+})
+end)
+
