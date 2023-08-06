@@ -1,4 +1,4 @@
-local pk = "PERM KEY"
+local pk = "REVVY CONFIG ON TOP"
 local ck = "RYLDBZVHXKOECFPNMTWAJQUSG"
 function load()
 repeat task.wait() until game:IsLoaded()
