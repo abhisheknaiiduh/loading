@@ -1,4 +1,4 @@
-local pk = "REVVY CONFIG ON TOP"
+local pk = "MY BALLS ITCH"
 local ck = "RYLDBZVHXKOECFPNMTWAJQUSG"
 function load()
 repeat task.wait() until game:IsLoaded()
