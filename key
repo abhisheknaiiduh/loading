@@ -2138,7 +2138,7 @@ writefile("key.lua",ck)
 Auth:Destroy()
 load()
 elseif key == pk then
-print("CORRECT KEY LOADING!")
+print("PERM KEY DETECTED, LOADING!")
 writefile("key.lua",pk)
 Auth:Destroy()
 load()
