@@ -11240,7 +11240,8 @@ TextLabel2.TextScaled = true
 TextLabel2.TextSize = 14.000
 TextLabel2.TextWrapped = true
 
-local points = game.Players.LocalPlayer.PlayerGui.hotbar["1"]["3"].Text
+points = game.Players.LocalPlayer.PlayerGui.hotbar["1"]["3"].Text
+
 TextLabel3.Parent = Frame
 TextLabel3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel3.BackgroundTransparency = 0.500
@@ -11349,6 +11350,9 @@ local function BJCUZ_fake_script() -- Sword.Script
 		}
 	
 		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+                wait(3)
+        points2 = game.Players.LocalPlayer.PlayerGui.hotbar["1"]["3"].Text
+        TextLabel3.Text = points2
 	end)
 end
 coroutine.wrap(BJCUZ_fake_script)()
@@ -11361,6 +11365,9 @@ local function RPJTRXX_fake_script() -- Dagger.Script
 		}
 	
 		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+                wait(3)
+        points2 = game.Players.LocalPlayer.PlayerGui.hotbar["1"]["3"].Text
+        TextLabel3.Text = points2
 	end)
 end
 coroutine.wrap(RPJTRXX_fake_script)()
@@ -11373,6 +11380,9 @@ local function WECCWH_fake_script() -- Scythe.Script
 		}
 	
 		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+                wait(3)
+        points2 = game.Players.LocalPlayer.PlayerGui.hotbar["1"]["3"].Text
+        TextLabel3.Text = points2
 	end)
 end
 coroutine.wrap(WECCWH_fake_script)()
@@ -11385,6 +11395,9 @@ local function NFMLW_fake_script() -- Hammer.Script
 		}
 	
 		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+                wait(3)
+        points2 = game.Players.LocalPlayer.PlayerGui.hotbar["1"]["3"].Text
+        TextLabel3.Text = points2
 	end)
 end
 coroutine.wrap(NFMLW_fake_script)()
@@ -11397,6 +11410,9 @@ local function JTHY_fake_script() -- Bow.Script
 		}
 	
 		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+                wait(3)
+        points2 = game.Players.LocalPlayer.PlayerGui.hotbar["1"]["3"].Text
+        TextLabel3.Text = points2
 	end)
 end
 coroutine.wrap(JTHY_fake_script)()
@@ -11409,6 +11425,9 @@ local function HEYAQ_fake_script() -- Armor.Script
 		}
 	
 		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ForgePurchaseUpgrade:FireServer(unpack(args))
+        wait(3)
+        points2 = game.Players.LocalPlayer.PlayerGui.hotbar["1"]["3"].Text
+        TextLabel3.Text = points2
 	end)
 end
 coroutine.wrap(HEYAQ_fake_script)()
