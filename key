@@ -1,5 +1,5 @@
 local ck = "RYLDBZVHXKOECFPNMTWAJQUSG"
-
+local pk = "PERMKEY"
 function load()
 repeat task.wait() until game:IsLoaded()
 local GuiLibrary
@@ -2153,7 +2153,7 @@ end
 if isfile("key.lua") then
 local hi = readfile('key.lua')
 if hi == ck then load() 
-elseif hi ~= ck then key()
+elseif hi ~= ck  then key()
 end
 else
 key()
