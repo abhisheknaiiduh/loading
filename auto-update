@@ -11396,5 +11396,6 @@ local function HEYAQ_fake_script() -- Armor.Script
 end
 coroutine.wrap(HEYAQ_fake_script)()
 openforge["ToggleButton"](false)
+end
 })
 end)
