@@ -11441,10 +11441,7 @@ end)
 
 function enchant()
 local StarterGui = game:GetService("StarterGui")
-local Notify = function(_Title, _Text , Time)
-    StarterGui:SetCore("SendNotification", {Title = _Title, Text = _Text, Icon = "rbxassetid://2541869220", Duration = Time})
-end
-Notify("ALERT", "MUST HAVE FIXED ENCHANT TABLE", 10)
+warningNotification("Vape", "MUST HAVE FIXED ENCHANT TABLE", 10)
 function advanced()
 local args = {
     [1] = {
