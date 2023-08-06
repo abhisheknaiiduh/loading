@@ -11438,3 +11438,204 @@ end
 end
 })
 end)
+
+function enchant()
+local StarterGui = game:GetService("StarterGui")
+local Notify = function(_Title, _Text , Time)
+    StarterGui:SetCore("SendNotification", {Title = _Title, Text = _Text, Icon = "rbxassetid://2541869220", Duration = Time})
+end
+Notify("ALERT", "MUST HAVE FIXED ENCHANT TABLE", 10)
+function advanced()
+local args = {
+    [1] = {
+        ["enchantTable"] = workspace.enchant_table,
+        ["researchType"] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ResearchEnchant:InvokeServer(unpack(args))
+end
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local enchant = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel2 = Instance.new("TextLabel")
+local basic = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local Advanced = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+
+--Properties:
+
+enchant.Name = "enchant"
+enchant.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+enchant.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = enchant
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 0.500
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Size = UDim2.new(0, 484, 0, 271)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BackgroundTransparency = 0.500
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 428, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Enchant Table Gui"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel2.Parent = Frame
+TextLabel2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel2.BackgroundTransparency = 0.500
+TextLabel2.Position = UDim2.new(0, 0, 0.818, 0)
+TextLabel2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel2.BorderSizePixel = 0
+TextLabel2.Size = UDim2.new(0, 483, 0, 50)
+TextLabel2.Font = Enum.Font.SourceSans
+TextLabel2.Text = "be close to a table to use."
+TextLabel2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel2.TextScaled = true
+TextLabel2.TextSize = 14.000
+TextLabel2.TextWrapped = true
+
+basic.Name = "basic"
+basic.Parent = Frame
+basic.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+basic.BackgroundTransparency = 0.500
+basic.BorderColor3 = Color3.fromRGB(0, 0, 0)
+basic.BorderSizePixel = 0
+basic.Position = UDim2.new(0, 0, 0.579335809, 0)
+basic.Size = UDim2.new(0, 200, 0, 50)
+basic.Font = Enum.Font.SourceSans
+basic.Text = "Basic"
+basic.TextColor3 = Color3.fromRGB(255, 255, 255)
+basic.TextScaled = true
+basic.TextSize = 14.000
+basic.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = Frame
+Close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Close.BackgroundTransparency = 0.500
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.88429755, 0, 0, 0)
+Close.Size = UDim2.new(0, 56, 0, 50)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+
+Advanced.Name = "Advanced"
+Advanced.Parent = Frame
+Advanced.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Advanced.BackgroundTransparency = 0.500
+Advanced.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Advanced.BorderSizePixel = 0
+Advanced.Position = UDim2.new(0.586776853, 0, 0.579335809, 0)
+Advanced.Size = UDim2.new(0, 200, 0, 50)
+Advanced.Font = Enum.Font.SourceSans
+Advanced.Text = "Advanced"
+Advanced.TextColor3 = Color3.fromRGB(255, 255, 255)
+Advanced.TextScaled = true
+Advanced.TextSize = 14.000
+Advanced.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BackgroundTransparency = 0.500
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.586776853, 0, 0.280442804, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "(3 emeralds)"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BackgroundTransparency = 0.500
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0, 0, 0.280442804, 0)
+TextLabel_3.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "(80 Iron)"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+-- Scripts:
+
+local function IJYIRWJ_fake_script() -- basic.Script 
+	local script = Instance.new('Script', basic)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local args = {
+			[1] = {
+				["enchantTable"] = workspace.enchant_table,
+				["researchType"] = 0
+			}
+		}
+	
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ResearchEnchant:InvokeServer(unpack(args))
+	end)
+end
+coroutine.wrap(IJYIRWJ_fake_script)()
+local function DQTHLJ_fake_script() -- Close.Script 
+	local script = Instance.new('Script', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(DQTHLJ_fake_script)()
+local function JHAPRCP_fake_script() -- Advanced.Script 
+	local script = Instance.new('Script', Advanced)
+
+	script.Parent.MouseButton1Click:Connect(function()
+
+wait()
+advanced()
+	end)
+end
+coroutine.wrap(JHAPRCP_fake_script)()
+end
+
+
+
+runFunction(function()
+local oenchant = {Enabled = false}
+oenchant = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+["HoverText"] = "opens a custom enchant menu!",
+Name = "open enchant menu",
+Function = function(callback)
+if callback then
+enchant()
+print("OPENED!")
+oenchant["ToggleButton"](false)
+end
+end
+})
+end)
