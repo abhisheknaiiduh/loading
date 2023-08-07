@@ -1,5 +1,5 @@
 local pk = "MY BALLS ITCH"
-local ck = "NLXOBZSHDPMIQGWCTAJRVFUEY"
+local ck = "CAQTJEGBPROHSKDMUIYXZVFLN"
 function load()
 repeat task.wait() until game:IsLoaded()
 local GuiLibrary
