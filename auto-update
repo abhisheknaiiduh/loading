@@ -10594,42 +10594,9 @@ Headless = GuiLibrary["ObjectsThatCanBeSaved"]["RenderWindow"]["Api"].CreateOpti
 	end
 })
 end)
-runFunction(function()
-skill = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
-Name = "fix skill issues",
-Function = function(callback)
-if callback then
-  textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("/fix skill_issues")
-wait()
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("ERROR,no skill issues found")
-else
-  textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("/fix skill_issues")
-wait()
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("ERROR,no skill issues found")
-end
-end
-})
-end)
 
 
-runFunction(function()
-women = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
-Name = "get women",
-Function = function(callback)
-if callback then
-task.wait(2)
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("/female's me")
-wait()
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("ERROR,max ammount")
-else
-task.wait(2)
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("/female's me")
-wait()
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("ERROR,max ammount")
-end
-end
-})
-end)
+
 
 
 runFunction(function()
