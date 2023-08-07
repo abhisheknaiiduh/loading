@@ -11671,8 +11671,8 @@ end)
 runFunction(function()
 local secretmsg = {Enabled = false}
 secretmsg = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-["HoverText"] = "instantly fixes ur enchant table (need 8 diamonds)",
-Name = "inst fix enchant table",
+["HoverText"] = "opens a secret msg gui",
+Name = "secret msgs",
 Function = function(callback)
 if callback then
 secretmsg["ToggleButton"](false)
