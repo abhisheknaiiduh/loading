@@ -10729,7 +10729,7 @@ if callback then
 c = workspace.MapCFrames["1_bed"].Value
 local tweenService = game:GetService("TweenService")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
+local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = c + Vector3.new(0, 10, 0)})
@@ -10738,6 +10738,8 @@ end)
 hasTeleported = false
 	 bbedtp["ToggleButton"](false)
   end
+wait(5)
+sex:Disconnect()
 end
 end
 })
@@ -10755,7 +10757,7 @@ if callback then
 b = workspace.MapCFrames["2_bed"].Value
 local tweenService = game:GetService("TweenService")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
+local sex =game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
@@ -10764,6 +10766,8 @@ end)
 hasTeleported = false
 	 rbedtp["ToggleButton"](false)
   end
+wait(5)
+sex:Disconnect()
 end
 end
 })
@@ -10781,7 +10785,7 @@ if callback then
 b = workspace.MapCFrames["3_bed"].Value
 local tweenService = game:GetService("TweenService")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
+local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
@@ -10790,6 +10794,8 @@ end)
 hasTeleported = false
 gbedtp["ToggleButton"](false)
   end
+wait(5)
+sex:Disconnect()
 end
 end
 })
@@ -10807,7 +10813,7 @@ if callback then
 b = workspace.MapCFrames["4_bed"].Value
 local tweenService = game:GetService("TweenService")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
+local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
@@ -10816,6 +10822,8 @@ end)
 hasTeleported = false
 	 ybedtp["ToggleButton"](false)
   end
+wait(5)
+sex:Disconnect()
 end
 end
 })
@@ -10833,7 +10841,7 @@ if callback then
 b = workspace.MapCFrames["5_bed"].Value
 local tweenService = game:GetService("TweenService")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
+local sex =game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
@@ -10842,6 +10850,8 @@ end)
 hasTeleported = false
 	 obedtp["ToggleButton"](false)
   end
+wait(5)
+sex:Disconnect()
 end
 end
 })
@@ -10861,7 +10871,7 @@ if callback then
 b = workspace.MapCFrames["6_bed"].Value
 local tweenService = game:GetService("TweenService")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
+local sex =game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
@@ -10870,6 +10880,8 @@ end)
 hasTeleported = false
 	 pibedtp["ToggleButton"](false)
   end
+wait(5)
+sex:Disconnect()
 end
 end
 })
@@ -10889,7 +10901,7 @@ if callback then
 b = workspace.MapCFrames["8_bed"].Value
 local tweenService = game:GetService("TweenService")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
+local sex =game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
@@ -10898,6 +10910,8 @@ end)
 hasTeleported = false
 	 pubedtp["ToggleButton"](false)
   end
+wait(5)
+sex:Disconnect()
 end
 end
 })
@@ -10915,7 +10929,7 @@ if callback then
 b = workspace.MapCFrames["7_bed"].Value
 local tweenService = game:GetService("TweenService")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
+local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween =tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.94), {CFrame = b + Vector3.new(0, 10, 0)})
@@ -10924,6 +10938,8 @@ end)
 hasTeleported = false
 	 cybedtp["ToggleButton"](false)
   end
+wait(5)
+sex:Disconnect()
 end
 end
 })
@@ -11132,7 +11148,6 @@ local TweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRootPart, TweenInfo.new(0.64), {CFrame = b})
 tween:Play()
-sex:Disconnect()
 end
 end
 hasTeleported = false
@@ -11140,6 +11155,8 @@ end)
 hasTeleported = false
 MidTp["ToggleButton"](false)
 end
+wait(5)
+sex:Disconnect()
 end
 end
 })
