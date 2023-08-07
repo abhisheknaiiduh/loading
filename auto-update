@@ -10706,9 +10706,9 @@ hasTeleported = false
 	 bbedtp["ToggleButton"](false)
   end
 end
-end
 wait(8)
 sex:Disconnect()
+end
 })
 end)
 
@@ -10734,9 +10734,9 @@ hasTeleported = false
 	 rbedtp["ToggleButton"](false)
   end
 end
-end
 wait(8)
 sex:Disconnect()
+end
 })
 end)
 
@@ -10762,9 +10762,9 @@ hasTeleported = false
 gbedtp["ToggleButton"](false)
   end
 end
-end
 wait(8)
 sex:Disconnect()
+end
 })
 end)
 
@@ -10790,9 +10790,9 @@ hasTeleported = false
 	 ybedtp["ToggleButton"](false)
   end
 end
-end
 wait(8)
 sex:Disconnect()
+end
 })
 end)
 
@@ -10818,9 +10818,9 @@ hasTeleported = false
 	 obedtp["ToggleButton"](false)
   end
 end
-end
 wait(8)
 sex:Disconnect()
+end
 })
 end)
 
@@ -10848,9 +10848,9 @@ hasTeleported = false
 	 pibedtp["ToggleButton"](false)
   end
 end
-end
 wait(8)
 sex:Disconnect()
+end
 })
 end)
 
@@ -10878,9 +10878,9 @@ hasTeleported = false
 	 pubedtp["ToggleButton"](false)
   end
 end
-end
 wait(8)
 sex:Disconnect()
+end
 })
 end)
 
@@ -10906,9 +10906,9 @@ hasTeleported = false
 	 cybedtp["ToggleButton"](false)
   end
 end
-end
 wait(8)
 sex:Disconnect()
+end
 })
 end)
 
