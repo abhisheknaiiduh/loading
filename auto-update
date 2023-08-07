@@ -11146,6 +11146,35 @@ end
 end)
 
 
+
+runFunction(function()
+local DimTp = {Enabled = false}
+DimTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
+["HoverText"] = "must be holding scythe",
+Name = "tp to Diamond(working)",
+Function = function(callback)
+if callback then
+DimTp["ToggleButton"](false)
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
+local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+for i,v in pairs(workspace.Map.Worlds:GetChildren()) do
+local map = v.Name
+local b = workspace.Map.Worlds[map].Blocks.diamond_block.CFrame + Vector3.new(0,10,0)
+wait(0.3)
+local TweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRootPart, TweenInfo.new(0.64), {CFrame = b})
+tween:Play()
+end
+end)
+wait(5)
+sex:Disconnect()
+end
+end
+})
+end)
+
+
 runFunction(function()
 local oforge = {Enabled = false}
 oforge = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
