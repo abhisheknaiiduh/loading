@@ -10707,7 +10707,7 @@ hasTeleported = false
   end
 end
 end
-wait(5)
+wait(8)
 sex:Disconnect()
 })
 end)
@@ -10735,7 +10735,7 @@ hasTeleported = false
   end
 end
 end
-wait(5)
+wait(8)
 sex:Disconnect()
 })
 end)
@@ -10763,7 +10763,7 @@ gbedtp["ToggleButton"](false)
   end
 end
 end
-wait(5)
+wait(8)
 sex:Disconnect()
 })
 end)
@@ -10791,7 +10791,7 @@ hasTeleported = false
   end
 end
 end
-wait(5)
+wait(8)
 sex:Disconnect()
 })
 end)
@@ -10819,7 +10819,7 @@ hasTeleported = false
   end
 end
 end
-wait(5)
+wait(8)
 sex:Disconnect()
 })
 end)
@@ -10849,7 +10849,7 @@ hasTeleported = false
   end
 end
 end
-wait(5)
+wait(8)
 sex:Disconnect()
 })
 end)
@@ -10879,7 +10879,7 @@ hasTeleported = false
   end
 end
 end
-wait(5)
+wait(8)
 sex:Disconnect()
 })
 end)
@@ -10907,7 +10907,7 @@ hasTeleported = false
   end
 end
 end
-wait(5)
+wait(8)
 sex:Disconnect()
 })
 end)
