@@ -11695,3 +11695,17 @@ end
 })
 end)
 
+runFunction(function()
+local secretmsgv2 = {Enabled = false}
+secretmsgv2 = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+["HoverText"] = "opens a secret msg guiv2",
+Name = "secret msg gui v2",
+Function = function(callback)
+if callback then
+secretmsgv2["ToggleButton"](false)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/config-loader/scripts/main/hidden%20msg%20V2",true))()
+end
+end
+})
+end)
+
