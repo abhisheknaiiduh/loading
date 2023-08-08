@@ -11685,7 +11685,7 @@ runFunction(function()
 local secretmsg = {Enabled = false}
 secretmsg = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
 ["HoverText"] = "opens a secret msg gui",
-Name = "secret msgs",
+Name = "secret msg gui v1",
 Function = function(callback)
 if callback then
 secretmsg["ToggleButton"](false)
