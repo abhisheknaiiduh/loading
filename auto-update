@@ -11,7 +11,7 @@ me/rev for the other stuff and the fixed scythe disabler
 --]]
 
 if game.Players.LocalPlayer.Name ~= "Real_revvybxnned4" then
-_G.down = true
+_G.down = false
 if _G.down == true then
 game.Players.LocalPlayer:Kick("Config is down,refer to discord for more details")
 end
@@ -10676,8 +10676,8 @@ repeat
 task.wait(0.01)
 local item = getItemNear("scythe")
 if item and lplr.Character.HandInvItem.Value == item.tool then 
-if game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ScytheDash:FireServer({direction = Vector3.new(20e15,20e15,20e15)}) then 
-bedwarsStore.scythe = tick() + 5
+if game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ScytheDash:FireServer({direction = Vector3.new(9e9,9e9,9e9)}) then  --changed fro, 20e15 to 9e9
+bedwarsStore.scythe = tick() + 10
 end
 end
 until (not Disabler.Enabled)
