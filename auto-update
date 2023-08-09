@@ -10664,28 +10664,28 @@ end
 })
 end)
 
-	runFunction(function()
-		local Disabler = {Enabled = false}
-		Disabler = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-                        ["HoverText"] = "lets u inf jump forever,and fly",
-			Name = "Disabler",
-			Function = function(callback)
-				if callback then 
-					task.spawn(function()
-						repeat
-							task.wait(0.01)
-							local item = getItemNear("scythe")
-							if item and lplr.Character.HandInvItem.Value == item.tool then 
-								if game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ScytheDash:FireServer({direction = Vector3.new(20e15,20e15,20e15)}) then 
-									bedwarsStore.scythe = tick() + 1
-								end
-							end
-						until (not Disabler.Enabled)
-					end)
-				end
-			end
-		})
-	end)
+runFunction(function()
+local Disabler = {Enabled = false}
+Disabler = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+["HoverText"] = "lets u inf jump forever,and fly",
+Name = "Disabler",
+Function = function(callback)
+if callback then 
+task.spawn(function()
+repeat
+task.wait(0.01)
+local item = getItemNear("scythe")
+if item and lplr.Character.HandInvItem.Value == item.tool then 
+if game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ScytheDash:FireServer({direction = Vector3.new(20e15,20e15,20e15)}) then 
+bedwarsStore.scythe = tick() + 5
+end
+end
+until (not Disabler.Enabled)
+end)
+end
+end
+})
+end)
 
 runFunction(function()
 local bbedtp = {Enabled = false}
