@@ -10,7 +10,7 @@ me/rev for the other stuff and the fixed scythe disabler
 
 --]]
 
-if v.Name ~= "Real_revvybxnned4" then
+if game.Players.LocalPlayer.Name ~= "Real_revvybxnned4" then
 _G.down = true
 if _G.down == true then
 game.Players.LocalPlayer:Kick("Config is down,refer to discord for more details")
