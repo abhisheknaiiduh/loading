@@ -4,7 +4,7 @@ original vape
 
 pistonware for the original scythe disabler i use
 
-snoopy config for tp
+infinityv2 config for tp and anti ban
 
 me/rev for the other stuff and the fixed scythe disabler
 
@@ -11706,6 +11706,32 @@ Function = function(callback)
 if callback then
 secretmsgv2["ToggleButton"](false)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/config-loader/scripts/main/hidden%20msg%20V2",true))()
+end
+end
+})
+end)
+
+runFunction(function()
+AntiBan = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+Name = "AntiBan",
+Function = function(callback)
+if callback then
+repeat task.wait() until game:IsLoaded()
+local groupId = 5774246
+local roleId = 121
+local function checkUserRole(player)
+if player:IsInGroup(groupId) and player:GetRankInGroup(groupId) == roleId then
+warningNotification("Vape", "A Staff Has Joined The Game, Leaving....", 60)
+wait(2)
+bedwars.ClientHandler:Get("TeleportToLobby"):SendToServer()
+end
+end
+local function checkAllUsersRoles()
+for _, player in pairs(game.Players:GetPlayers()) do
+checkUserRole(player)
+end
+end
+checkAllUsersRoles()
 end
 end
 })
