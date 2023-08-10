@@ -11134,15 +11134,17 @@ end)
 
 
 runFunction(function()
-local DimTp = {Enabled = false}
-DimTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
+local MidTp = {Enabled = false}
+MidTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to Diamond(working)",
+Name = "tp to middle(working)",
 Function = function(callback)
 if callback then
-DimTp["ToggleButton"](false)
+  if entityLibrary.isAlive then
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
 local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+if not hasTeleported then
+hasTeleported = true
 for i,v in pairs(workspace.Map.Worlds:GetChildren()) do
 local map = v.Name
 local b = workspace.Map.Worlds[map].Blocks.diamond_block.CFrame + Vector3.new(0,10,0)
@@ -11152,7 +11154,12 @@ local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection
 local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRootPart, TweenInfo.new(0.64), {CFrame = b})
 tween:Play()
 end
+end
+hasTeleported = false
 end)
+hasTeleported = false
+MidTp["ToggleButton"](false)
+end
 wait(5)
 sex:Disconnect()
 end
