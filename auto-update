@@ -11126,6 +11126,8 @@ MidTp["ToggleButton"](false)
 end
 wait(5)
 sex:Disconnect()
+wait()
+sex:Disconnect()
 end
 end
 })
@@ -11161,6 +11163,8 @@ hasTeleported = false
 DimTp["ToggleButton"](false)
 end
 wait(5)
+sex:Disconnect()
+wait()
 sex:Disconnect()
 end
 end
