@@ -11142,6 +11142,7 @@ Function = function(callback)
 if callback then
 DimTp["ToggleButton"](false)
   if entityLibrary.isAlive then
+print("NEW VERSION")
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
 local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
 if not hasTeleported then
