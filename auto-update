@@ -11098,11 +11098,12 @@ runFunction(function()
 end)	
 
 
+
 runFunction(function()
 local MidTp = {Enabled = false}
 MidTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to middle(working)",
+Name = "tp to Middle(working)",
 Function = function(callback)
 if callback then
 MidTp["ToggleButton"](false)
