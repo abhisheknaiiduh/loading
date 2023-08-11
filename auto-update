@@ -11121,11 +11121,11 @@ end
 end
 hasTeleported = false
 end)
-wait(5)
-sex:Disconnect()
 hasTeleported = false
 MidTp["ToggleButton"](false)
 end
+wait(5)
+sex:Disconnect()
 end
 end
 })
