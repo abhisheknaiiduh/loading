@@ -11135,7 +11135,7 @@ end)
 
 runFunction(function()
 local DimTp = {Enabled = false}
-MidTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
+DimTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
 Name = "tp to Diamonds(working)",
 Function = function(callback)
