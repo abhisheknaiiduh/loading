@@ -11134,10 +11134,10 @@ end)
 
 
 runFunction(function()
-local MidTp = {Enabled = false}
+local DimTp = {Enabled = false}
 MidTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsButton({
 ["HoverText"] = "must be holding scythe",
-Name = "tp to middle(working)",
+Name = "tp to Diamonds(working)",
 Function = function(callback)
 if callback then
   if entityLibrary.isAlive then
@@ -11158,7 +11158,7 @@ end
 hasTeleported = false
 end)
 hasTeleported = false
-MidTp["ToggleButton"](false)
+DimTp["ToggleButton"](false)
 end
 wait(5)
 sex:Disconnect()
