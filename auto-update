@@ -11104,6 +11104,7 @@ MidTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsBut
 Name = "tp to middle(working)",
 Function = function(callback)
 if callback then
+MidTp["ToggleButton"](false)
   if entityLibrary.isAlive then
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
 local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
@@ -11117,15 +11118,14 @@ local TweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRootPart, TweenInfo.new(0.64), {CFrame = b})
 tween:Play()
+wait(5)
+sex:Disconnect()
 end
 end
 hasTeleported = false
 end)
 hasTeleported = false
-MidTp["ToggleButton"](false)
 end
-wait(5)
-sex:Disconnect()
 end
 end
 })
@@ -11140,6 +11140,7 @@ MidTp = GuiLibrary["ObjectsThatCanBeSaved"]["TpsWindow"]["Api"].CreateOptionsBut
 Name = "tp to Diamonds(working)",
 Function = function(callback)
 if callback then
+DimTp["ToggleButton"](false)
   if entityLibrary.isAlive then
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
 local sex = game.Players.LocalPlayer.CharacterAdded:Connect(function()
@@ -11159,10 +11160,7 @@ end
 end
 hasTeleported = false
 end)
-wait(5)
-sex:Disconnect()
 hasTeleported = false
-DimTp["ToggleButton"](false)
 end
 end
 end
