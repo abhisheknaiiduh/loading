@@ -11117,6 +11117,8 @@ local TweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRootPart, TweenInfo.new(0.64), {CFrame = b})
 tween:Play()
+wait(5)
+sex:Disconnect()
 end
 end
 hasTeleported = false
@@ -11124,10 +11126,6 @@ end)
 hasTeleported = false
 MidTp["ToggleButton"](false)
 end
-wait(5)
-sex:Disconnect()
-wait()
-sex:Disconnect()
 end
 end
 })
@@ -11155,6 +11153,8 @@ local TweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
 local tween = TweenService:Create(game.Players.localPlayer.Character.HumanoidRootPart, TweenInfo.new(0.64), {CFrame = b})
 tween:Play()
+wait(5)
+sex:Disconnect()
 end
 end
 hasTeleported = false
@@ -11162,10 +11162,6 @@ end)
 hasTeleported = false
 DimTp["ToggleButton"](false)
 end
-wait(5)
-sex:Disconnect()
-wait()
-sex:Disconnect()
 end
 end
 })
