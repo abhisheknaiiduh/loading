@@ -1,1 +1,1 @@
-if game.PlaceId == 6872265039 then game.Players.LocalPlayer:Kick("BANNED") end
+if game.PlaceId == 6872265039 then game.Players.LocalPlayer:Kick("BANNED, dm jude_or_rev on discord to appeal ") end
