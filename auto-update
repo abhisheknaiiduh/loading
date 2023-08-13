@@ -11768,3 +11768,18 @@ end
 })
 end)
 
+runFunction(function()
+local speedboost = {Enabled = false}
+speedboost = GuiLibrary.ObjectsThatCanBeSaved.BlantantWindow.Api.CreateOptionsButton({
+["HoverText"] = "boosts u for a second",
+Name = "turns ur spped to ur inf fly speed for 1 seconds",
+Function = function(callback)
+if callback then
+InfiniteFly.ToggleButton(true)
+wait(1)
+InfiniteFly.ToggleButton(false)
+end
+end
+})
+end)
+
