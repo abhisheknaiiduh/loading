@@ -11773,12 +11773,12 @@ end)
 runFunction(function()
 local sb = {Enabled = false}
 sb = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
-["HoverText"] = "test",
-Name = "sb",
+["HoverText"] = "turns on inf fly for 0.5 seconds",
+Name = "speedboost",
 Function = function(callback)
 if callback then
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
-wait(1)
+wait(0.5)
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
 sb["ToggleButton"](false)
 end
