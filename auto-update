@@ -3195,7 +3195,7 @@ runFunction(function()
 		oldcloneroot = nil
 	end
 
-	local InfiniteFly = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
+	InfiniteFly = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
 		Name = "InfiniteFly",
 		Function = function(callback)
 			if callback then
