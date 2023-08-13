@@ -11716,7 +11716,6 @@ thot = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
 Name = "play 'thot'",
 Function = function(callback)
 if callback then
-thot["ToggleButton"](false)
 SongAudio = Instance.new("Sound")
 SongAudio.SoundId = "rbxassetid://6772846771"
 SongAudio.Parent = game.SoundService
