@@ -11768,18 +11768,5 @@ end
 })
 end)
 
-runFunction(function()
-local speedboost = {Enabled = false}
-speedboost = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
-["HoverText"] = "turns ur spped to ur inf fly speed for 1 seconds",
-Name = "boosts u for a sec",
-Function = function(callback)
-if callback then
-InfiniteFly.ToggleButton(true)
-wait(1)
-InfiniteFly.ToggleButton(false)
-end
-end
-})
-end)
+
 
