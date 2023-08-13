@@ -11711,7 +11711,7 @@ end)
 
 runFunction(function()
 local thot = {Enabled = false}
-thot = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+thot = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
 ["HoverText"] = "play the song 'thot' by tokyos revenge",
 Name = "play 'thot'",
 Function = function(callback)
