@@ -11707,6 +11707,28 @@ end
 })
 end)
 
+
+
+runFunction(function()
+local thot = {Enabled = false}
+thot = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+["HoverText"] = "play the song 'thot' by tokyos revenge",
+Name = "play 'thot'",
+Function = function(callback)
+if callback then
+thot["ToggleButton"](false)
+SongAudio = Instance.new("Sound")
+SongAudio.SoundId = "rbxassetid://6772846771"
+SongAudio.Parent = game.SoundService
+SongAudio.Playing = true
+SongAudio.Name = "THOT"
+else
+game.SoundService.THOT:Destroy()
+end
+end
+})
+end)
+
 runFunction(function()
 local secretmsgv2 = {Enabled = false}
 secretmsgv2 = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
