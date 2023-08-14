@@ -11763,7 +11763,7 @@ Name = "speedboost",
 Function = function(callback)
 if callback then
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
-wait(0.5)
+task.wait(0.5)
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
 sb["ToggleButton"](false)
 end
