@@ -11792,15 +11792,11 @@ if getgenv().test then
 local z = aura(15)
 wait() 
 if z ~= nil and z.Character.Humanoid.Health > 0 then
-local look = z.Character.HumanoidRootPart.CFrame.LookVector * -4
-local person = z.Character.HumanoidRootPart.CFrame * look
+look = z.Character.HumanoidRootPart.CFrame.LookVector * -4
+person = z.Character.HumanoidRootPart.CFrame * look
 local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
-    hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(0,0,5)
-    wait(0.5)
-    hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(5,0,0)
-    wait(0.5)
-    hrp.CFrame = z.Character.HumanoidRootPart.CFrame
-    wait(0.5)
+wait()
+hrp.CFrame = person
 end
 wait(.5)
 end
