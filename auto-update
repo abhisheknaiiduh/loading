@@ -10602,21 +10602,6 @@ end)
 
 
 
-runFunction(function()
-superman = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
-Name = "superman kit",
-Function = function(callback)
-if callback then
-task.wait(1)
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("/kit superman")
-else
-task.wait(1)
-textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("/kit superman")
-end
-end
-})
-end)
-
 
 runFunction(function()
 local barb = {Enabled = false}
