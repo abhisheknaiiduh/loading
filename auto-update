@@ -11807,8 +11807,8 @@ end)
 runFunction(function()
 local tpaura = {Enabled = false}
 tpaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
-["HoverText"] = "tpaura",
-Name = "tpaura",
+["HoverText"] = "very experimental",
+Name = "Tp-aura (Beta)",
 Function = function(callback)
 if callback then
 getgenv().test = true
