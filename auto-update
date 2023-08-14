@@ -11794,11 +11794,11 @@ wait()
 if z ~= nil and z.Character.Humanoid.Health > 0 then
 local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
     hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(0,0,5)
-    wait(0.3)
+    wait(0.5)
     hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(5,0,0)
-    wait(0.3)
+    wait(0.5)
     hrp.CFrame = z.Character.HumanoidRootPart.CFrame
-    wait(0.3)
+    wait(0.5)
 end
 wait(.5)
 end
