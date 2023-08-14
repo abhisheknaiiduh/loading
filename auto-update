@@ -11770,3 +11770,51 @@ end
 end
 })
 end)
+
+-- CREDITS TO MY FRIEND NATHAN
+function aura(x)
+    local plr = game.Players.LocalPlayer
+    local closest_player
+    for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Character:FindFirstChild("Humanoid") and v ~= plr and v.Team ~= plr.Team then
+                local distance = (plr.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                if distance < x then
+                    closest_player = v
+            end
+        end
+    end
+    return closest_player
+end
+--
+
+game:GetService("RunService").Heartbeat:Connect(function(x)
+if getgenv().test then
+local z = aura(15)
+wait() 
+if z ~= nil and z.Character.Humanoid.Health > 0 then
+local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+    hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(0,0,5)
+    wait(0.3)
+    hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(5,0,0)
+    wait(0.3)
+    hrp.CFrame = z.Character.HumanoidRootPart.CFrame
+    wait(0.3)
+end
+wait(.5)
+end
+end)
+
+runFunction(function()
+local tpaura = {Enabled = false}
+tpaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+["HoverText"] = "tpaura",
+Name = "tpaura",
+Function = function(callback)
+if callback then
+getgenv().test = true
+else
+getgenv().test = false
+end
+end
+})
+end)
