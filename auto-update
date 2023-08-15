@@ -11788,9 +11788,9 @@ end
 --
 
 -- CREDITS TO MY FRIEND NATHAN
-function aura(c)
+function aura2(c)
     local plr = game.Players.LocalPlayer
-    local closest_player
+    local closest_player2
     for i, v in pairs(game.Players:GetPlayers()) do
             if v.Character:FindFirstChild("Humanoid") and v ~= plr and v.Team ~= plr.Team then
                 local distance = (plr.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
@@ -11799,13 +11799,13 @@ function aura(c)
             end
         end
     end
-    return closest_player
+    return closest_player2
 end
 --
 
 game:GetService("RunService").Heartbeat:Connect(function(c)
 if getgenv().test2 then
-local z = aura(15)
+local z = aura2(15)
 wait() 
 if z ~= nil and z.Character.Humanoid.Health > 0 then
 look = z.Character.HumanoidRootPart.CFrame.LookVector * -4
