@@ -11795,7 +11795,7 @@ function aura2(c)
             if v.Character:FindFirstChild("Humanoid") and v ~= plr and v.Team ~= plr.Team then
                 local distance = (plr.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                 if distance < x then
-                    closest_player = v
+                    closest_player2 = v
             end
         end
     end
