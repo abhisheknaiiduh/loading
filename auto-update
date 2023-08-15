@@ -11787,6 +11787,38 @@ function aura(x)
 end
 --
 
+-- CREDITS TO MY FRIEND NATHAN
+function aura(c)
+    local plr = game.Players.LocalPlayer
+    local closest_player
+    for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Character:FindFirstChild("Humanoid") and v ~= plr and v.Team ~= plr.Team then
+                local distance = (plr.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                if distance < x then
+                    closest_player = v
+            end
+        end
+    end
+    return closest_player
+end
+--
+
+game:GetService("RunService").Heartbeat:Connect(function(c)
+if getgenv().test2 then
+local z = aura(15)
+wait() 
+if z ~= nil and z.Character.Humanoid.Health > 0 then
+look = z.Character.HumanoidRootPart.CFrame.LookVector * -4
+person = z.Character.HumanoidRootPart.CFrame + look
+local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+wait()
+hrp.CFrame = person
+end
+wait(.5)
+end
+end)
+
+
 game:GetService("RunService").Heartbeat:Connect(function(x)
 if getgenv().test then
 local z = aura(15)
@@ -11812,6 +11844,21 @@ if callback then
 getgenv().test = true
 else
 getgenv().test = false
+end
+end
+})
+end)
+
+runFunction(function()
+local oldtpaura = {Enabled = false}
+oldtpaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+["HoverText"] = "very experimental",
+Name = "old Tp-aura",
+Function = function(callback)
+if callback then
+getgenv().test2 = true
+else
+getgenv().test2 = false
 end
 end
 })
