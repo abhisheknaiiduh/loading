@@ -11816,3 +11816,5 @@ end
 end
 })
 end)
+
+GuiLibrary.ObjectsThatCanBeSaved.DisablerOptionsButton.Api["ToggleButton"](true)
