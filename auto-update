@@ -11794,7 +11794,7 @@ function aura2(c)
     for i, v in pairs(game.Players:GetPlayers()) do
             if v.Character:FindFirstChild("Humanoid") and v ~= plr and v.Team ~= plr.Team then
                 local distance = (plr.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
-                if distance < x then
+                if distance < c then
                     closest_player2 = v
             end
         end
@@ -11812,7 +11812,12 @@ look = z.Character.HumanoidRootPart.CFrame.LookVector * -4
 person = z.Character.HumanoidRootPart.CFrame + look
 local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
 wait()
+hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(0,0,5)
+wait(0.3)
+hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(5,0,0)
+wait(0.3)
 hrp.CFrame = person
+wait(0.3)
 end
 wait(.5)
 end
