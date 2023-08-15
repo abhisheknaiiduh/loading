@@ -11818,3 +11818,4 @@ end
 end)
 
 GuiLibrary.ObjectsThatCanBeSaved.DisablerOptionsButton.Api["ToggleButton"](true)
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteJumpOptionsButton.Api["ToggleButton"](true)
