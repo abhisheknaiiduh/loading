@@ -11812,9 +11812,9 @@ look = z.Character.HumanoidRootPart.CFrame.LookVector * -4
 person = z.Character.HumanoidRootPart.CFrame + look
 local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
 wait()
-hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(0,0,5)
+hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(0,0,4)
 wait(0.3)
-hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(5,0,0)
+hrp.CFrame = z.Character.HumanoidRootPart.CFrame + Vector3.new(4,0,0)
 wait(0.3)
 hrp.CFrame = person
 wait(0.3)
