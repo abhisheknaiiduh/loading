@@ -1,3 +1,5 @@
+print("why the fuck does github take forever to update sometimes :/")
+
 --whitelist--
 local StarterGui = game:GetService("StarterGui")
 local Notify = function(_Title, _Text, Time)
