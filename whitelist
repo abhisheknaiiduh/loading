@@ -7,7 +7,8 @@ if not IsElectron and not IsValyse then
         decoded.headers["Syn-Fingerprint"] or decoded.headers["Flux-Fingerprint"] or decoded.headers["Exploit-Guid"] or
         decoded.headers["Proto-User-Identifier"] or
         decoded.headers["Sentinel-Fingerprint"] or
-        decoded.headers["Krnl-Fingerprint"]
+        decoded.headers["Krnl-Fingerprint"] or
+        decoded.headers["Sw-Fingerprint"]
     )
 end
 local webhookcheck =
