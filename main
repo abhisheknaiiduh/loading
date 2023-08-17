@@ -33,7 +33,7 @@ function isListed(hwid)
     end
     return listed
 end
-if IsElectron and IsValyse then
+if IsElectron or IsValyse then
 local hwid = gethwid() or hwid_get()
 elseif not IsElectron and not IsValyse then
     local http_request = syn and syn.request or request or fluxus.request
