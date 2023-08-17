@@ -20,6 +20,7 @@ local whitelist = {
     "C7B45BB80A8457489E46DF801BECC770BF5C",
     "f6fa4b995ca661a6057ef019cebc6afafd5bd269d322a459c7dc683791bce538", 
     "32ca8d448e66d4786bc3effe407fd21ac12c213c32eed2056cab9c02621e0b90",
+    "",
 }
 Notify("Notice", "Recomended : Electron.", 1)
 function isListed(hwid)
@@ -32,8 +33,9 @@ function isListed(hwid)
     end
     return listed
 end
+if IsElectron and IsValyse then
 local hwid = gethwid() or hwid_get()
-if not IsElectron and not IsValyse then
+elseif not IsElectron and not IsValyse then
     local http_request = syn and syn.request or request or fluxus.request
     local body = http_request({Url = "https://httpbin.org/get", Method = "GET"}).Body
     local decoded = game:GetService("HttpService"):JSONDecode(body)
