@@ -38,7 +38,7 @@ end
 if IsElectron then
 local hwid = gethwid() or hwid_get()
 elseif IsValyse then
-gethwid() or hwid_get()
+local hwid = gethwid() or hwid_get()
 elseif not IsElectron and not IsValyse then
     local http_request = syn and syn.request or request or fluxus.request
     local body = http_request({Url = "https://httpbin.org/get", Method = "GET"}).Body
