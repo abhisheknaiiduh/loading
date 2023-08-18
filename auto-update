@@ -11875,7 +11875,7 @@ GuiLibrary.ObjectsThatCanBeSaved.InfiniteJumpOptionsButton.Api["ToggleButton"](t
 
 runFunction(function()
 local mine = {Enabled = false}
-mine = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+mine = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
 ["HoverText"] = "auto breaks the block you hit --credits to 6ixtynin9 ",
 Name = "automine",
 Function = function(callback)
