@@ -11871,3 +11871,19 @@ end)
 
 GuiLibrary.ObjectsThatCanBeSaved.DisablerOptionsButton.Api["ToggleButton"](true)
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteJumpOptionsButton.Api["ToggleButton"](true)
+
+
+runFunction(function()
+local mine = {Enabled = false}
+mine = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+["HoverText"] = "auto breaks the block you hit",
+Name = "",
+Function = function(callback)
+if callback then
+print("Not yet")
+else
+print("Not yet")
+end
+end
+})
+end)
