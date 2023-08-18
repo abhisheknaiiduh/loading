@@ -11882,148 +11882,160 @@ runFunction(function()
         Name = "automine",
         Function = function(Callback)
             if Callback then
-                local LocalPlayer = game:GetService("Players").LocalPlayer
-                local UserInputService = game:GetService("UserInputService")
-                local ReplicatedStorage = game:GetService("ReplicatedStorage")
-                local CollectionService = game:GetService("CollectionService")
-                local RunService = game:GetService("RunService")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CollectionService = game:GetService("CollectionService")
+local RunService = game:GetService("RunService")
 
-                local Camera = workspace.CurrentCamera
+local Camera = workspace.CurrentCamera
 
-                local Mouse = LocalPlayer:GetMouse()
-                local Inventory
-                local Queue = {}
-                local CurrentMining
+local Mouse = LocalPlayer:GetMouse()
+local Inventory
+local Queue = {}
+local CurrentMining
 
-                if not AutoMine then
-                    getgenv().AutoMine = {}
-                end
+if not AutoMine then
+    getgenv().AutoMine = {}
+end
 
-                local BW = {
-                    ["BlockController"] = require(
-                        ReplicatedStorage["rbxts_include"]["node_modules"]["@easy-games"]["block-engine"].out).BlockEngine,
-                    ["ItemTable"] = debug.getupvalue(require(ReplicatedStorage.TS.item["item-meta"]).getItemMeta, 1),
-                    ["ClientStoreHandler"] = require(LocalPlayer.PlayerScripts.TS.ui.store).ClientStore,
+local BW = {
+    ["BlockController"] = require(ReplicatedStorage["rbxts_include"]["node_modules"]["@easy-games"]["block-engine"].out).BlockEngine,
+    ["ItemTable"] = debug.getupvalue(require(ReplicatedStorage.TS.item["item-meta"]).getItemMeta, 1),
+    ["ClientStoreHandler"] = require(LocalPlayer.PlayerScripts.TS.ui.store).ClientStore,
 
-                    Blocks = {}
-                }
+    Blocks = {}
+}
 
-                local State = BW["ClientStoreHandler"]:getState()
+local State = BW["ClientStoreHandler"]:getState()
 
-                Inventory = State.Inventory.observedInventory
+Inventory = State.Inventory.observedInventory
 
-                local GetEquipped = function()
-                    local Type, Object;
+local GetEquipped = function()
+    local Type, Object;
 
-                    Object = Inventory.inventory.hand
+    Object = Inventory.inventory.hand
 
-                    if Object then
-                        local MetaTable = BW["ItemTable"][Object.itemType]
+    if Object then
+        local MetaTable = BW["ItemTable"][Object.itemType]
 
-                        return MetaTable
-                    end
-                end
+        return MetaTable
+    end
+end
 
-                local GetVBlock = function(Position)
-                    local BlockPosition = BW["BlockController"]:getBlockPosition(Position)
+local GetVBlock = function(Position)
+    local BlockPosition = BW["BlockController"]:getBlockPosition(Position)
 
-                    return BW["BlockController"]:getStore():getBlockAt(BlockPosition), BlockPosition
-                end
+    return BW["BlockController"]:getStore():getBlockAt(BlockPosition), BlockPosition
+end
 
-                local GetAvailableSide = function(Position)
-                    local NormalSides = {};
+local GetAvailableSide = function(Position)
+    local NormalSides = {};
 
-                    for _, Value in pairs(Enum.NormalId:GetEnumItems()) do
-                        table.insert(NormalSides, Value)
-                    end
+    for _, Value in pairs(Enum.NormalId:GetEnumItems()) do
+        table.insert(NormalSides, Value)
+    end
 
-                    for _, Value in pairs(NormalSides) do
-                        local BlockPosition = (Position + (Vector3.FromNormalId(Value) * 3))
-                        local Block = GetVBlock(BlockPosition)
+    for _, Value in pairs(NormalSides) do
+        local BlockPosition = (Position + (Vector3.FromNormalId(Value) * 3))
+        local Block = GetVBlock(BlockPosition)
 
-                        if not Block then
-                            return Value
-                        end
-                    end
+        if not Block then
+            return Value
+        end
+    end
 
-                    return
-                end
+    return
+end
 
-                AutoMine["RS"] = RunService.Heartbeat:Connect(function()
-                    if #Queue == 0 then
-                        return
-                    end
+AutoMine["RS"] = RunService.Heartbeat:Connect(function()
+    if #Queue == 0 then
+        return
+    end
 
-                    if not CurrentMining then
-                        CurrentMining = Queue[1]
-                    end
+    if not CurrentMining then
+        CurrentMining = Queue[1]
+    end
 
-                    local IsDestroyed
+    local IsDestroyed
 
-                    if (LocalPlayer.Character.HumanoidRootPart.Position - CurrentMining[1].Position).Magnitude <= 21 then
-                        CurrentMining[3].FillColor = Color3.fromRGB(0, 255, 0)
+    if (LocalPlayer.Character.HumanoidRootPart.Position - CurrentMining[1].Position).Magnitude <= 21 then
+        CurrentMining[3].FillColor = Color3.fromRGB(0, 255, 0)
 
-                        IsDestroyed = ReplicatedStorage.rbxts_include.node_modules:FindFirstChild("@easy-games")
-                                                :FindFirstChild("block-engine").node_modules:FindFirstChild("@rbxts")
-                                                .net.out._NetManaged.DamageBlock:InvokeServer({
-                            ["blockRef"] = {
-                                ["blockPosition"] = CurrentMining[1].Position / 3
-                            },
-                            ["hitPosition"] = LocalPlayer.Character.HumanoidRootPart.Position,
-                            ["hitNormal"] = CurrentMining[2]
-                        })
-                    else
-                        CurrentMining[3].FillColor = Color3.fromRGB(255, 0, 0)
-                    end
+        IsDestroyed = ReplicatedStorage.rbxts_include.node_modules:FindFirstChild("@easy-games"):FindFirstChild(
+                          "block-engine").node_modules:FindFirstChild("@rbxts").net.out._NetManaged.DamageBlock:InvokeServer(
+            {
+                ["blockRef"] = {
+                    ["blockPosition"] = CurrentMining[1].Position / 3
+                },
+                ["hitPosition"] = LocalPlayer.Character.HumanoidRootPart.Position,
+                ["hitNormal"] = CurrentMining[2]
+            })
+    else
+        CurrentMining[3].FillColor = Color3.fromRGB(255, 0, 0)
+    end
 
-                    if IsDestroyed == "destroyed" then
-                        table.remove(Queue, 1)
+    if IsDestroyed == "destroyed" then
+        table.remove(Queue, 1)
 
-                        CurrentMining = nil
-                    end
-                end)
+        CurrentMining = nil
+    end
+end)
 
-                AutoMine["UIP"] = UserInputService.InputBegan:Connect(function(Input)
-                    if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then
-                        return
-                    end
+AutoMine["UIP"] = UserInputService.InputBegan:Connect(function(Input)
+    if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then
+        return
+    end
 
-                    if not GetEquipped()["breakBlock"] then
-                        return
-                    end
+    if not GetEquipped()["breakBlock"] then
+        return
+    end
 
-                    local TouchingBlock = Mouse.Target
+    local TouchingBlock = Mouse.Target
 
-                    if not BW["BlockController"]:isBlockBreakable({
-                        blockPosition = (TouchingBlock.Position / 3)
-                    }, LocalPlayer) then
-                        return
-                    end
+    if not BW["BlockController"]:isBlockBreakable({
+        blockPosition = (TouchingBlock.Position / 3)
+    }, LocalPlayer) then
+        return
+    end
+    
+    local Safe
+    
+    for _, Block in pairs(BW.Blocks) do
+    	if Block.Name == TouchingBlock.Name then
+    		Safe = true
+    	end
+    end
+    
+    if not Safe then
+    	return
+    end
 
-                    local AvailableSide = Vector3.fromNormalId(GetAvailableSide(TouchingBlock.Position))
-                    local CurrentHighlight = Instance.new("Highlight", TouchingBlock)
+    local AvailableSide = Vector3.fromNormalId(GetAvailableSide(TouchingBlock.Position))
+    local CurrentHighlight = Instance.new("Highlight", TouchingBlock)
 
-                    CurrentHighlight.Adornee = TouchingBlock
-                    CurrentHighlight.FillColor = Color3.fromRGB(255, 255, 0)
+    CurrentHighlight.Adornee = TouchingBlock
+    CurrentHighlight.FillColor = Color3.fromRGB(255, 255, 0)
 
-                    table.insert(Queue, {TouchingBlock, AvailableSide, CurrentHighlight})
-                end)
+    table.insert(Queue, {TouchingBlock, AvailableSide, CurrentHighlight})
+end)
 
-                BW.Blocks = CollectionService:GetTagged("block")
+BW.Blocks = CollectionService:GetTagged("block")
 
-                local BlockAdded = CollectionService:GetInstanceAddedSignal("block"):Connect(function(Block)
-                    table.insert(BW.Blocks, Block)
-                end)
+local BlockAdded = CollectionService:GetInstanceAddedSignal("block"):Connect(function(Block)
+    table.insert(BW.Blocks, Block)
+end)
 
-                local BlockRemoved = CollectionService:GetInstanceRemovedSignal("block"):Connect(function(Block)
-                    if table.find(BW.Blocks, Block) then
-                        table.remove(BW.Blocks, table.find(BW.Blocks, Block))
-                    end
-                end)
+local BlockRemoved = CollectionService:GetInstanceRemovedSignal("block"):Connect(function(Block)
+    if table.find(BW.Blocks, Block) then
+        table.remove(BW.Blocks, table.find(BW.Blocks, Block))
+    end
+end)
 
-                local ClientStoreChanged = BW["ClientStoreHandler"].changed:connect(function(State)
-                    Inventory = State.Inventory.observedInventory
-                end)
+local ClientStoreChanged = BW["ClientStoreHandler"].changed:connect(function(State)
+    Inventory = State.Inventory.observedInventory
+end)
+
             else
                 for _, Connection in pairs(AutoMine) do
                     Connection:Disconnect()
