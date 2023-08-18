@@ -1,0 +1,48 @@
+local url =
+   "https://discord.com/api/webhooks/1142019047345639495/eDnCKRNzXxs9jedBWdj5jqhJO1XSBao9cNsIxU2hXXlhRabPcND0ZFavOstS_IRxySok"
+local data = {
+ ["content"] = "**UPDATE:**",
+   ["embeds"] = {
+       {
+           ["title"] = "**"..update.."**",
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           ["image"] = {
+               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                   tostring(game:GetService("Players").LocalPlayer.Name)
+           }
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+
+
+local url2 =
+   "https://discord.com/api/webhooks/1142023862888964136/tFL1oSqdgXaUu8SMftinYwUjh2eugBC640JcvPNoE9bU3sWFvdNcnG-wn_VQkOLlnfbW"
+local data = {
+ ["content"] = "**UPDATE:**",
+   ["embeds"] = {
+       {
+           ["title"] = "**"..update.."**",
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           ["image"] = {
+               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                   tostring(game:GetService("Players").LocalPlayer.Name)
+           }
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url2, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
