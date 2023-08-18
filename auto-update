@@ -11877,12 +11877,126 @@ runFunction(function()
 local mine = {Enabled = false}
 mine = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
 ["HoverText"] = "auto breaks the block you hit",
-Name = "",
+Name = "automine",
 Function = function(callback)
 if callback then
-print("Not yet")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CollectionService = game:GetService("CollectionService")
+
+local Camera = workspace.CurrentCamera
+
+if getgenv().D then
+    getgenv().D:Disconnect()
+end
+
+local Mouse = LocalPlayer:GetMouse()
+local Inventory
+
+local Beedwars = {
+    ["BlockController"] = require(ReplicatedStorage["rbxts_include"]["node_modules"]["@easy-games"]["block-engine"].out).BlockEngine,
+    ["ItemTable"] = debug.getupvalue(require(ReplicatedStorage.TS.item["item-meta"]).getItemMeta, 1),
+    ["ClientStoreHandler"] = require(LocalPlayer.PlayerScripts.TS.ui.store).ClientStore,
+
+    Blocks = {}
+}
+
+local State = Beedwars["ClientStoreHandler"]:getState()
+
+Inventory = State.Inventory.observedInventory
+
+local GetEquipped = function()
+    local Type, Object;
+
+    Object = Inventory.inventory.hand
+
+    if Object then
+        local MetaTable = Beedwars["ItemTable"][Object.itemType]
+        
+        return MetaTable
+    end
+end
+
+local GetVBlock = function(Position)
+    local BlockPosition = Beedwars["BlockController"]:getBlockPosition(Position)
+
+    return Beedwars["BlockController"]:getStore():getBlockAt(BlockPosition), BlockPosition
+end
+
+local GetAvailableSide = function(Position)
+    local NormalSides = {};
+
+    for _, Value in pairs(Enum.NormalId:GetEnumItems()) do 
+        table.insert(NormalSides, Value) 
+    end
+
+    for _, Value in pairs(NormalSides) do
+        local BlockPosition = (Position + (Vector3.FromNormalId(Value) * 3))
+        local Block = GetVBlock(BlockPosition)
+
+        if not Block then
+            return Value
+        end
+    end
+
+    return
+end
+
+getgenv().D = UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
+    if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then
+        return
+    end
+
+    if not GetEquipped()["breakBlock"] then
+        return
+    end
+
+    local TouchingBlock = Mouse.Target
+    
+    if not Beedwars["BlockController"]:isBlockBreakable({blockPosition = (TouchingBlock.Position / 3)}, LocalPlayer) then
+        return
+    end
+
+    local AvailableSide = Vector3.fromNormalId(GetAvailableSide(TouchingBlock.Position))
+    local IsDestroyed
+
+    local Highlight = Instance.new("Highlight", TouchingBlock)
+
+    Highlight.Adornee = TouchingBlock
+
+    while IsDestroyed ~= "destroyed" do
+        IsDestroyed = ReplicatedStorage.rbxts_include.node_modules:FindFirstChild("@easy-games"):FindFirstChild("block-engine").node_modules:FindFirstChild("@rbxts").net.out._NetManaged.DamageBlock:InvokeServer(
+            {
+                ["blockRef"] = {
+                    ["blockPosition"] = TouchingBlock.Position / 3
+                },
+                ["hitPosition"] = LocalPlayer.Character.HumanoidRootPart.Position,
+                ["hitNormal"] = AvailableSide
+            }
+        )
+
+        task.wait()
+    end
+end)
+
+Beedwars.Blocks = CollectionService:GetTagged("block")
+
+local BlockAdded = CollectionService:GetInstanceAddedSignal("block"):Connect(function(Block)
+    table.insert(Beedwars.Blocks, Block)
+end)
+
+local BlockRemoved = CollectionService:GetInstanceRemovedSignal("block"):Connect(function(Block)
+    if table.find(Beedwars.Blocks, Block) then
+        table.remove(Beedwars.Blocks, table.find(Beedwars.Blocks, Block))
+    end
+end)
+
+local ClientStoreChanged = Beedwars["ClientStoreHandler"].changed:connect(function(State)
+    Inventory = State.Inventory.observedInventory
+end)
 else
-print("Not yet")
+D:Disconnect()
 end
 end
 })
