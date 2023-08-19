@@ -12070,11 +12070,18 @@ VirtualUser:ClickButton2(Vector2.new())
 end)
 end
 print("Anti Afk Ran")
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
+_G.AntiFarm = true
 else
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
+_G.AntiFarm = false
 end
 end
 })
 end)
+
+while _G.AntiFarm == true do
+wait(2)
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
+wait(10)
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
+end
 
