@@ -12045,3 +12045,18 @@ end)
     })
 end)
 
+
+runFunction(function()
+local afkfarm = {Enabled = false}
+afkfarm = GuiLibrary["ObjectsThatCanBeSaved"]["RenderWindow"]["Api"].CreateOptionsButton({
+Name = "AfkFarm",
+Function = function(callback)
+if callback then
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
+else
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
+end
+end
+})
+end)
+
