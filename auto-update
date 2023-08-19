@@ -12048,8 +12048,8 @@ end)
 
 runFunction(function()
 local afkfarm = {Enabled = false}
-afkfarm = GuiLibrary["ObjectsThatCanBeSaved"]["RenderWindow"]["Api"].CreateOptionsButton({
-Name = "AfkFarm",
+afkfarm = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+Name = "AfkFarm (BETA)",
 Function = function(callback)
 if callback then
 task.wait(20)
