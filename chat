@@ -166,6 +166,7 @@ creatmsg('',"")
 
 ts.MessageReceived:Connect(function(z)
     local speaker = tostring(z.TextSource)
+    if z.Metadata ~= "" then print(z.Metadata)end
     if speaker == owner then
     creatmsg("<font color='rgb(152, 194, 219)'>[SEXER]</font> Rev:",z.Text)
     elseif speaker == xerv then
@@ -174,6 +175,8 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(152, 0, 0)'>[adolf hitler]</font> kosovo:",z.Text)
     elseif speaker == issei then
     creatmsg("<font color='rgb(166,213,166)'>[retart]</font> issei:",z.Text)
+    elseif z.Metadata == "im using revvy" then
+    creatmsg("<font color='rgb(152, 194, 0)'>[revvy+]</font> "..speaker..":",z.Text) 
     else
     creatmsg(z.PrefixText,z.Text)
     end
@@ -182,7 +185,7 @@ end)
 
 TextInput.FocusLost:Connect(function(eP,inp)
 	if eP then
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,TextInput.ContentText)
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
 wait() 
 TextInput.Text = ""
 	end
