@@ -12045,7 +12045,6 @@ end)
     })
 end)
 
---[[
 local function afkfarm()
 while _G.AntiFarm == true do
 wait(2)
@@ -12089,5 +12088,4 @@ end
 end
 })
 end)
---]]
 
