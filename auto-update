@@ -12045,6 +12045,14 @@ end)
     })
 end)
 
+function test()
+while _G.AntiFarm == true do
+wait(2)
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
+wait(10)
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
+end
+end
 
 function antiafk()
 local GC = getconnections or get_signal_cons
@@ -12076,7 +12084,7 @@ antiafk()
 print("Anti Afk Ran")
 _G.AntiFarm = true
 print("toggling function")
-print("broken rn")
+test()
 print("toggled!")
 else
 _G.AntiFarm = false
@@ -12084,12 +12092,3 @@ end
 end
 })
 end)
-
-function test()
-while _G.AntiFarm == true do
-wait(2)
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
-wait(10)
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
-end
-end
