@@ -11875,6 +11875,7 @@ GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.ToggleButton(false
 task.wait(1)
 end
 
+GuiLibrary.ObjectsThatCanBeSaved.AutoLeaveOptionsButton.Api["ToggleButton"](true)
 GuiLibrary.ObjectsThatCanBeSaved.DisablerOptionsButton.Api["ToggleButton"](true)
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteJumpOptionsButton.Api["ToggleButton"](true)
 
