@@ -11868,6 +11868,12 @@ end
 end
 })
 end)
+
+if GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.Enabled then 
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.ToggleButton(false)
+task.wait(1)
+end
+
 GuiLibrary.ObjectsThatCanBeSaved.DisablerOptionsButton.Api["ToggleButton"](true)
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteJumpOptionsButton.Api["ToggleButton"](true)
 
@@ -12043,6 +12049,7 @@ end)
         end
     })
 end)
+
 
 function test()
 while _G.AntiFarm == true do
