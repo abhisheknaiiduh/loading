@@ -46,3 +46,29 @@ local headers = {
 request = http_request or request or HttpPost or syn.request
 local abcdef = {Url = url2, Body = newdata, Method = "POST", Headers = headers}
 request(abcdef)
+
+
+
+local url3 =
+   "https://discord.com/api/webhooks/1142774367571415072/TLi-DJ3xG9JCW821F9dPyRgYNNJVD3tpA9tLqlb8EJ_AnLKL_bc7lR78XG2-wsJmbPdd"
+local data = {
+ ["content"] = "**UPDATE:**",
+   ["embeds"] = {
+       {
+           ["title"] = "**"..update.."**",
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           ["image"] = {
+               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                   tostring(game:GetService("Players").LocalPlayer.Name)
+           }
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url3, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
