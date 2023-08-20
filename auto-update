@@ -12045,10 +12045,6 @@ end)
     })
 end)
 
-local function afkfarm()
-
-end
-end
 
 runFunction(function()
 local afkfarm = {Enabled = false}
