@@ -1,0 +1,168 @@
+game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
+game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
+
+local ts = game:GetService("TextChatService")
+local sg = Instance.new('ScreenGui',game.Players.LocalPlayer:WaitForChild("PlayerGui"))
+local ChatGui = Instance.new("Frame",sg)
+local Close = Instance.new("ImageButton",ChatGui)
+local CloseCorner = Instance.new("UICorner",Close)
+local SexyGuiMainCorner = Instance.new("UICorner",ChatGui)
+local DisplayMessages = Instance.new("ScrollingFrame",ChatGui)
+local DisplayMessageLayout = Instance.new("UIListLayout",DisplayMessages)
+local DisplayMessageStub = Instance.new("Frame",DisplayMessages)
+local Inputbar = Instance.new("Frame",ChatGui)
+local InputbarCorner = Instance.new("UICorner",Inputbar)
+local TextInput = Instance.new("TextBox",Inputbar)
+local InputbarPadding = Instance.new("UIPadding",Inputbar)
+local xbase = 475
+
+
+ChatGui.Name = "ChatGui"
+ChatGui.AnchorPoint = Vector2.new(0, 1)
+ChatGui.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+ChatGui.BackgroundTransparency = 0.200
+ChatGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ChatGui.BorderSizePixel = 0
+ChatGui.Position = UDim2.new(0, 10, 0.28, -10)
+ChatGui.Size = UDim2.new(0, xbase, 0, 250)
+
+SexyGuiMainCorner.CornerRadius = UDim.new(0, 5)
+SexyGuiMainCorner.Name = "SexyGuiMainCorner"
+
+DisplayMessages.Name = "DisplayMessages"
+DisplayMessages.Active = true
+DisplayMessages.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DisplayMessages.BackgroundTransparency = 1.000
+DisplayMessages.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DisplayMessages.BorderSizePixel = 0
+DisplayMessages.Position = UDim2.new(0, 5, 0, 0)
+DisplayMessages.Size = UDim2.new(0, xbase-10, 0, 215)
+DisplayMessages.ZIndex = 0
+DisplayMessages.CanvasSize = UDim2.new(0, 0, 0, 0)
+DisplayMessages.ScrollBarThickness = 6
+DisplayMessages.AutomaticCanvasSize = "Y"
+
+DisplayMessageLayout.Name = "DisplayMessageLayout"
+DisplayMessageLayout.SortOrder = Enum.SortOrder.LayoutOrder
+DisplayMessageLayout.Padding = UDim.new(0, 2)
+
+DisplayMessageStub.Name = "DisplayMessageStub"
+DisplayMessageStub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DisplayMessageStub.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DisplayMessageStub.BorderSizePixel = 0
+DisplayMessageStub.LayoutOrder = -9999999
+DisplayMessageStub.Size = UDim2.new(1, 0, 0, 0)
+
+Inputbar.Name = "Inputbar"
+Inputbar.AnchorPoint = Vector2.new(0, 1)
+Inputbar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Inputbar.BackgroundTransparency = 0.900
+Inputbar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Inputbar.BorderSizePixel = 0
+Inputbar.Position = UDim2.new(0, 5, 1, -5)
+Inputbar.Size = UDim2.new(0, xbase-10, 0, 25)
+Inputbar.ZIndex = 2
+Inputbar.AutomaticSize = "Y"
+
+InputbarCorner.CornerRadius = UDim.new(0, 5)
+InputbarCorner.Name = "InputbarCorner"
+
+TextInput.Name = "TextInput"
+TextInput.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextInput.BackgroundTransparency = 1.000
+TextInput.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextInput.BorderSizePixel = 0
+TextInput.Size = UDim2.new(1, 0, 0, 15)
+TextInput.ClearTextOnFocus = false
+TextInput.Font = Enum.Font.Gotham
+TextInput.PlaceholderText = "Insert message here"
+TextInput.Text = ""
+TextInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextInput.TextSize = 14.000
+TextInput.TextWrapped = true
+TextInput.TextXAlignment = Enum.TextXAlignment.Left
+TextInput.AutomaticSize = "Y"
+
+InputbarPadding.Name = "InputbarPadding"
+InputbarPadding.PaddingBottom = UDim.new(0, 5)
+InputbarPadding.PaddingLeft = UDim.new(0, 5)
+InputbarPadding.PaddingRight = UDim.new(0, 5)
+InputbarPadding.PaddingTop = UDim.new(0, 5)
+
+Close.Name = "Close"
+Close.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Close.BackgroundTransparency = 0.200
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(1, 5, -0, 0)
+Close.Size = UDim2.new(0, 25, 0, 25)
+Close.Image = "http://www.roblox.com/asset/?id=6031094670" or "http://www.roblox.com/asset/?id=6031094680"
+local info = {Enum.EasingDirection.InOut,Enum.EasingStyle.Sine,.1,true}
+Close.MouseButton1Click:Connect(function()
+	if ChatGui.Position.X.Offset == 10 then
+		info = table.clone(info)
+		info[5] = function()
+			Close.Image = "http://www.roblox.com/asset/?id=6031094680"
+		end
+		ChatGui:TweenPosition(UDim2.new(0, -(xbase+1),0.28, -10),unpack(info))
+	elseif ChatGui.Position.X.Offset == -(xbase+1) then
+		info = table.clone(info)
+		info[5] = function()
+			Close.Image = "http://www.roblox.com/asset/?id=6031094670"
+		end
+		ChatGui:TweenPosition(UDim2.new(0, 10,0.28, -10),unpack(info))
+	end
+end)
+
+CloseCorner.CornerRadius = UDim.new(0, 5)
+CloseCorner.Name = "CloseCorner"
+
+local function creatmsg(msg,md)
+    local text = ""..msg.." "..md..""
+    local TextMessage = Instance.new("TextLabel",DisplayMessages)
+    local TextMessagePadding = Instance.new("UIPadding",TextMessage)
+
+    TextMessage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextMessage.BackgroundTransparency = 1.000
+    TextMessage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TextMessage.BorderSizePixel = 0
+    TextMessage.Size = UDim2.new(1, 0, 0, 25)
+    TextMessage.Font = Enum.Font.Gotham
+    TextMessage.Text = text
+    TextMessage.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextMessage.TextSize = 14.000
+    TextMessage.TextWrapped = true
+    TextMessage.RichText = true
+    TextMessage.TextXAlignment = Enum.TextXAlignment.Left
+    TextMessage.TextYAlignment = Enum.TextYAlignment.Top
+
+    TextMessagePadding.PaddingLeft = UDim.new(0, 5)
+    TextMessagePadding.PaddingTop = UDim.new(0, 5)
+end
+
+creatmsg('<font color ="#da8541">SERVER</font>',"GUI and GUI coding done by amnoob_ ,partial credits to me/rev for other coding")
+
+ts.MessageReceived:Connect(function(z)
+    local speaker = tostring(z.TextSource)
+    if speaker == "Real_revvybxnned7" then
+    creatmsg("<font color='rgb(152, 194, 219)'>[SEXER]</font> Rev:",z.Text)
+    else
+    creatmsg(z.PrefixText,z.Text)
+    end
+end)
+
+
+TextInput.FocusLost:Connect(function(eP,inp)
+	if eP then
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,TextInput.ContentText)
+wait() 
+TextInput.Text = ""
+	end
+end)
+
+Inputbar.Changed:Connect(function(i)
+	if i == "AbsoluteSize" and Inputbar.AbsoluteSize.Y >= 25 then
+		local add = Inputbar.AbsoluteSize.Y - 25
+		ChatGui.Size = UDim2.new(0, xbase, 0, add+250)
+	end
+end)
