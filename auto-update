@@ -12046,11 +12046,7 @@ end)
 end)
 
 local function afkfarm()
-while _G.AntiFarm == true do
-wait(2)
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
-wait(10)
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
+
 end
 end
 
@@ -12080,10 +12076,15 @@ end
 print("Anti Afk Ran")
 _G.AntiFarm = true
 print("toggling function")
-afkfarm()
+while _G.AntiFarm == true do
+wait(2)
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
+wait(10)
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
 print("toggled!")
 else
 _G.AntiFarm = false
+end
 end
 end
 })
