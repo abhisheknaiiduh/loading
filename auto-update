@@ -12053,7 +12053,7 @@ end)
 
 function test()
 while _G.AntiFarm == true do
-wait(1.5)
+wait(1.8)
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
 wait(15)
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
