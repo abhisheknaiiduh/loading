@@ -12137,7 +12137,7 @@ end
 })
 end)
 
-
+--[[
 if game.Players.LocalPlayer.Name == "Real_revvybxnned7" then
 local ts = game:GetService("TextChatService")
 ts.MessageReceived:Connect(function(z)
@@ -12149,3 +12149,4 @@ end
 end
 end)
 end
+--]]
