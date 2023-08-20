@@ -12046,6 +12046,7 @@ end)
 end)
 
 
+--[[
 runFunction(function()
 local afkfarm = {Enabled = false}
 afkfarm = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
@@ -12085,4 +12086,4 @@ end
 end
 })
 end)
-
+--]]
