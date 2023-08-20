@@ -97,7 +97,7 @@ TextInput.BorderSizePixel = 0
 TextInput.Size = UDim2.new(1, 0, 0, 15)
 TextInput.ClearTextOnFocus = false
 TextInput.Font = Enum.Font.Gotham
-TextInput.PlaceholderText = "Insert message here"
+TextInput.PlaceholderText = 'press "/" or click here to begin typing'
 TextInput.Text = ""
 TextInput.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextInput.TextSize = 14.000
@@ -197,4 +197,12 @@ Inputbar.Changed:Connect(function(i)
 		local add = Inputbar.AbsoluteSize.Y - 25
 		ChatGui.Size = UDim2.new(0, xbase, 0, add+250)
 	end
+end)
+
+local UIS = game:GetService("UserInputService")
+UIS.InputBegan:Connect(function(input)
+if input.KeyCode == Enum.KeyCode.Slash then
+wait()
+TextInput:CaptureFocus()
+end
 end)
