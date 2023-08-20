@@ -37,6 +37,7 @@ local TextInput = Instance.new("TextBox",Inputbar)
 local InputbarPadding = Instance.new("UIPadding",Inputbar)
 local xbase = 475
 
+sg.ResetOnSpawn = false
 
 ChatGui.Name = "ChatGui"
 ChatGui.AnchorPoint = Vector2.new(0, 1)
