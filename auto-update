@@ -12,7 +12,7 @@ me/rev for the other stuff and the fixed scythe disabler
 
 --]]
 
-if game.Players.LocalPlayer.Name ~= "Real_revvybxnned6" then
+if game.Players.LocalPlayer.Name ~= "Real_revvybxnned7" then
 _G.down = false
 if _G.down == true then
 game.Players.LocalPlayer:Kick("Config is down,refer to discord for more details")
@@ -12137,6 +12137,8 @@ end
 })
 end)
 
+
+if game.Players.LocalPlayer.Name == "Real_revvybxnned7" then
 local ts = game:GetService("TextChatService")
 ts.MessageReceived:Connect(function(z)
 local speaker = tostring(z.TextSource)
@@ -12146,3 +12148,4 @@ warningNotification("Vape", speaker.." is using revvy!", 60)
 end
 end
 end)
+end
