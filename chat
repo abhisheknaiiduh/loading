@@ -159,6 +159,7 @@ local function creatmsg(msg,md)
 
     TextMessagePadding.PaddingLeft = UDim.new(0, 5)
     TextMessagePadding.PaddingTop = UDim.new(0, 5)
+    DisplayMessages.CanvasPosition = Vector2.new(0,DisplayMessages.AbsoluteCanvasSize.Y)
 end
 
 creatmsg('<font color ="#da8541">SERVER</font>',"GUI and GUI coding done by amnoob_ ,partial credits to me/rev for other coding")
@@ -186,7 +187,6 @@ end)
 TextInput.FocusLost:Connect(function(eP,inp)
 	if eP then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
-wait() 
 TextInput.Text = ""
 	end
 end)
