@@ -12046,7 +12046,6 @@ end)
 end)
 
 
---[[
 runFunction(function()
 local afkfarm = {Enabled = false}
 afkfarm = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
@@ -12073,17 +12072,19 @@ end
 print("Anti Afk Ran")
 _G.AntiFarm = true
 print("toggling function")
-while _G.AntiFarm == true do
-wait(2)
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
-wait(10)
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
+print("broken rn")
 print("toggled!")
 else
 _G.AntiFarm = false
 end
 end
-end
 })
 end)
---]]
+function test()
+while _G.AntiFarm == true do
+wait(2)
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
+wait(10)
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
+end
+end
