@@ -12099,3 +12099,22 @@ end
 end
 })
 end)
+
+
+
+
+runFunction(function()
+local destory = {Enabled = false}
+destroy = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+Name = "destroy spec platform",
+Function = function(callback)
+if callback then
+print("Destorying spectator platform..")
+if workspace:FindFirstChild("SpectatorPlatform", true) then
+game:GetService("Workspace").SpectatorPlatform:Destroy()
+print("Destroyed!")
+destroy["ToggleButton"](false)
+end
+end
+})
+end)
