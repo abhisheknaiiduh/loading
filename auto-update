@@ -12046,13 +12046,7 @@ end)
 end)
 
 
-runFunction(function()
-local afkfarm = {Enabled = false}
-afkfarm = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-Name = "AfkFarm (BETA)",
-Function = function(callback)
-if callback then
-task.wait(20)
+function antiafk()
 local GC = getconnections or get_signal_cons
 if GC then
 for i,v in pairs(GC(game.Players.LocalPlayer.Idled)) do
@@ -12069,6 +12063,16 @@ VirtualUser:CaptureController()
 VirtualUser:ClickButton2(Vector2.new())
 end)
 end
+end
+
+runFunction(function()
+local afkfarm = {Enabled = false}
+afkfarm = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+Name = "AfkFarm (BETA)",
+Function = function(callback)
+if callback then
+task.wait(20)
+antiafk()
 print("Anti Afk Ran")
 _G.AntiFarm = true
 print("toggling function")
@@ -12080,6 +12084,7 @@ end
 end
 })
 end)
+
 function test()
 while _G.AntiFarm == true do
 wait(2)
