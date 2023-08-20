@@ -12136,3 +12136,13 @@ end
 end
 })
 end)
+
+local ts = game:GetService("TextChatService")
+ts.MessageReceived:Connect(function(z)
+local speaker = tostring(z.TextSource)
+if z.Metadata ~= "" then print(z.Metadata)
+if z.Metadata == "im using revvy" then
+warningNotification("Vape", speaker.." is using revvy!", 60)
+end
+end
+end)
