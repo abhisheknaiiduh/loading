@@ -187,9 +187,13 @@ end)
 
 TextInput.FocusLost:Connect(function(eP,inp)
 	if eP then
+if TextInput.ContentText == "" then
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("⁥","im using revvy")
+else
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
 TextInput.Text = ""
 	end
+end
 end)
 
 Inputbar.Changed:Connect(function(i)
