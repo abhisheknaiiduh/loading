@@ -274,7 +274,7 @@ end)
 TextInput.FocusLost:Connect(function(eP,inp)
 if eP then
 if TextInput.ContentText ~= "" then
-if TextInput.ContentText == ";features" or TextInput.ContentText == ":features" then
+if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" then
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:')
 TextInput.Text = ""
 else
