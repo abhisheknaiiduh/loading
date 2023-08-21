@@ -250,6 +250,8 @@ ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🤡","im using revvy"
 TextInput.Text = ""
 elseif TextInput.ContentText == ":nerd:" or TextInput.ContentText == ":Nerd:" then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🤓","im using revvy")
+elseif TextInput.ContentText == ":cap:" or TextInput.ContentText == ":Cap:" then
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🧢","im using revvy")
 TextInput.Text = ""
 else
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
