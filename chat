@@ -170,7 +170,7 @@ ts.MessageReceived:Connect(function(z)
     local speaker = tostring(z.TextSource)
     if z.Metadata ~= "" then print(z.Metadata)end
     if speaker == owner then
-    creatmsg("<font color='rgb(152, 194, 219)'>[SEXER]</font> Rev:",z.Text)
+    creatmsg("<font color='rgb(152, 194, 219)'>[SEXER] Rev:</font>",z.Text)
     elseif speaker == xerv then
     creatmsg("<font color='rgb(152, 194, 219)'>[AC MOD]</font> xerv:",z.Text)
     elseif speaker == kos then
