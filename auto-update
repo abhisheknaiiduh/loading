@@ -12090,20 +12090,7 @@ afkfarm = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton
 Name = "AfkFarm (BETA)",
 Function = function(callback)
 if callback then
-local LocalPlayer = game:GetService("Players").LocalPlayer
-local PlayerGui = LocalPlayer:WaitForChild("PlayerGui", math.huge)
-PlayerGui:WaitForChild("PregameCountdown", math.huge)
-local Started
-while task.wait() do
-    if not PlayerGui:FindFirstChild("PregameCountdown") then
-        task.wait(0.15)
-        
-        if not PlayerGui:FindFirstChild("PregameCountdown") then
-            Started = true
-            break
-        end
-    end
-end
+repeat task.wait() until bedwarsStore.matchState ~= 0
 print("game")
 antiafk()
 print("Anti Afk Ran")
