@@ -139,6 +139,58 @@ end)
 CloseCorner.CornerRadius = UDim.new(0, 5)
 CloseCorner.Name = "CloseCorner"
 
+
+
+local function system(msg)
+    local text = "<font color ='#da8541'>SERVER</font>: "..msg..""
+    local TextMessage = Instance.new("TextLabel",DisplayMessages)
+    local TextMessagePadding = Instance.new("UIPadding",TextMessage)
+
+    TextMessage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextMessage.BackgroundTransparency = 1.000
+    TextMessage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TextMessage.BorderSizePixel = 0
+    TextMessage.Size = UDim2.new(1, 0, 0, 25)
+    TextMessage.Font = Enum.Font.Gotham
+    TextMessage.Text = text
+    TextMessage.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextMessage.TextSize = 14.000
+    TextMessage.TextWrapped = true
+    TextMessage.RichText = true
+    TextMessage.TextXAlignment = Enum.TextXAlignment.Left
+    TextMessage.TextYAlignment = Enum.TextYAlignment.Top
+
+    TextMessagePadding.PaddingLeft = UDim.new(0, 5)
+    TextMessagePadding.PaddingTop = UDim.new(0, 5)
+    DisplayMessages.CanvasPosition = Vector2.new(0,DisplayMessages.AbsoluteCanvasSize.Y)
+end
+
+
+
+local function invis()
+    local text = ""
+    local TextMessage = Instance.new("TextLabel",DisplayMessages)
+    local TextMessagePadding = Instance.new("UIPadding",TextMessage)
+
+    TextMessage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextMessage.BackgroundTransparency = 1.000
+    TextMessage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TextMessage.BorderSizePixel = 0
+    TextMessage.Size = UDim2.new(1, 0, 0, 25)
+    TextMessage.Font = Enum.Font.Gotham
+    TextMessage.Text = text
+    TextMessage.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextMessage.TextSize = 14.000
+    TextMessage.TextWrapped = true
+    TextMessage.RichText = true
+    TextMessage.TextXAlignment = Enum.TextXAlignment.Left
+    TextMessage.TextYAlignment = Enum.TextYAlignment.Top
+
+    TextMessagePadding.PaddingLeft = UDim.new(0, 5)
+    TextMessagePadding.PaddingTop = UDim.new(0, 5)
+    DisplayMessages.CanvasPosition = Vector2.new(0,DisplayMessages.AbsoluteCanvasSize.Y)
+end
+
 local function creatmsg(msg,md)
     local text = ""..msg.." "..md..""
     local TextMessage = Instance.new("TextLabel",DisplayMessages)
@@ -163,8 +215,8 @@ local function creatmsg(msg,md)
     DisplayMessages.CanvasPosition = Vector2.new(0,DisplayMessages.AbsoluteCanvasSize.Y)
 end
 
-creatmsg('<font color ="#da8541">SERVER</font>',"GUI and GUI coding done by amnoob_ ,partial credits to me/rev for other coding")
-creatmsg('',"")
+system('GUI and GUI coding done by amnoob_ ,partial credits to me/rev for other coding')
+invis()
 
 ts.MessageReceived:Connect(function(z)
     local speaker = tostring(z.TextSource)
