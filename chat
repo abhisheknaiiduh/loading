@@ -142,7 +142,7 @@ CloseCorner.Name = "CloseCorner"
 
 
 local function system(msg)
-    local text = "<font color ='#da8541'>[SERVER]</font>: "..msg..""
+    local text = "<font color ='#da8541'>[SCRIPT]</font>: "..msg..""
     local TextMessage = Instance.new("TextLabel",DisplayMessages)
     local TextMessagePadding = Instance.new("UIPadding",TextMessage)
 
