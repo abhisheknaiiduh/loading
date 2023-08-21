@@ -7,6 +7,7 @@ local kos = "ILOVENATOARMY22222"
 local issei = "january7th_2012"
 local xerv = "EasyVelocity"
 
+--[[ NOT NEEDED ANYMORE
 local normal = {
 "browncreamed",
 "BritBoy009",
@@ -20,7 +21,7 @@ local normal = {
 "october5th_2000",
 "samisbozo321",
 }
-
+]]
 
 local ts = game:GetService("TextChatService")
 local sg = Instance.new('ScreenGui',game.Players.LocalPlayer:WaitForChild("PlayerGui"))
