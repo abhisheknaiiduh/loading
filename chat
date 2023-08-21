@@ -1,3 +1,4 @@
+--loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
 game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
 
@@ -7,7 +8,6 @@ local kos = "ILOVENATOARMY22222"
 local issei = "january7th_2012"
 local xerv = "EasyVelocity"
 
---[[ NOT NEEDED ANYMORE
 local normal = {
 "browncreamed",
 "BritBoy009",
@@ -21,7 +21,7 @@ local normal = {
 "october5th_2000",
 "samisbozo321",
 }
-]]
+
 
 local ts = game:GetService("TextChatService")
 local sg = Instance.new('ScreenGui',game.Players.LocalPlayer:WaitForChild("PlayerGui"))
@@ -237,32 +237,36 @@ ts.MessageReceived:Connect(function(z)
     end
 end)
 
+local identifyEmotes,isbusy = {
+    {':sob:','😭'},
+    {':clown:','🤡'},
+    {':nerd:','🤓'},
+    {':exploding_head:','🤯'},
+    {':fire:','🔥'},
+    {':cap:','🧢'},
+},false
+TextInput.Changed:Connect(function(x)
+    if x == 'Text' and not isbusy then
+        isbusy = true
+        local lowered_text = TextInput.Text:lower();
+        for i,v in pairs(identifyEmotes) do
+            local txt ,num = lowered_text:gsub(v[1],v[2])
+            if num ~= 0  then
+                TextInput.Text = txt
+                TextInput.CursorPosition = txt:len()+1
+            end
+        end
+        isbusy = false
+    end
+end)
 
 TextInput.FocusLost:Connect(function(eP,inp)
-	if eP then
-if TextInput.ContentText == "" then
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("⁥","im using revvy")
-TextInput.Text = ""
-elseif TextInput.ContentText == ":sob:" or TextInput.ContentText == ":Sob:" then
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("😭","im using revvy")
-TextInput.Text = ""
-elseif TextInput.ContentText == ":clown:" or TextInput.ContentText == ":Clown:" then
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🤡","im using revvy")
-TextInput.Text = ""
-elseif TextInput.ContentText == ":nerd:" or TextInput.ContentText == ":Nerd:" then
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🤓","im using revvy")
-TextInput.Text = ""
-elseif TextInput.ContentText == ":cap:" or TextInput.ContentText == ":Cap:" then
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🧢","im using revvy")
-TextInput.Text = ""
-elseif TextInput.ContentText == ":fire:" or TextInput.ContentText == ":Fire:" then
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🔥","im using revvy")
-TextInput.Text = ""
-else
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
-TextInput.Text = ""
-	end
-end
+    if eP then
+        if TextInput.ContentText ~= "" then
+            ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
+            TextInput.Text = ""
+        end
+    end
 end)
 
 Inputbar.Changed:Connect(function(i)
