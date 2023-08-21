@@ -278,10 +278,14 @@ if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" 
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:')
 TextInput.Text = ""
 elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" then
-system('cmds are: /features, /cmds, /admins')
+system('cmds are: /features, /cmds, /admins, /chatfix')
 TextInput.Text = ""
 elseif TextInput.ContentText == "/admins" or TextInput.ContentText == "/Admins" then
 system('admins are: Rev.')
+TextInput.Text = ""
+elseif TextInput.ContentText == "/chatfix" or TextInput.ContentText == "/Chatfix" then
+system('("you should only use this after saing what the fuck") done!')
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("fdgdfg z","im using revvy")
 TextInput.Text = ""
 else
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
