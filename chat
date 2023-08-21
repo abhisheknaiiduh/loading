@@ -254,6 +254,9 @@ TextInput.Text = ""
 elseif TextInput.ContentText == ":cap:" or TextInput.ContentText == ":Cap:" then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🧢","im using revvy")
 TextInput.Text = ""
+elseif TextInput.ContentText == ":fire:" or TextInput.ContentText == ":Fire:" then
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🔥","im using revvy")
+TextInput.Text = ""
 else
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
 TextInput.Text = ""
