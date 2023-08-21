@@ -277,6 +277,9 @@ if TextInput.ContentText ~= "" then
 if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" then
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:')
 TextInput.Text = ""
+elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" then
+system('cmds are: /features')
+TextInput.Text = ""
 else
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
 TextInput.Text = ""
