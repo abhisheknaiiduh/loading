@@ -252,6 +252,8 @@ local identifyEmotes,isbusy = {
     {':thumbsdown:','👎'},
     {':pensive:','😔'},
     {':thinking:','🤔'},
+    {':star:','⭐'},
+    {':star2:','🌟'},
 },false
 TextInput.Changed:Connect(function(x)
     if x == 'Text' and not isbusy then
