@@ -189,12 +189,16 @@ TextInput.FocusLost:Connect(function(eP,inp)
 	if eP then
 if TextInput.ContentText == "" then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("⁥","im using revvy")
+TextInput.Text = ""
 elseif TextInput.ContentText == ":sob:" then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("😭","im using revvy")
+TextInput.Text = ""
 elseif TextInput.ContentText == ":clown:" then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🤡","im using revvy")
+TextInput.Text = ""
 elseif TextInput.ContentText == ":nerd:" then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🤓","im using revvy")
+TextInput.Text = ""
 else
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
 TextInput.Text = ""
