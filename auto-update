@@ -11843,88 +11843,19 @@ end
 end)
 
 
-local CalculateClosestOpponent = function(IntegerLimit)
-    local LocalPlayer = game:GetService("Players").LocalPlayer
-    local ClosestPlayer, Difference = nil, math.huge
-
-    for _, Player in pairs(game:GetService("Players"):GetPlayers()) do
-        if Player.Character:FindFirstChild("Humanoid") and Player ~= LocalPlayer and Player.Team ~= Player.Team then
-            local Distance = (LocalPlayer.Character.HumanoidRootPart.Position - Player.Character.HumanoidRootPart.Position).Magnitude
-
-            if Distance < IntegerLimit then
-                if Distance < Difference then
-                    ClosestPlayer = Player
-                    Difference = Distance
-                end
-            end
-        end
-    end
-
-    return ClosestPlayer
-end
-
-
 runFunction(function()
-    local tpaura = {
-        Enabled = false
-    }
-    tpaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
-        ["HoverText"] = "very experimental",
-        Name = "Tp-aura (Beta)",
-        Function = function(callback)
-            local LocalPlayer = game:GetService("Players").LocalPlayer
-            local CollectionService = game:GetService("CollectionService")
-            local RunService = game:GetService("RunService")
-
-            if callback then
-                getgenv().TpAura = RunService.Heartbeat:Connect(function()
-                    local ClosestPlayer = CalculateClosestOpponent(15)
-
-                    if ClosestPlayer then
-                        local Character = ClosestPlayer.Character
-                        local Humanoid = ClosestPlayer.Humanoid
-
-                        if Humanoid:GetState() ~= Enum.HumanoidStateType.Dead then
-                            local Blocks = CollectionService:GetTagged("block")
-
-                            local RO = LocalPlayer.Character.HumanoidRootPart.Position
-                            local RD = Vector3.new(0, -1, 0)
-                            
-                            local RP = RaycastParams.new()
-                            
-                            RP.FilterDescendantsInstances = {LocalPlayer.Character}
-                            RP.FilterType = Enum.RaycastFilterType.Exclude
-                            
-                            local RaycastResult = workspace:Raycast(RO, RD * 250, RP)
-                            
-                            if RaycastResult then
-                                local OverVoid
-
-                                for _, Block in pairs(Blocks) do
-                                    if Block.Name == RaycastResult.Instance.Name then
-                                        OverVoid = true
-
-                                        break
-                                    end
-                                end
-
-                                if OverVoid then
-                                    local LookVector = Character.HumanoidRootPart.CFrame.LookVector * -3
-                                    local Position = Character.HumanoidRootPart.CFrame + LookVector
-
-                                    LocalPlayer.Character.HumanoidRootPart.CFrame = Position
-                                end
-                            end
-                        end
-                    end
-
-                    task.wait(.5)
-                end)
-            else
-                getgenv().TpAura:Disconnect()
-            end
-        end
-    })
+local tpaura = {Enabled = false}
+tpaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+["HoverText"] = "very experimental",
+Name = "Tp-aura (Beta)",
+Function = function(callback)
+if callback then
+getgenv().test = true
+else
+getgenv().test = false
+end
+end
+})
 end)
 
 runFunction(function()
