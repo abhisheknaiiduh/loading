@@ -272,17 +272,17 @@ TextInput.Changed:Connect(function(x)
 end)
 
 TextInput.FocusLost:Connect(function(eP,inp)
-    if eP then
-        if TextInput.ContentText ~= "" then
-        if TextInput.ContentText == ";features" then
+if eP then
+if TextInput.ContentText ~= "" then
+if TextInput.ContentText == ";features" or TextInput.ContentText == ":features" then
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:')
 TextInput.Text = ""
 else
-            ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
-            TextInput.Text = ""
-        end
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
+TextInput.Text = ""
 end
-    end
+end
+end
 end)
 
 Inputbar.Changed:Connect(function(i)
