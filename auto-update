@@ -12152,107 +12152,107 @@ end)
 end
 --]]
 
-	runFunction(function()
-		local InvisNoCollide = {Enabled = false}
-		local partslist = {}
+runFunction(function()
+local InvisNoCollide = {Enabled = false}
+local partslist = {}
+
+local InvisAnims = {
+--HANNAH_JUMP_DOWN = "rbxassetid://10725339583", -- HANNAH_JUMP_DOWN [PATCHED]
+CLETUS_BOSS_SPAWN = "rbxassetid://11198021943", -- CLETUS_BOSS_SPAWN
+SKELETON_SPAWN = "rbxassetid://11330409797", -- SKELETON_SPAWN
+HALLOWEEN_BOSS_SPAWN = "rbxassetid://11335949902",  -- HALLOWEEN_BOSS_SPAWN
+}
 	
-		local InvisAnims = {
-			--HANNAH_JUMP_DOWN = "rbxassetid://10725339583", -- HANNAH_JUMP_DOWN [PATCHED]
-			CLETUS_BOSS_SPAWN = "rbxassetid://11198021943", -- CLETUS_BOSS_SPAWN
-			SKELETON_SPAWN = "rbxassetid://11330409797", -- SKELETON_SPAWN
-			HALLOWEEN_BOSS_SPAWN = "rbxassetid://11335949902",  -- HALLOWEEN_BOSS_SPAWN
-		}
-	
-		local animsinvis = {}
-		for i,v in next, InvisAnims do
-			animsinvis[#animsinvis+1] = i
-		end
-	
-		local InvisMethod = {Value = "HALLOWEEN_BOSS_SPAWN"}
-		local newSize = 3
-	
-		local function setCollisions(character, state)
-			if state then
-				RunLoops:UnbindFromStepped("InvisPhase")
-				if entityLibrary.isAlive then
-					for i, v in next, partslist do
-						v.CanCollide = true
-						v.CanTouch = true
-					end
-					table.clear(partslist)
-					character.HumanoidRootPart.Size = Vector3.new(1.9, 2, 1)
-					character.Humanoid.CameraOffset = Vector3.new(0, 0, 0)
-				end
-			else
-				RunLoops:BindToStepped("InvisPhase", function()
-					for _, part in next, character:GetDescendants() do
-						if part:IsA("BasePart") and part ~= character.PrimaryPart and part.CanCollide then
-							part.CanCollide = false
-							part.CanTouch = false
-							table.insert(partslist, part)
-						end
-					end
-					character.Humanoid.CameraOffset = Vector3.new(0, newSize / -2, 0)
-				end)
-				character.HumanoidRootPart.Size = Vector3.new(2, newSize, 1.1)
-			end
-		end
-	
-		local function invisibility(char)
-			if not entityLibrary.isAlive then return nil end
-			local animator = char.Humanoid:WaitForChild("Animator", 5)
-			local function playAnim(id)
-				local anim = Instance.new("Animation", char)
-				anim.AnimationId = id
-				return animator:LoadAnimation(anim)
-			end
-			local anim = playAnim(InvisAnims[InvisMethod.Value])
-			anim.Priority = Enum.AnimationPriority.Action4
-			setCollisions(lplr.Character, false)
-			repeat
-				if not anim.IsPlaying then
-					anim:Play(1 / 999999, 999999, 1 / 999999)
-				end
-				task.wait(1)
-			until not Invis.Enabled or not entityLibrary.isAlive
-			if anim then
-				anim.Looped = false
-				anim:AdjustSpeed(9999)
-				local c
-				c = anim.Ended:Connect(function()
-					c:Disconnect()
-					anim:Destroy()
-				end)
-			end
-			if lplr.Character then
-				setCollisions(lplr.Character, true)
-			end
-		end
-		Invis = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-			Name = "Invis",
-			Function = function(callback)
-				if callback then
-					task.spawn(function()
-						repeat task.wait() until bedwarsStore.matchState ~= 0
-						local oldchar
-						table.insert(Invis.Connections, lplr.CharacterAdded:Connect(function(char)
-							task.wait(1)
-							char:WaitForChild("Humanoid", 5):WaitForChild("Animator", 5)
-							invisibility(char)
-						end))
-						if lplr.Character then
-							task.wait(1)
-							lplr.Character:WaitForChild("Humanoid", 5):WaitForChild("Animator", 5)
-							invisibility(lplr.Character)
-						end
-					end)
-				end
-			end
-		})
-		InvisMethod = Invis.CreateDropdown({
-			Name = "Method",
-			List = animsinvis,
-			Function = blankFunction,
-			Default = "HALLOWEEN_BOSS_SPAWN"
-		})
-	end)
+local animsinvis = {}
+for i,v in next, InvisAnims do
+animsinvis[#animsinvis+1] = i
+end
+
+local InvisMethod = {Value = "HALLOWEEN_BOSS_SPAWN"}
+local newSize = 3
+
+local function setCollisions(character, state)
+if state then
+RunLoops:UnbindFromStepped("InvisPhase")
+if entityLibrary.isAlive then
+for i, v in next, partslist do
+v.CanCollide = true
+v.CanTouch = true
+end
+table.clear(partslist)
+character.HumanoidRootPart.Size = Vector3.new(1.9, 2, 1)
+character.Humanoid.CameraOffset = Vector3.new(0, 0, 0)
+end
+else
+RunLoops:BindToStepped("InvisPhase", function()
+for _, part in next, character:GetDescendants() do
+if part:IsA("BasePart") and part ~= character.PrimaryPart and part.CanCollide then
+part.CanCollide = false
+part.CanTouch = false
+table.insert(partslist, part)
+end
+end
+character.Humanoid.CameraOffset = Vector3.new(0, newSize / -2, 0)
+end)
+character.HumanoidRootPart.Size = Vector3.new(2, newSize, 1.1)
+end
+end
+
+local function invisibility(char)
+if not entityLibrary.isAlive then return nil end
+local animator = char.Humanoid:WaitForChild("Animator", 5)
+local function playAnim(id)
+local anim = Instance.new("Animation", char)
+anim.AnimationId = id
+return animator:LoadAnimation(anim)
+end
+local anim = playAnim(InvisAnims[InvisMethod.Value])
+anim.Priority = Enum.AnimationPriority.Action4
+setCollisions(lplr.Character, false)
+repeat
+if not anim.IsPlaying then
+anim:Play(1 / 999999, 999999, 1 / 999999)
+end
+task.wait(1)
+until not Invis.Enabled or not entityLibrary.isAlive
+if anim then
+anim.Looped = false
+anim:AdjustSpeed(9999)
+local c
+c = anim.Ended:Connect(function()
+c:Disconnect()
+anim:Destroy()
+end)
+end
+if lplr.Character then
+setCollisions(lplr.Character, true)
+end
+end
+Invis = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+Name = "Invis",
+Function = function(callback)
+if callback then
+task.spawn(function()
+repeat task.wait() until bedwarsStore.matchState ~= 0
+local oldchar
+table.insert(Invis.Connections, lplr.CharacterAdded:Connect(function(char)
+task.wait(1)
+char:WaitForChild("Humanoid", 5):WaitForChild("Animator", 5)
+invisibility(char)
+end))
+if lplr.Character then
+task.wait(1)
+lplr.Character:WaitForChild("Humanoid", 5):WaitForChild("Animator", 5)
+invisibility(lplr.Character)
+end
+end)
+end
+end
+})
+InvisMethod = Invis.CreateDropdown({
+Name = "Method",
+List = animsinvis,
+Function = blankFunction,
+Default = "HALLOWEEN_BOSS_SPAWN"
+})
+end)
