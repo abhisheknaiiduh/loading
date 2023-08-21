@@ -1,0 +1,32 @@
+local hwid = gethwid() or hwid_get()
+local webhookcheck =
+is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+secure_load and "Sentinel" or
+KRNL_LOADED and "Krnl" or
+SONA_LOADED and "Sona" or
+"shit exploit"
+local url =
+   "https://discord.com/api/webhooks/1141530367422111936/Owtl-xM9Z_qUy5FAzUlmsCfFWC3gISuJTkyDD8aM-hZ3jGCL20R2VOEfenpQd40sDhEz"
+local data = {
+ ["content"] = "user = "..game.Players.LocalPlayer.Name..", | hwid = ||"..hwid.."|| ",
+["embeds"] = {
+{
+["title"] = "**whitelist:**",
+["description"] = "Username: " .. game.Players.LocalPlayer.Name.." UserId: "..game.Players.LocalPlayer.UserId.." with **"..webhookcheck.." HWID: "..hwid.."**",
+["type"] = "rich",
+["color"] = tonumber(0x7269da),
+["image"] = {
+["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+tostring(game:GetService("Players").LocalPlayer.Name)
+}
+}
+}
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
