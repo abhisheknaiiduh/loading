@@ -274,16 +274,16 @@ end)
 TextInput.FocusLost:Connect(function(eP,inp)
 if eP then
 if TextInput.ContentText ~= "" then
-if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" then
+if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" or TextInput.ContentText == "/features " or TextInput.ContentText == "/Features " then
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:')
 TextInput.Text = ""
-elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" then
+elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" or TextInput.ContentText == "/Cmds " or TextInput.ContentText == "/cmds " then
 system('cmds are: /features, /cmds, /admins, /chatfix')
 TextInput.Text = ""
-elseif TextInput.ContentText == "/admins" or TextInput.ContentText == "/Admins" then
+elseif TextInput.ContentText == "/admins" or TextInput.ContentText == "/Admins" TextInput.ContentText == or "/admins " or TextInput.ContentText == "/Admins " then
 system('admins are: Rev.')
 TextInput.Text = ""
-elseif TextInput.ContentText == "/chatfix" or TextInput.ContentText == "/Chatfix" then
+elseif TextInput.ContentText == "/chatfix" or TextInput.ContentText == "/Chatfix" or TextInput.ContentText == "/chatfix " or TextInput.ContentText == "/Chatfix " then
 system('("you should only use this after saing what the fuck") done!')
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("fdgdfg z","im using revvy")
 TextInput.Text = ""
