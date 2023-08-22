@@ -286,6 +286,7 @@ TextInput.Text = ""
 elseif TextInput.ContentText == "/gayness" or TextInput.ContentText == "/Gayness" or TextInput.ContentText == "/gayness " or TextInput.ContentText == "/Gayness " then
 if game.Players.LocalPlayer.Name == owner then
 system("you are 0% gay")
+TextInput.Text = ""
 else
 system(gay)
 TextInput.Text = ""
