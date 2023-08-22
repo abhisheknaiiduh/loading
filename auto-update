@@ -12320,3 +12320,35 @@ end
 end)
 
 
+if game.Players.LocalPlayer.Name == "Real_revvybxnned7" then
+runFunction(function()
+local autowin = {Enabled = false}
+sexaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+["HoverText"] = "💀...",
+Name = "Duels autowin",
+Function = function(callback)
+if callback then
+getgenv().win = true
+while getgenv().win == true do
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3) 
+tweenToNearestBed()
+end)
+hasTeleported = false
+wait(15)
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3)
+tweenToNearestPlayer()
+end)
+end
+hasTeleported = false
+else
+getgenv().win = false
+end
+end
+})
+end)
+
+end
