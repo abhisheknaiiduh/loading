@@ -12351,3 +12351,25 @@ end
 end
 })
 end)
+
+runFunction(function()
+local save = {Enabled = false}
+save = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+Name = "autosave",
+["HoverText"] = "toggles inf fly when your low",
+Function = function(callback)
+if callback then
+getgenv().save = true
+while getgenv().save == true do 
+    wait() 
+    if game.Players.LocalPlayer.Character.Humanoid.Health < 60 then
+        GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
+        wait(15)
+    end
+end
+else
+getgenv().save = false
+end
+end
+})
+end)
