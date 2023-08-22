@@ -12273,7 +12273,7 @@ local function PlayEmote(name: string, id: IntValue)
 end
 
 
-function aura(w)
+function aura3(w)
     local plr = game.Players.LocalPlayer
     local closest_player
     for i, v in pairs(game.Players:GetPlayers()) do
@@ -12290,7 +12290,7 @@ end
 
 game:GetService("RunService").Heartbeat:Connect(function(x)
 if getgenv().sex then
-local z = aura(15)
+local z = aura3(15)
 wait() 
 if z ~= nil and z.Character.Humanoid.Health > 0 then
 PlayEmote(Sleep, 4689362868)
