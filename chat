@@ -336,7 +336,7 @@ Rope.Name = "ROPE"
 TextInput.Text = ""
 
 elseif TextInput.ContentText == "/unhang" or TextInput.ContentText == "/Unhang" or TextInput.ContentText == "/unhang " or TextInput.ContentText == "/Unhang " then
-game.Players.LocalPlayer.Character.Head.ROPE:Destroy()
+workspace.ROOF.ROPE:Destroy()
 workspace.ROOF:Destroy()
 TextInput.Text = ""
 
