@@ -277,7 +277,7 @@ end)
 TextInput.FocusLost:Connect(function(eP,inp)
 if eP then
 if TextInput.ContentText ~= "" then
-local lowered_text = TextInput.ContentText:lower();
+local lower = TextInput.ContentText:lower();
 
 if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" or TextInput.ContentText == "/features " or TextInput.ContentText == "/Features " then
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:, :drool:, kys')
@@ -341,7 +341,7 @@ workspace.ROOF.ROPE:Destroy()
 workspace.ROOF:Destroy()
 TextInput.Text = ""
 
-elseif lowered_text:gsub("/info","info") or lowered_text:gsub("/Info","info") or lowered_text:gsub("/info ","info") or lowered_text:gsub("/Info ","info") then
+elseif lower:gsub("/info","info") or lowered_text:gsub("/Info","info") or lowered_text:gsub("/info ","info") or lowered_text:gsub("/Info ","info") then
 
 args = TextInput.ContentText:split(" ")
 cmd = args[2]
