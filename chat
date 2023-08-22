@@ -1,8 +1,5 @@
 game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
 game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
-
-local Roof = Instance.new("Part")
-local Rope = Instance.new("RopeConstraint")
 local gayness = math.random(1,100)
 local gay = "you are "..gayness.."% gay"
 
@@ -280,19 +277,15 @@ end)
 TextInput.FocusLost:Connect(function(eP,inp)
 if eP then
 if TextInput.ContentText ~= "" then
-
 if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" or TextInput.ContentText == "/features " or TextInput.ContentText == "/Features " then
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:, :drool:, kys')
 TextInput.Text = ""
-
 elseif TextInput.ContentText == "/admin me" or TextInput.ContentText == "/Admin me" or TextInput.ContentText == "/Admin me " or TextInput.ContentText == "/admin me " or TextInput.ContentText == "/admin" or TextInput.ContentText == "/Admin" or TextInput.ContentText == "/admin " or TextInput.ContentText == "/Admin "then
 system('dumbass 💀')
 TextInput.Text = ""
-
 elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" or TextInput.ContentText == "/Cmds " or TextInput.ContentText == "/cmds " then
-system('cmds are: /features, /cmds, /admins, /chatfix, /gayness, /hang, /unhang')
+system('cmds are: /features, /cmds, /admins, /chatfix, /gayness')
 TextInput.Text = ""
-
 elseif TextInput.ContentText == "/gayness" or TextInput.ContentText == "/Gayness" or TextInput.ContentText == "/gayness " or TextInput.ContentText == "/Gayness " then
 if game.Players.LocalPlayer.Name == owner then
 system("you are 0% gay")
@@ -301,19 +294,20 @@ else
 system(gay)
 TextInput.Text = ""
 end
-
 elseif TextInput.ContentText == "/admins" or TextInput.ContentText == "/Admins" or TextInput.ContentText ==  "/admins " or TextInput.ContentText == "/Admins " then
 system('admins are: Rev.')
 TextInput.Text = ""
-
 elseif TextInput.ContentText == "/chatfix" or TextInput.ContentText == "/Chatfix" or TextInput.ContentText == "/chatfix " or TextInput.ContentText == "/Chatfix " then
 system('("you should only use this after saing what the fuck") done!')
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("fdgdfg z","im using revvy")
 TextInput.Text = ""
 
 elseif TextInput.ContentText == "/hang" or TextInput.ContentText == "/Hang" or TextInput.ContentText == "/hang " or TextInput.ContentText == "/Hang " then
-
 system('do /unhang to stop')
+
+local Roof = Instance.new("Part")
+local Rope = Instance.new("RopeConstraint")
+
 local player = game.Players.LocalPlayer
 local char = player.Character
 char.HumanoidRootPart.CFrame = char.HumanoidRootPart.CFrame + Vector3.new(0,5,0)
@@ -321,6 +315,7 @@ Roof.CFrame = player.Character.HumanoidRootPart.CFrame + Vector3.new(0,10,0)
 Roof.Anchored = true
 Roof.Size = Vector3.new(10,0,10)
 Roof.Parent = workspace
+Roof.Name = "ROOF"
 local Att1 = Instance.new("Attachment")
 Att1.Parent = Roof
 local Att2 = Instance.new("Attachment")
@@ -333,11 +328,12 @@ Rope.Attachment1 = Att2
 Rope.Restitution = 1
 Rope.Enabled = true
 Rope.Visible = true
+Rope.Name = "ROPE"
 TextInput.Text = ""
 
 elseif TextInput.ContentText == "/unhang" or TextInput.ContentText == "/Unhang" or TextInput.ContentText == "/unhang " or TextInput.ContentText == "/Unhang " then
-Rope:Destroy()
-Roof:Destroy()
+workspace.ROPE:Destroy()
+workspace.ROOF:Destroy()
 TextInput.Text = ""
 
 else
