@@ -281,6 +281,10 @@ if TextInput.ContentText ~= "" then
 if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" or TextInput.ContentText == "/features " or TextInput.ContentText == "/Features " then
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:, :drool:, kys')
 TextInput.Text = ""
+elseif TextInput.ContentText == "/admin me" or TextInput.ContentText == "/Admin me" or TextInput.ContentText == "/Admin me " or TextInput.ContentText == "/admin me " or TextInput.ContentText == "/admin" or TextInput.ContentText == "/Admin" or TextInput.ContentText == "/admin " or TextInput.ContentText == "/Admin "then
+system('cmds are: /features, /cmds, /admins, /chatfix, /gayness')
+TextInput.Text = ""
+
 elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" or TextInput.ContentText == "/Cmds " or TextInput.ContentText == "/cmds " then
 system('cmds are: /features, /cmds, /admins, /chatfix, /gayness')
 TextInput.Text = ""
