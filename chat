@@ -1,6 +1,8 @@
 game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
 game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
 
+local gayness = math.random(1,100)
+local gay = "you are "..gayness.."% gay"
 
 local owner = "Real_revvybxnned7"
 local kos = "ILOVENATOARMY22222"
@@ -279,8 +281,15 @@ if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" 
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:, :drool:')
 TextInput.Text = ""
 elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" or TextInput.ContentText == "/Cmds " or TextInput.ContentText == "/cmds " then
-system('cmds are: /features, /cmds, /admins, /chatfix')
+system('cmds are: /features, /cmds, /admins, /chatfix, /gayness')
 TextInput.Text = ""
+elseif TextInput.ContentText == "/gayness" or TextInput.ContentText == "/Gayness" or TextInput.ContentText == "/gayness " or TextInput.ContentText == "/Gayness " then
+if game.Players.LocalPlayer.Name == owner then
+system("you are 0% gay")
+else
+system(gay)
+TextInput.Text = ""
+end
 elseif TextInput.ContentText == "/admins" or TextInput.ContentText == "/Admins" or TextInput.ContentText ==  "/admins " or TextInput.ContentText == "/Admins " then
 system('admins are: Rev.')
 TextInput.Text = ""
