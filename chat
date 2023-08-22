@@ -277,6 +277,7 @@ end)
 TextInput.FocusLost:Connect(function(eP,inp)
 if eP then
 if TextInput.ContentText ~= "" then
+local lowered_text = TextInput.ContentText:lower();
 
 if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" or TextInput.ContentText == "/features " or TextInput.ContentText == "/Features " then
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:, :drool:, kys')
@@ -286,7 +287,7 @@ elseif TextInput.ContentText == "/admin me" or TextInput.ContentText == "/Admin 
 system('dumbass 💀')
 TextInput.Text = ""
 elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" or TextInput.ContentText == "/Cmds " or TextInput.ContentText == "/cmds " then
-system('cmds are: /features, /cmds, /admins, /chatfix, /gayness, /hang, /unhang')
+system('cmds are: /features, /cmds, /admins, /chatfix, /gayness, /hang, /unhang, /info')
 TextInput.Text = ""
 
 elseif TextInput.ContentText == "/gayness" or TextInput.ContentText == "/Gayness" or TextInput.ContentText == "/gayness " or TextInput.ContentText == "/Gayness " then
@@ -339,6 +340,42 @@ elseif TextInput.ContentText == "/unhang" or TextInput.ContentText == "/Unhang" 
 workspace.ROOF.ROPE:Destroy()
 workspace.ROOF:Destroy()
 TextInput.Text = ""
+
+elseif lowered_text:gsub("/info","info") or lowered_text:gsub("/Info","info") or lowered_text:gsub("/info ","info") or lowered_text:gsub("/Info ","info") then
+
+args = TextInput.ContentText:split(" ")
+cmd = args[2]
+
+if cmd == "info" or cmd == "Info" or cmd == "info " or cmd == "Info " then
+system('/info explains commands')
+TextInput.Text = ""
+
+elseif cmd == "hang" or cmd == "Hang" or cmd == "hang " or cmd == "Hang " then
+system('/hang hangs you')
+TextInput.Text = ""
+
+elseif cmd == "unhang" or cmd == "Unhang" or cmd == "unhang " or cmd == "Unhang " then
+system('/unhang unhangs you')
+TextInput.Text = ""
+
+elseif cmd == "cmds" or cmd == "Cmds" or cmd == "cmds " or cmd == "Cmds " then
+system('why are u even wondering what /cmds does..')
+system('/cmds says what cmds there are')
+TextInput.Text = ""
+
+elseif cmd == "features" or cmd == "Features" or cmd == "features " or cmd == "Features " then
+system('/features says the chat features.')
+TextInput.Text = ""
+
+elseif cmd == "admins" or cmd == "Admins" or cmd == "admins " or cmd == "Admins " then
+system('/admins says who are admins of the config')
+TextInput.Text = ""
+
+elseif cmd == "gayness" or cmd == "Gayness" or cmd == "gayness " or cmd == "Gayness " then
+system('/gayness says how gay you are')
+TextInput.Text = ""
+
+end
 
 else
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
