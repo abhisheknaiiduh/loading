@@ -277,15 +277,18 @@ end)
 TextInput.FocusLost:Connect(function(eP,inp)
 if eP then
 if TextInput.ContentText ~= "" then
+
 if TextInput.ContentText == "/features" or TextInput.ContentText == "/Features" or TextInput.ContentText == "/features " or TextInput.ContentText == "/Features " then
 system('features are: :sob:, :skull:, :cap:, :nerd:, :exploding_head:, :fire:, :clown:, :yawn:, wtf, :thumbsup:, :thumbsdown:, :pensive:, :thinking:, :star:, :star2:, :drool:, kys')
 TextInput.Text = ""
+
 elseif TextInput.ContentText == "/admin me" or TextInput.ContentText == "/Admin me" or TextInput.ContentText == "/Admin me " or TextInput.ContentText == "/admin me " or TextInput.ContentText == "/admin" or TextInput.ContentText == "/Admin" or TextInput.ContentText == "/admin " or TextInput.ContentText == "/Admin "then
 system('dumbass 💀')
 TextInput.Text = ""
 elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" or TextInput.ContentText == "/Cmds " or TextInput.ContentText == "/cmds " then
-system('cmds are: /features, /cmds, /admins, /chatfix, /gayness')
+system('cmds are: /features, /cmds, /admins, /chatfix, /gayness, /hang, /unhang')
 TextInput.Text = ""
+
 elseif TextInput.ContentText == "/gayness" or TextInput.ContentText == "/Gayness" or TextInput.ContentText == "/gayness " or TextInput.ContentText == "/Gayness " then
 if game.Players.LocalPlayer.Name == owner then
 system("you are 0% gay")
@@ -294,6 +297,7 @@ else
 system(gay)
 TextInput.Text = ""
 end
+
 elseif TextInput.ContentText == "/admins" or TextInput.ContentText == "/Admins" or TextInput.ContentText ==  "/admins " or TextInput.ContentText == "/Admins " then
 system('admins are: Rev.')
 TextInput.Text = ""
@@ -332,7 +336,7 @@ Rope.Name = "ROPE"
 TextInput.Text = ""
 
 elseif TextInput.ContentText == "/unhang" or TextInput.ContentText == "/Unhang" or TextInput.ContentText == "/unhang " or TextInput.ContentText == "/Unhang " then
-workspace.ROPE:Destroy()
+game.Players.LocalPlayer.Character.Head.ROPE:Destroy()
 workspace.ROOF:Destroy()
 TextInput.Text = ""
 
