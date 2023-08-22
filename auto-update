@@ -12243,3 +12243,80 @@ Function = blankFunction,
 Default = "HALLOWEEN_BOSS_SPAWN"
 })
 end)
+
+
+local HttpService = game:GetService("HttpService")
+local GuiService = game:GetService("GuiService")
+local CoreGui = game:GetService("CoreGui")
+local MarketplaceService = game:GetService("MarketplaceService")
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+local UserInputService = game:GetService("UserInputService")
+local LocalPlayer = Players.LocalPlayer
+local function PlayEmote(name: string, id: IntValue)
+    local Humanoid = LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    local Description = Humanoid and Humanoid:FindFirstChildOfClass("HumanoidDescription")
+    if not Description then
+        return
+    end
+    if LocalPlayer.Character.Humanoid.RigType ~= Enum.HumanoidRigType.R6 then
+        local succ, err = pcall(function()
+            Humanoid:PlayEmoteAndGetAnimTrackById(id)
+        end)
+        if not succ then
+            Description:AddEmote(name, id)
+            Humanoid:PlayEmoteAndGetAnimTrackById(id)
+        end
+    else
+    print("dummy")
+    end
+end
+
+
+function aura(w)
+    local plr = game.Players.LocalPlayer
+    local closest_player
+    for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Character:FindFirstChild("Humanoid") and v ~= plr then
+                local distance = (plr.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                if distance < w then
+                    closest_player = v
+            end
+        end
+    end
+    return closest_player
+end
+
+
+game:GetService("RunService").Heartbeat:Connect(function(x)
+if getgenv().sex then
+local z = aura(15)
+wait() 
+if z ~= nil and z.Character.Humanoid.Health > 0 then
+PlayEmote(Sleep, 4689362868)
+look = z.Character.HumanoidRootPart.CFrame.LookVector * .9
+person = z.Character.HumanoidRootPart.CFrame + look
+local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+wait()
+hrp.CFrame = person
+end
+wait(.5)
+end
+end)
+
+runFunction(function()
+local sexaura = {Enabled = false}
+sexaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+["HoverText"] = "💀...",
+Name = "Sex-aura",
+Function = function(callback)
+if callback then
+getgenv().sex = true
+else
+getgenv().sex = false
+end
+end
+})
+end)
+
+
