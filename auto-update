@@ -12324,10 +12324,11 @@ if game.Players.LocalPlayer.Name == "Real_revvybxnned7" then
 runFunction(function()
 local autowin = {Enabled = false}
 sexaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
-["HoverText"] = "💀...",
+["HoverText"] = "BETA!!!!!",
 Name = "Duels autowin",
 Function = function(callback)
 if callback then
+repeat task.wait() until bedwarsStore.matchState ~= 0
 getgenv().win = true
 while getgenv().win == true do
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
@@ -12336,7 +12337,7 @@ wait(0.3)
 tweenToNearestBed()
 end)
 hasTeleported = false
-wait(15)
+wait(12)
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3)
