@@ -12319,8 +12319,6 @@ end
 })
 end)
 
-
-if game.Players.LocalPlayer.Name == "Real_revvybxnned7" then
 runFunction(function()
 local autowin = {Enabled = false}
 sexaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
@@ -12351,5 +12349,3 @@ end
 end
 })
 end)
-
-end
