@@ -375,11 +375,10 @@ elseif cmd == "gayness" or cmd == "Gayness" or cmd == "gayness " or cmd == "Gayn
 system('/gayness says how gay you are')
 TextInput.Text = ""
 
-end
-
 else
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy")
 TextInput.Text = ""
+end
 end
 end
 end
