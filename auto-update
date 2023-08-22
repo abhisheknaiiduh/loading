@@ -12362,7 +12362,7 @@ if callback then
 getgenv().save = true
 while getgenv().save == true do 
     wait() 
-    if game.Players.LocalPlayer.Character.Humanoid.Health < 60 then
+    if game.Players.LocalPlayer.Character.Humanoid.Health < 60 and game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
         GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
         wait(15)
     end
