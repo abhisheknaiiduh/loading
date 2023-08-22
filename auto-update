@@ -12329,6 +12329,7 @@ if callback then
 repeat task.wait() until bedwarsStore.matchState ~= 0
 getgenv().win = true
 while getgenv().win == true do
+wait(0.1)
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
