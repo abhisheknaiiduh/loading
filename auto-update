@@ -10665,8 +10665,6 @@ task.wait(0.01)
 local item = getItemNear("scythe")
 if item and lplr.Character.HandInvItem.Value == item.tool then 
 if game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.ScytheDash:FireServer({direction = Vector3.new(9e9,9e9,9e9)}) then  --changed from, 20e15 to 9e9
-game.Players.LocalPlayer:SetAttribute("IsCharging",false) 
-game.Players.LocalPlayer:SetAttribute("IsCasting",false) 
 end
 end
 until (not Disabler.Enabled)
