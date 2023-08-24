@@ -12216,7 +12216,8 @@ setCollisions(lplr.Character, true)
 end
 end
 Invis = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-Name = "Invis -by scrxpted",
+Name = "Invis",
+["HoverText"] = "-by scrxpted",
 Function = function(callback)
 if callback then
 task.spawn(function()
