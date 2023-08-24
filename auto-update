@@ -12360,9 +12360,13 @@ if callback then
 getgenv().save = true
 while getgenv().save == true do 
     wait() 
-    if game.Players.LocalPlayer.Character.Humanoid.Health < Health.Value and game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
+    if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health < Health.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 then
         GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
         wait(15)
+        elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > Health.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 then
+        if GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.Enabled then 
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.ToggleButton(false)
+end
     end
 end
 else
