@@ -12370,8 +12370,11 @@ if not GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.Enabled the
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
 inftoggled = true
 elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > Health2.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 then
+print("check 1")
 if inftoggled == true then
+print("check 2")
 if GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.Enabled then
+print("check 3")
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.ToggleButton(false)
 inftoggled = false
 end
