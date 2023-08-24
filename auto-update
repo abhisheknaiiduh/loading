@@ -11763,9 +11763,19 @@ sb = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
 Name = "speedboost",
 Function = function(callback)
 if callback then
+if GuiLibrary.ObjectsThatCanBeSaved.AutoSaveOptionsButton.Api.Enabled then
+toggled = true
+GuiLibrary.ObjectsThatCanBeSaved.AutoSaveOptionsButton.Api.ToggleButton(false)
+end
+
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
 task.wait(0.5)
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](false)
+
+if not GuiLibrary.ObjectsThatCanBeSaved.AutoSaveOptionsButton.Api.Enabled and toggled == true then
+GuiLibrary.ObjectsThatCanBeSaved.AutoSaveOptionsButton.Api.ToggleButton(true)
+end
+toggled = false
 sb["ToggleButton"](false)
 end
 end
