@@ -12385,7 +12385,6 @@ Function = function(val)
 end,
 Default = 60
 })
-
 Health2 = save.CreateSlider({
 Name = "Health to leave inf fly at",
 Min = 1,
@@ -12394,5 +12393,4 @@ Function = function(val)
 end,
 Default = 70
 })
-
 end)
