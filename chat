@@ -22,7 +22,7 @@ function createcock(root)
 	Ball1.Size = Vector3.new(1,1,1)
 	Ball1.Material = "Plastic"
 	Ball1.TopSurface = "Smooth"
-	Ball1.Color = Color3.fromRGB(90, 98, 83)
+	Ball1.Color = Color3.fromRGB(255, 255, 255)
 	Ball1.CanCollide = false
 	Ball1.Name = "ball1"
 	Ball1.BottomSurface = "Smooth"
@@ -30,7 +30,7 @@ function createcock(root)
 	Ball2.Shape = "Ball"
 	Ball2.Size = Vector3.new(1,1,1)
 	Ball2.Material = "Plastic"
-	Ball2.Color = Color3.fromRGB(90, 98, 83)
+	Ball2.Color = Color3.fromRGB(255, 255, 255)
 	Ball2.CanCollide = false
 	Ball2.Name = "ball2"
 	Ball2.TopSurface = "Smooth"
@@ -40,7 +40,7 @@ function createcock(root)
 	rod.Size = Vector3.new(3,15,1)
 	rod.TopSurface = "Smooth"
 	rod.Material = "Plastic"
-	rod.Color = Color3.fromRGB(90, 98, 83)
+	rod.Color = Color3.fromRGB(255, 255, 255)
 	rod.CanCollide = false
 	rod.Name = "rod"
 	rod.Orientation = Vector3.new(5, 90, 0)
@@ -53,7 +53,7 @@ function createcock(root)
 		weld.Part0 = p0
 		weld.Part1 = p1
 	end
-	weld(holder,rod,CFrame.new(1.65,0,0))
+	weld(holder,rod,CFrame.new(2,0,0))
 	weld(rod,Ball1,CFrame.new(-1.75, -0.5, 0.5))
 	weld(rod,Ball2,CFrame.new(-1.75, -0.5, -0.5))
 	weld(root,holder,CFrame.new(0,-1,-.25)*CFrame.Angles(math.rad(0),math.rad(90),math.rad(0)))
