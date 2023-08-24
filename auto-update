@@ -12366,7 +12366,7 @@ if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health < Health.V
 if not GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.Enabled then
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
 end
-elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > Health.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 then
+elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > Health2.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 then
 if GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.Enabled then
 GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.ToggleButton(false)
 end
@@ -12385,4 +12385,14 @@ Function = function(val)
 end,
 Default = 60
 })
+
+Health2 = save.CreateSlider({
+Name = "Health to leave inf fly at",
+Min = 1,
+Max = 100,
+Function = function(val)
+end,
+Default = 70
+})
+
 end)
