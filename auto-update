@@ -12354,53 +12354,44 @@ end)
 
 
 runFunction(function()
-local save = {
-Enabled = false
-}
-save = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-Name = "AutoSave",
-["HoverText"] = "toggles inf fly when your low",
-Function = function(callback)
-if callback then
-getgenv().save = true
-while getgenv().save == true do
-wait()
-if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health < Health.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 then
-if not GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.Enabled then
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
-inftoggled = true
-elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > Health2.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 then
-print("check 1")
-if inftoggled == true then
-print("check 2")
-if GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.Enabled then
-print("check 3")
-GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.ToggleButton(false)
-inftoggled = false
-end
-end
-end
-end
-end
-else
-getgenv().save = false
-end
-end
-})
-Health = save.CreateSlider({
-Name = "Health to inf fly at",
-Min = 1,
-Max = 100,
-Function = function(val)
-end,
-Default = 60
-})
-Health2 = save.CreateSlider({
-Name = "Health to leave inf fly at",
-Min = 1,
-Max = 100,
-Function = function(val)
-end,
-Default = 70
-})
+    local save = {
+        Enabled = false
+    }
+    save = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+        Name = "autosave",
+        ["HoverText"] = "toggles inf fly when your low",
+        Function = function(callback)
+            if callback then
+                getgenv().save = true
+
+                while getgenv().save do
+                    repeat task.wait() until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health < Health.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0
+
+                    GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
+
+                    repeat task.wait() until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > Health2.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0
+                    
+                    GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.ToggleButton(false)
+                end
+            else
+                getgenv().save = false
+            end
+        end
+    })
+    Health = save.CreateSlider({
+        Name = "Health to inf fly at",
+        Min = 1,
+        Max = 100,
+        Function = function(val)
+        end,
+        Default = 60
+    })
+    Health2 = save.CreateSlider({
+        Name = "Health to leave inf fly at",
+        Min = 1,
+        Max = 100,
+        Function = function(val)
+        end,
+        Default = 70
+    })
 end)
