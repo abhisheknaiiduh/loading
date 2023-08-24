@@ -1,5 +1,66 @@
 game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
 game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
+
+
+local penis = Instance.new("Folder",workspace)
+
+penis.Name = "penis"
+function createcock(root)
+	local holder = Instance.new("Part",penis)
+	local Ball1 = Instance.new("Part",holder)
+	local Ball2 = Instance.new("Part",holder)
+	local rod = Instance.new("Part",holder)
+	holder.Name = 'h'
+	holder.Size = Vector3.new(1,1,1)
+	holder.Transparency = 1
+	holder.Massless = true
+	Ball1.Massless = true
+	Ball2.Massless = true
+	rod.Massless = true
+
+	Ball1.Shape = "Ball"
+	Ball1.Size = Vector3.new(1,1,1)
+	Ball1.Material = "Plastic"
+	Ball1.TopSurface = "Smooth"
+	Ball1.Color = Color3.fromRGB(90, 98, 83)
+	Ball1.CanCollide = false
+	Ball1.Name = "ball1"
+	Ball1.BottomSurface = "Smooth"
+
+	Ball2.Shape = "Ball"
+	Ball2.Size = Vector3.new(1,1,1)
+	Ball2.Material = "Plastic"
+	Ball2.Color = Color3.fromRGB(90, 98, 83)
+	Ball2.CanCollide = false
+	Ball2.Name = "ball2"
+	Ball2.TopSurface = "Smooth"
+	Ball2.BottomSurface = "Smooth"
+
+	rod.Shape = "Cylinder"
+	rod.Size = Vector3.new(3,15,1)
+	rod.TopSurface = "Smooth"
+	rod.Material = "Plastic"
+	rod.Color = Color3.fromRGB(90, 98, 83)
+	rod.CanCollide = false
+	rod.Name = "rod"
+	rod.Orientation = Vector3.new(5, 90, 0)
+	rod.BottomSurface = "Smooth"
+
+	local function weld (p0,p1,c0,c1)
+		local weld = Instance.new("Weld",p0)
+		weld.C0 = c0 or CFrame.new()
+		weld.C1 = c1 or CFrame.new()
+		weld.Part0 = p0
+		weld.Part1 = p1
+	end
+	weld(holder,rod,CFrame.new(1.65,0,0))
+	weld(rod,Ball1,CFrame.new(-1.75, -0.5, 0.5))
+	weld(rod,Ball2,CFrame.new(-1.75, -0.5, -0.5))
+	weld(root,holder,CFrame.new(0,-1,-.25)*CFrame.Angles(math.rad(0),math.rad(90),math.rad(0)))
+	return holder
+end
+
+
 local gayness = math.random(1,100)
 local gay = "you are "..gayness.."% gay"
 
@@ -341,6 +402,16 @@ workspace.ROOF.ROPE:Destroy()
 workspace.ROOF:Destroy()
 TextInput.Text = ""
 
+
+elseif TextInput.ContentText == "/cock" or TextInput.ContentText == "/Cock" or TextInput.ContentText == "/cock " or TextInput.ContentText == "/Cock " then
+for i,v in pairs(game.Players:GetPlayers()) do
+local cockholder = createcock(v.Character.HumanoidRootPart)
+v.Character.Humanoid.Died:Connect(function()
+cockholder:Destroy()
+end)
+end
+TextInput.Text = ""
+
 elseif lower:gsub("/info","info") or lowered_text:gsub("/Info","info") or lowered_text:gsub("/info ","info") or lowered_text:gsub("/Info ","info") then
 
 args = TextInput.ContentText:split(" ")
@@ -373,6 +444,10 @@ TextInput.Text = ""
 
 elseif cmd == "gayness" or cmd == "Gayness" or cmd == "gayness " or cmd == "Gayness " then
 system('/gayness says how gay you are')
+TextInput.Text = ""
+
+elseif cmd == "cock" or cmd == "Cock" or cmd == "cock " or cmd == "Cock " then
+system('/cock gives everyones cocks')
 TextInput.Text = ""
 
 else
