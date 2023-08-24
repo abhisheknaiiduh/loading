@@ -12356,20 +12356,11 @@ save = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
 Name = "autosave",
 ["HoverText"] = "toggles inf fly when your low",
 Function = function(callback)
-
-Health = save.CreateSlider({
-Name = "Health to inf fly at",
-Min = 1,
-Max = 100, 
-Function = function(val) end,
-Default = 60
-})
-
 if callback then
 getgenv().save = true
 while getgenv().save == true do 
     wait() 
-    if game.Players.LocalPlayer.Character.Humanoid.Health < Health.value and game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
+    if game.Players.LocalPlayer.Character.Humanoid.Health < Health.Value and game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
         GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
         wait(15)
     end
@@ -12379,4 +12370,12 @@ getgenv().save = false
 end
 end
 })
+Health = save.CreateSlider({
+Name = "Health to inf fly at",
+Min = 1,
+Max = 100, 
+Function = function(val) end,
+Default = 60
+})
+
 end)
