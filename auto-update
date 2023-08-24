@@ -12355,7 +12355,7 @@ local save = {
 Enabled = false
 }
 save = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-Name = "autosave",
+Name = "AutoSave",
 ["HoverText"] = "toggles inf fly when your low",
 Function = function(callback)
 if callback then
