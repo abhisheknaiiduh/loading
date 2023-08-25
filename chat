@@ -4,7 +4,7 @@ game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
 local name = game.Players.LocalPlayer.Name
 
 local revvyplus = {
-"test",
+"kernelis2",
 "",
 }
 
