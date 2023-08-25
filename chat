@@ -3,11 +3,17 @@ game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
 
 local ts = game:GetService("TextChatService")
 
-local owner = "real_revvybxnned7"
-local kos = "ilovenatoarmy22222"
+local owner = "Real_revvybxnned7"
+local kos = "ILOVENATOARMY22222"
 local issei = "january7th_2012"
-local xerv = "easyvelocity"
+local xerv = "EasyVelocity"
 local kern = "kernelis2"
+
+local owner2 = "real_revvybxnned7"
+local kos2 = "ilovenatoarmy22222"
+local issei2 = "january7th_2012"
+local xerv2 = "easyvelocity"
+local kern2 = "kernelis2"
 
 local users = {
 
@@ -40,16 +46,16 @@ for i,b in pairs(users) do
 if v:IsA("TextLabel") then
 lower = v.Text:lower()
 
-if lower:match(owner) then
+if lower:match(owner2) then
 v.Text = "<font color='rgb(152, 194, 219)'>[SEXER]</font> <font color='rgb(0, 255, 0)'>Rev</font>"
 
-elseif lower:match(kern) then
+elseif lower:match(kern2) then
 v.Text = "<font color='rgb(255,0,0)'>[bunny]</font> Kern"
 
-elseif lower:match(issei) then
+elseif lower:match(issei2) then
 v.Text = "<font color='rgb(166,213,166)'>[retart]</font> issei"
 
-elseif lower:match(xerv) then
+elseif lower:match(xerv2) then
 v.Text = "<font color='rgb(152, 194, 219)'>[AC MOD]</font> xerv"
 
 elseif lower:match(c) then
