@@ -46,7 +46,7 @@ end
 return revvyp
 end
 
-if game.Players.LocalPlayer.Name ~= owner and not isrevvyplus(user) then
+if game.Players.LocalPlayer.Name ~= owner and not isrevvyplus(game.Players.LocalPlayer.Name) then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","im using revvy")
 end
 
