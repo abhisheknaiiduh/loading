@@ -16,9 +16,7 @@ local issei2 = "january7th_2012"
 local xerv2 = "easyvelocity"
 local kern2 = "kernelis2"
 
-local users = {
-
-}
+local users = {}
 
 ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
