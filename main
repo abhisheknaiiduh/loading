@@ -36,8 +36,55 @@ function isListed(hwid)
     end
     return listed
 end
-local hwid = gethwid() or hwid_get()
-if not IsElectron and not IsValyse then
+if IsValyse then
+local hwid = gethwid()
+if hwid ~= nil then
+    if isListed(hwid) then
+        Notify("Notice", "You are whitelisted", 4)
+-- mv = main version
+-- cv = current version
+writefile("version.txt",game:HttpGet("https://raw.githubusercontent.com/config-loader/loading/main/version.txt"))
+local mv = readfile('version.txt')
+local cv = "23"
+
+if cv ~= mv then 
+game.Players.LocalPlayer:Kick("OUTDATED VERSION,PLEASE UPDATE. Error code:3")
+elseif cv == mv then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/config-loader/loading/main/key",true))()
+end
+    else
+        Notify("Notice", "You aren't whitelisted", 4)
+        setclipboard(hwid)
+    end
+else
+    print("nil",hwid)
+    Notify("Whitelist", "Nil", 4)
+    end
+elseif IsElectron then
+local hwid = gethwid()
+if hwid ~= nil then
+    if isListed(hwid) then
+        Notify("Notice", "You are whitelisted", 4)
+-- mv = main version
+-- cv = current version
+writefile("version.txt",game:HttpGet("https://raw.githubusercontent.com/config-loader/loading/main/version.txt"))
+local mv = readfile('version.txt')
+local cv = "23"
+
+if cv ~= mv then 
+game.Players.LocalPlayer:Kick("OUTDATED VERSION,PLEASE UPDATE. Error code:3")
+elseif cv == mv then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/config-loader/loading/main/key",true))()
+end
+    else
+        Notify("Notice", "You aren't whitelisted", 4)
+        setclipboard(hwid)
+    end
+else
+    print("nil",hwid)
+    Notify("Whitelist", "Nil", 4)
+    end
+else
     local http_request = syn and syn.request or request or fluxus.request
     local body = http_request({Url = "https://httpbin.org/get", Method = "GET"}).Body
     local decoded = game:GetService("HttpService"):JSONDecode(body)
