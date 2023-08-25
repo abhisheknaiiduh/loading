@@ -12353,6 +12353,20 @@ end
 end)
 
 
+function functionsave()
+task.spawn(function()
+while getgenv().save do
+repeat task.wait() until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health < Health.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0
+
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
+
+repeat task.wait() until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > Health2.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0
+                    
+GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.ToggleButton(false)
+end
+end)
+end
+
 
 runFunction(function()
     local save = {
@@ -12363,18 +12377,8 @@ runFunction(function()
         ["HoverText"] = "toggles inf fly when your low",
         Function = function(callback)
             if callback then
-               task.spawn(function()
                 getgenv().save = true
-
-                while getgenv().save do
-                    repeat task.wait() until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health < Health.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0
-
-                    GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api["ToggleButton"](true)
-
-                    repeat task.wait() until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > Health2.Value and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0
-                    
-                    GuiLibrary.ObjectsThatCanBeSaved.InfiniteFlyOptionsButton.Api.ToggleButton(false)
-                end
+functionsave()
             else
                 getgenv().save = false
             end
@@ -12396,5 +12400,4 @@ runFunction(function()
         end,
         Default = 70
     })
-end)
 end)
