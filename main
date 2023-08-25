@@ -24,6 +24,7 @@ local whitelist = {
     "32ca8d448e66d4786bc3effe407fd21ac12c213c32eed2056cab9c02621e0b90",
     "D8903A045BFAB640FC6E0E2C6D2E3B401004",
     "05a53e7f0d67681b406453270cd7aaf0a33fa710f05e427429ffe736f9d3b03b",
+    "4d4450acbfb43cb45438ce2160d362a85489ca95178df6e8b330b370f14417e7",
 }
 Notify("Notice", "Recomended : Electron.", 1)
 function isListed(hwid)
