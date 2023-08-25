@@ -36,14 +36,14 @@ local revvyplus = {
 }
 
 function isrevvyplus(user)
-local listed = false
+local revvyp = false
 for i, v in pairs(revvyplus) do
 if v == user then
-listed = true
+revvyp = true
 break
 end
 end
-return listed
+return revvyp
 end
 
 if game.Players.LocalPlayer.Name ~= owner and not isrevvyplus(user) then
