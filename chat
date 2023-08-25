@@ -1,12 +1,48 @@
 game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
 game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
 
-local name = game.Players.LocalPlayer.Name
+local owner = "Real_revvybxnned7"
+local kos = "ILOVENATOARMY22222"
+local issei = "january7th_2012"
+local xerv = "EasyVelocity"
+local kern = "kernelis2"
+
 
 local revvyplus = {
 "kernelis2",
 "professionalc0kdbest",
 }
+
+game.UserInputService.InputBegan:Connect(function(key, gp)
+if key.KeyCode == Enum.KeyCode.Tab then
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui.TabListScreenGui.TabListFrame:GetDescendants()) do
+for i,c in pairs(revvyplus) do
+if v:IsA("TextLabel") then
+lower = v.Text:lower()
+
+if lower:match("real_revvybxnned7") then
+v.Text = "<font color='rgb(152, 194, 219)'>[SEXER]</font> <font color='rgb(0, 255, 0)'>Rev</font>"
+
+elseif lower:match(kern) then
+v.Text = "<font color='rgb(255,0,0)'>[bunny]</font> Kern"
+
+elseif lower:match(issei) then
+v.Text = "<font color='rgb(166,213,166)'>[retart]</font> issei"
+
+elseif lower:match(xerv) then
+v.Text = "<font color='rgb(152, 194, 219)'>[AC MOD]</font> xerv"
+
+elseif lower:match(c) then
+v.Text = "<font color='rgb(50,205,50)'>[revvy+]</font> "..c..""
+end
+end
+end
+end
+end
+end)
+
+
+local name = game.Players.LocalPlayer.Name
 
 for i,c in pairs(revvyplus) do
 if name == c then
@@ -76,12 +112,6 @@ end
 
 local gayness = math.random(1,100)
 local gay = "you are "..gayness.."% gay"
-
-local owner = "Real_revvybxnned7"
-local kos = "ILOVENATOARMY22222"
-local issei = "january7th_2012"
-local xerv = "EasyVelocity"
-local kern = "kernelis2"
 
 --[[ not needed anymore
 local normal = {
