@@ -311,7 +311,7 @@ ts.MessageReceived:Connect(function(z)
     elseif speaker == kern then
     creatmsg("<font color='rgb(255,0,0)'>[bunny]</font> Kern:",z.Text)
     elseif z.Metadata == "im using revvy+" then
-    creatmsg("<font color='rgb(152, 194, 0)'>[revvy+]</font> "..speaker..":",z.Text) 
+    creatmsg("<font color='rgb(50,205,50)'>[revvy+]</font> "..speaker..":",z.Text) 
     elseif z.Metadata == "im using revvy" then
     creatmsg("<font color='rgb(152, 194, 0)'>[revvy]</font> "..speaker..":",z.Text) 
     else
