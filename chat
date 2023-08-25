@@ -19,8 +19,6 @@ local users = {
 
 }
 
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","im using revvy")
-
 ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
 person = speaker:lower()
@@ -37,6 +35,11 @@ local revvyplus = {
 "professionalc0kdbest",
 "cokss4",
 }
+
+for i,v in pairs(revvyplus) do
+if game.Players.LocalPlayer.Name ~= owner or game.Players.LocalPlayer.Name ~= v
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","im using revvy")
+end
 
 game.UserInputService.InputBegan:Connect(function(key, gp)
 if key.KeyCode == Enum.KeyCode.Tab then
