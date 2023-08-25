@@ -81,6 +81,7 @@ local owner = "Real_revvybxnned7"
 local kos = "ILOVENATOARMY22222"
 local issei = "january7th_2012"
 local xerv = "EasyVelocity"
+local kern = "kernelis2"
 
 --[[ not needed anymore
 local normal = {
@@ -307,6 +308,8 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(152, 0, 0)'>[adolf hitler]</font> kosovo:",z.Text)
     elseif speaker == issei then
     creatmsg("<font color='rgb(166,213,166)'>[retart]</font> issei:",z.Text)
+    elseif speaker == kern then
+    creatmsg("<font color='rgb(255,0,0)'>[bunny]</font> Kern:",z.Text)
     elseif z.Metadata == "im using revvy+" then
     creatmsg("<font color='rgb(152, 194, 0)'>[revvy+]</font> "..speaker..":",z.Text) 
     elseif z.Metadata == "im using revvy" then
