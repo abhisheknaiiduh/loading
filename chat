@@ -441,6 +441,7 @@ local function creatmsg(msg,md)
 end
 
 system('GUI and GUI coding done by amnoob_ ,partial credits to me/rev for other coding')
+invis()
 system('chatted "🥱" to load leaderboard tags')
 invis()
 
