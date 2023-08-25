@@ -444,6 +444,8 @@ system('GUI and GUI coding done by amnoob_ ,partial credits to me/rev for other 
 invis()
 system('chatted "🥱" to load leaderboard tags')
 invis()
+system('correct tag should now be loaded!')
+invis()
 
 ts.MessageReceived:Connect(function(z)
     local speaker = tostring(z.TextSource)
