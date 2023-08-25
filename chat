@@ -45,10 +45,11 @@ end
 end
 return revvyp
 end
+local chat = Instance.new("TextChannel")
+chat.Parent = ts.TextChannels
+chat.Name = "sex"
 
-if game.Players.LocalPlayer.Name ~= owner and not isrevvyplus(game.Players.LocalPlayer.Name) then
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","im using revvy")
-end
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🥱","im using revvy")
 
 game.UserInputService.InputBegan:Connect(function(key, gp)
 if key.KeyCode == Enum.KeyCode.Tab then
@@ -61,21 +62,94 @@ lower = v.Text:lower()
 if lower:match(owner2) then
 v.Text = "<font color='rgb(152, 194, 219)'>[SEXER]</font> <font color='rgb(0, 255, 0)'>Rev</font>"
 
-elseif lower:match(kern2) then
+end
+end
+end
+end
+end
+end
+end)
+
+game.UserInputService.InputBegan:Connect(function(key, gp)
+if key.KeyCode == Enum.KeyCode.Tab then
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui.TabListScreenGui.TabListFrame:GetDescendants()) do
+for i,c in pairs(revvyplus) do
+for i,b in pairs(users) do
+if v:IsA("TextLabel") then
+lower = v.Text:lower()
+if lower:match(kern2) then
 v.Text = "<font color='rgb(255,0,0)'>[bunny]</font> Kern"
+end
+end
+end
+end
+end
+end
+end)
 
-elseif lower:match(issei2) then
+game.UserInputService.InputBegan:Connect(function(key, gp)
+if key.KeyCode == Enum.KeyCode.Tab then
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui.TabListScreenGui.TabListFrame:GetDescendants()) do
+for i,c in pairs(revvyplus) do
+for i,b in pairs(users) do
+if v:IsA("TextLabel") then
+lower = v.Text:lower()
+if lower:match(issei2) then
 v.Text = "<font color='rgb(166,213,166)'>[retart]</font> issei"
+end
+end
+end
+end
+end
+end
+end)
 
-elseif lower:match(xerv2) then
+game.UserInputService.InputBegan:Connect(function(key, gp)
+if key.KeyCode == Enum.KeyCode.Tab then
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui.TabListScreenGui.TabListFrame:GetDescendants()) do
+for i,c in pairs(revvyplus) do
+for i,b in pairs(users) do
+if v:IsA("TextLabel") then
+lower = v.Text:lower()
+if lower:match(xerv2) then
 v.Text = "<font color='rgb(152, 194, 219)'>[AC MOD]</font> xerv"
+end
+end
+end
+end
+end
+end
+end)
 
-elseif lower:match(c) then
+
+
+game.UserInputService.InputBegan:Connect(function(key, gp)
+if key.KeyCode == Enum.KeyCode.Tab then
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui.TabListScreenGui.TabListFrame:GetDescendants()) do
+for i,c in pairs(revvyplus) do
+for i,b in pairs(users) do
+if v:IsA("TextLabel") then
+lower = v.Text:lower()
+if lower:match(c) then
 v.Text = "<font color='rgb(50,205,50)'>[revvy+]</font> "..c..""
+end
+end
+end
+end
+end
+end
+end)
 
-elseif lower:match(b) then
+
+game.UserInputService.InputBegan:Connect(function(key, gp)
+if key.KeyCode == Enum.KeyCode.Tab then
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui.TabListScreenGui.TabListFrame:GetDescendants()) do
+for i,c in pairs(revvyplus) do
+for i,b in pairs(users) do
+if v:IsA("TextLabel") then
+lower = v.Text:lower()
+if lower:match(b) then
 v.Text = "<font color='rgb(152, 194, 0)'>[revvy]</font> "..b..""
-
 end
 end
 end
@@ -367,6 +441,7 @@ local function creatmsg(msg,md)
 end
 
 system('GUI and GUI coding done by amnoob_ ,partial credits to me/rev for other coding')
+system('chatted "🥱" to load leaderboard tags')
 invis()
 
 ts.MessageReceived:Connect(function(z)
