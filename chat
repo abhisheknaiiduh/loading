@@ -19,13 +19,13 @@ local users = {
 
 }
 
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","revvy user detected!")
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","im using revvy")
 
 ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
 person = speaker:lower()
 if detect.Metadata ~= "" then
-if detect.Metadata == "revvy user detected!" then
+if detect.Metadata == "im using revvy" then
 table.insert(users, person)
 end 
 end
