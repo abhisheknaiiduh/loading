@@ -1,6 +1,20 @@
 game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
 game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
 
+game.Players.LocalPlayer.Name = "Hi"
+local name = game.Players.LocalPlayer.Name
+
+local revvyplus = {
+"Hi",
+"z",
+}
+
+for i,c in pairs(revvyplus) do
+if name == c then
+    print("revvy plus detected")
+    revvyplus = true
+end
+end
 
 local penis = Instance.new("Folder",workspace)
 
@@ -294,8 +308,10 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(152, 0, 0)'>[adolf hitler]</font> kosovo:",z.Text)
     elseif speaker == issei then
     creatmsg("<font color='rgb(166,213,166)'>[retart]</font> issei:",z.Text)
-    elseif z.Metadata == "im using revvy" then
+    elseif z.Metadata == "im using revvy+" then
     creatmsg("<font color='rgb(152, 194, 0)'>[revvy+]</font> "..speaker..":",z.Text) 
+    elseif z.Metadata == "im using revvy" then
+    creatmsg("<font color='rgb(152, 194, 0)'>[revvy]</font> "..speaker..":",z.Text) 
     else
     creatmsg(z.PrefixText,z.Text)
     end
@@ -448,6 +464,10 @@ TextInput.Text = ""
 
 elseif cmd == "cock" or cmd == "Cock" or cmd == "cock " or cmd == "Cock " then
 system('/cock gives everyones cocks')
+TextInput.Text = ""
+
+elseif revvyplus == true then
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy+")
 TextInput.Text = ""
 
 else
