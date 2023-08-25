@@ -12363,6 +12363,7 @@ runFunction(function()
         ["HoverText"] = "toggles inf fly when your low",
         Function = function(callback)
             if callback then
+               task.spawn(function()
                 getgenv().save = true
 
                 while getgenv().save do
