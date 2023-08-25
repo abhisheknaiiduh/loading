@@ -11,6 +11,7 @@ local kern = "kernelis2"
 local revvyplus = {
 "kernelis2",
 "professionalc0kdbest",
+"GGMakesUMad",
 }
 
 game.UserInputService.InputBegan:Connect(function(key, gp)
