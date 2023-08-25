@@ -1,12 +1,11 @@
 game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
 game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
 
-game.Players.LocalPlayer.Name = "Hi"
 local name = game.Players.LocalPlayer.Name
 
 local revvyplus = {
-"Hi",
-"z",
+"test",
+"",
 }
 
 for i,c in pairs(revvyplus) do
