@@ -1,4 +1,4 @@
---z
+--fdgfdgfdhfhfdhjhgfdsghj
 getgenv().hidden = false
 game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
 game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
