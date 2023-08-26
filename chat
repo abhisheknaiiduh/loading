@@ -57,6 +57,7 @@ local phrases ={
     "####",
     "hi",
     "gg!",
+    "i hope this match goes well!",
 }
 
 local say = phrases[math.random(#phrases)]
