@@ -12335,7 +12335,7 @@ wait(0.3)
 tweenToNearestBed()
 end)
 hasTeleported = false
-wait(12)
+wait(11)
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3)
