@@ -12344,7 +12344,6 @@ tweenToNearestPlayer()
 end)
 end
 hasTeleported = false
-end
 end)
 end
 
