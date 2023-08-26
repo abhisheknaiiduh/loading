@@ -12333,7 +12333,6 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 tweenToNearestBed()
-if tweenToNearestBed() == nil then print("bed detected") end
 end)
 hasTeleported = false
 wait(12)
