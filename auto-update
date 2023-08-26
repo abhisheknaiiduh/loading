@@ -19,8 +19,6 @@ game.Players.LocalPlayer:Kick("Config is down,refer to discord for more details"
 end
 end
 
-print("HI")
--- stop skidding LMAO
 local REV = game.Players.LocalPlayer.Name
 local GuiLibrary = shared.GuiLibrary
 local playersService = game:GetService("Players")
