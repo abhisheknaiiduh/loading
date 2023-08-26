@@ -31,13 +31,13 @@ end
 end)
 
 
-local revvyplus = {
+local revvyplus = { --non capital
 "kernelis2",
 "professionalc0kdbest",
 "lzacc_4444",
 }
 
-local revvyplus2 = {
+local revvyplus2 = { --capital
 "kernelis2",
 "professionalc0kdbest",
 "LZACC_4444",
@@ -53,6 +53,7 @@ end
 end
 return revvyp
 end
+
 local chat = Instance.new("TextChannel")
 chat.Parent = ts.TextChannels
 chat.Name = "sex"
@@ -200,12 +201,19 @@ end)
 
 local name = game.Players.LocalPlayer.Name
 
-for i,c in pairs(revvyplus2) do
-if name == c then
-    print("revvy plus detected")
-    revvyplus = true
+
+function isrevvyplus2(user)
+local revvyplus = false
+for i, v in pairs(revvyplus2) do
+if v == user then
+revvyplus = true
+break
 end
 end
+return revvyplus
+end
+
+
 
 local penis = Instance.new("Folder",workspace)
 
@@ -666,7 +674,7 @@ elseif cmd == "revvy+" or cmd == "Revvy+" or cmd == "revvy+ " or cmd == "Revvy+ 
 system('/revvy+ says the revvy+ users')
 TextInput.Text = ""
 
-elseif revvyplus == true then
+elseif isrevvyplus2(game.Players.LocalPlayer.Name) then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy+")
 TextInput.Text = ""
 
