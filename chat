@@ -40,6 +40,9 @@ person = speaker:lower()
 if detect.Metadata ~= "" then
 if detect.Metadata == "hide me" then
 table.insert(fakeusers, person)
+elseif detect.Metadata == "unhide me" then
+local index = table.find(fakeusers, person)
+table.remove(fakeusers, index)
 end 
 end
 end)
@@ -671,14 +674,11 @@ TextInput.Text = ""
 
 elseif TextInput.ContentText == "/hide" or TextInput.ContentText == "/Hide" or TextInput.ContentText == "/hide " or TextInput.ContentText == "/Hide " then
 getgenv().hidden = true
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("####","hide me")
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","hide me")
 TextInput.Text = ""
 
 elseif TextInput.ContentText == "/unhide" or TextInput.ContentText == "/Unhide" or TextInput.ContentText == "/unhide " or TextInput.ContentText == "/Unhide " then
-local loweredname = game.Players.LocalPlayer.Name:lower()
-table.insert(revvyplus, loweredname)
-local index = table.find(fakeusers, game.Players.LocalPlayer.Name)
-table.remove(fakeusers, index)
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","unhide me")
 getgenv().hidden = false
 TextInput.Text = ""
 
