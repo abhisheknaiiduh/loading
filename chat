@@ -454,7 +454,7 @@ end
 
 system('GUI and GUI coding done by amnoob_ ,partial credits to me/rev for other coding')
 invis()
-system('chatted random phrase to load leaderboard tags')
+system('chatting random phrase to load leaderboard tags,your chattag will be fixed after')
 invis()
 
 ts.MessageReceived:Connect(function(z)
@@ -664,6 +664,3 @@ wait()
 TextInput:CaptureFocus()
 end
 end)
-
-system('correct tag should now be loaded!')
-invis()
