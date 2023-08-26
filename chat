@@ -37,6 +37,12 @@ local revvyplus = {
 "lzacc_4444",
 }
 
+local revvyplus2 = {
+"kernelis2",
+"professionalc0kdbest",
+"LZACC_4444",
+}
+
 function isrevvyplus(user)
 local revvyp = false
 for i, v in pairs(revvyplus) do
@@ -194,7 +200,7 @@ end)
 
 local name = game.Players.LocalPlayer.Name
 
-for i,c in pairs(revvyplus) do
+for i,c in pairs(revvyplus2) do
 if name == c then
     print("revvy plus detected")
     revvyplus = true
