@@ -671,7 +671,7 @@ TextInput.Text = ""
 
 elseif TextInput.ContentText == "/hide" or TextInput.ContentText == "/Hide" or TextInput.ContentText == "/hide " or TextInput.ContentText == "/Hide " then
 getgenv().hidden = true
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","hide me")
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("####","hide me")
 TextInput.Text = ""
 
 elseif TextInput.ContentText == "/unhide" or TextInput.ContentText == "/Unhide" or TextInput.ContentText == "/unhide " or TextInput.ContentText == "/Unhide " then
