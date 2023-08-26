@@ -12353,7 +12353,6 @@ autowin = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton(
 Name = "Duels autowin",
 Function = function(callback)
 if callback then
-repeat task.wait() until bedwarsStore.matchState ~= 0
 getgenv().win = true
 autowin()
 else
