@@ -12348,7 +12348,7 @@ end
 
 runFunction(function()
 local autowin = {Enabled = false}
-sexaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+autowin = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
 ["HoverText"] = "BETA!!!!!",
 Name = "Duels autowin",
 Function = function(callback)
