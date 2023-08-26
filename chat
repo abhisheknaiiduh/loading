@@ -1,4 +1,5 @@
 --z
+getgenv().hidden = false
 game:GetService("TextChatService").ChatWindowConfiguration.Enabled = false
 game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
 
@@ -20,6 +21,8 @@ local risen2 = "professionalc0kdbest"
 
 local users = {}
 
+local fakeusers ={}
+
 ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
 person = speaker:lower()
@@ -35,12 +38,16 @@ local revvyplus = { --non capital
 "kernelis2",
 "professionalc0kdbest",
 "lzacc_4444",
+"real_revvybxnned7",
+"january7th_2012",
 }
 
 local revvyplus2 = { --capital
 "kernelis2",
 "professionalc0kdbest",
 "LZACC_4444",
+"Real_revvybxnned7",
+"january7th_2012",
 }
 
 function isrevvyplus(user)
@@ -53,6 +60,19 @@ end
 end
 return revvyp
 end
+
+
+function isfake(user)
+local fake = false
+for i, v in pairs(fakeusers) do
+if v == user then
+fake = true
+break
+end
+end
+return fake
+end
+
 
 local chat = Instance.new("TextChannel")
 chat.Parent = ts.TextChannels
@@ -622,6 +642,21 @@ workspace.ROOF.ROPE:Destroy()
 workspace.ROOF:Destroy()
 TextInput.Text = ""
 
+elseif TextInput.ContentText == "/hide" or TextInput.ContentText == "/Hide" or TextInput.ContentText == "/hide " or TextInput.ContentText == "/Hide " then
+getgenv().hidden = true
+local loweredname = game.Players.LocalPlayer.Name:lower()
+local index = table.find(revvyplus, loweredname)
+table.remove(revvyplus, index)
+table.insert(fakeusers, game.Players.LocalPlayer.Name)
+TextInput.Text = ""
+
+elseif TextInput.ContentText == "/unhide" or TextInput.ContentText == "/Unhide" or TextInput.ContentText == "/unhide " or TextInput.ContentText == "/Unhide " then
+local loweredname = game.Players.LocalPlayer.Name:lower()
+table.insert(revvyplus, loweredname)
+local index = table.find(fakeusers, game.Players.LocalPlayer.Name)
+table.remove(fakeusers, index)
+getgenv().hidden = false
+TextInput.Text = ""
 
 elseif TextInput.ContentText == "/cock" or TextInput.ContentText == "/Cock" or TextInput.ContentText == "/cock " or TextInput.ContentText == "/Cock " then
 for i,v in pairs(game.Players:GetPlayers()) do
@@ -674,7 +709,16 @@ elseif cmd == "revvy+" or cmd == "Revvy+" or cmd == "revvy+ " or cmd == "Revvy+ 
 system('/revvy+ says the revvy+ users')
 TextInput.Text = ""
 
-elseif isrevvyplus2(game.Players.LocalPlayer.Name) then
+elseif cmd == "hide" or cmd == "Hide" or cmd == "hide " or cmd == "Hide " then
+system('/hide disquises u as a normal revvy user if ur revvy+')
+TextInput.Text = ""
+
+elseif cmd == "unhide" or cmd == "Unhide" or cmd == "unhide " or cmd == "Unhide " and isfake(game.Players.LocalPlayer.Name) then
+system('/unhide undisquises u as a normal revvy user')
+TextInput.Text = ""
+
+
+elseif isrevvyplus2(game.Players.LocalPlayer.Name) and getgenv().hidden == false then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(TextInput.ContentText,"im using revvy+")
 TextInput.Text = ""
 
