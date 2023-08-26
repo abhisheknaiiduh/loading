@@ -100,7 +100,7 @@ for i,b in pairs(users) do
 if v:IsA("TextLabel") then
 lower = v.Text:lower()
 if lower:match(kern2) then
-v.Text = "<font color='rgb(255,0,0)'>[bunny]</font> Kern"
+v.Text = "<font color='rgb(255,0,0)'>[Bunny]</font> Kern"
 end
 end
 end
@@ -504,7 +504,7 @@ ts.MessageReceived:Connect(function(z)
     elseif speaker == issei then
     creatmsg("<font color='rgb(166,213,166)'>[retart]</font> issei:",z.Text)
     elseif speaker == kern then
-    creatmsg("<font color='rgb(255,0,0)'>[bunny]</font> Kern:",z.Text)
+    creatmsg("<font color='rgb(255,0,0)'>[Bunny]</font> Kern:",z.Text)
     elseif speaker == risen then
     creatmsg("<font color='rgb(51,102,255)'>[COOL GUY]</font> Risen:",z.Text)
     elseif z.Metadata == "im using revvy+" then
