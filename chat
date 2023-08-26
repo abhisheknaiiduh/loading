@@ -34,11 +34,20 @@ end
 end)
 
 
+ts.MessageReceived:Connect(function(detect)
+local speaker = tostring(detect.TextSource)
+person = speaker:lower()
+if detect.Metadata ~= "" then
+if detect.Metadata == "hide me" then
+table.insert(fakeusers, person)
+end 
+end
+end)
+
 local revvyplus = { --non capital
 "kernelis2",
 "professionalc0kdbest",
 "lzacc_4444",
-"real_revvybxnned7",
 "january7th_2012",
 }
 
@@ -46,7 +55,6 @@ local revvyplus2 = { --capital
 "kernelis2",
 "professionalc0kdbest",
 "LZACC_4444",
-"Real_revvybxnned7",
 "january7th_2012",
 }
 
@@ -218,6 +226,25 @@ end
 end
 end)
 
+
+
+game.UserInputService.InputBegan:Connect(function(key, gp)
+if key.KeyCode == Enum.KeyCode.Tab then
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui.TabListScreenGui.TabListFrame:GetDescendants()) do
+for i,c in pairs(revvyplus) do
+for i,b in pairs(fakeusers) do
+if v:IsA("TextLabel") then
+lower = v.Text:lower()
+if lower:match(b) then
+wait()
+v.Text = "<font color='rgb(152, 194, 0)'>[revvy]</font> "..b..""
+end
+end
+end
+end
+end
+end
+end)
 
 local name = game.Players.LocalPlayer.Name
 
@@ -644,10 +671,7 @@ TextInput.Text = ""
 
 elseif TextInput.ContentText == "/hide" or TextInput.ContentText == "/Hide" or TextInput.ContentText == "/hide " or TextInput.ContentText == "/Hide " then
 getgenv().hidden = true
-local loweredname = game.Players.LocalPlayer.Name:lower()
-local index = table.find(revvyplus, loweredname)
-table.remove(revvyplus, index)
-table.insert(fakeusers, game.Players.LocalPlayer.Name)
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","hide me")
 TextInput.Text = ""
 
 elseif TextInput.ContentText == "/unhide" or TextInput.ContentText == "/Unhide" or TextInput.ContentText == "/unhide " or TextInput.ContentText == "/Unhide " then
