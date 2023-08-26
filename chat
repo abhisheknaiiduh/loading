@@ -32,7 +32,7 @@ end)
 local revvyplus = {
 "kernelis2",
 "professionalc0kdbest",
-"cokss4",
+"lzacc_4444",
 }
 
 function isrevvyplus(user)
@@ -49,7 +49,18 @@ local chat = Instance.new("TextChannel")
 chat.Parent = ts.TextChannels
 chat.Name = "sex"
 
-ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync("🥱","im using revvy")
+
+local phrases ={
+    "🥱",
+    "😋",
+    "#########",
+    "####",
+    "hi",
+}
+
+local say = phrases[math.random(#phrases)]
+
+ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(say,"im using revvy")
 
 game.UserInputService.InputBegan:Connect(function(key, gp)
 if key.KeyCode == Enum.KeyCode.Tab then
@@ -442,9 +453,7 @@ end
 
 system('GUI and GUI coding done by amnoob_ ,partial credits to me/rev for other coding')
 invis()
-system('chatted "🥱" to load leaderboard tags')
-invis()
-system('correct tag should now be loaded!')
+system('chatted random phrase to load leaderboard tags')
 invis()
 
 ts.MessageReceived:Connect(function(z)
@@ -654,3 +663,6 @@ wait()
 TextInput:CaptureFocus()
 end
 end)
+
+system('correct tag should now be loaded!')
+invis()
