@@ -12324,21 +12324,16 @@ end
 })
 end)
 
-runFunction(function()
-local autowin = {Enabled = false}
-sexaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
-["HoverText"] = "BETA!!!!!",
-Name = "Duels autowin",
-Function = function(callback)
-if callback then
-repeat task.wait() until bedwarsStore.matchState ~= 0
-getgenv().win = true
+
+function autowin()
+task.spawn(function()
 while getgenv().win == true do
 wait(0.1)
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 tweenToNearestBed()
+if tweenToNearestBed() == nil then print("bed detected") end
 end)
 hasTeleported = false
 wait(12)
@@ -12349,6 +12344,20 @@ tweenToNearestPlayer()
 end)
 end
 hasTeleported = false
+end
+end)
+end
+
+runFunction(function()
+local autowin = {Enabled = false}
+sexaura = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+["HoverText"] = "BETA!!!!!",
+Name = "Duels autowin",
+Function = function(callback)
+if callback then
+repeat task.wait() until bedwarsStore.matchState ~= 0
+getgenv().win = true
+autowin()
 else
 getgenv().win = false
 end
