@@ -12410,3 +12410,34 @@ functionsave()
         Default = 70
     })
 end)
+
+
+function detec()
+while getgenv().detect == true do
+wait()
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Character.HumanoidRootPart ~= nil then
+if v.Character.HumanoidRootPart.Position.Y > 900 then
+print(tostring(v.Character.HumanoidRootPart.Position.Y))
+warningNotification("Vape", v.Name" is using inf fly!", 60)
+end
+end
+end
+end
+end
+
+runFunction(function()
+local detecthackers = {Enabled = false}
+detecthackers = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+["HoverText"] = "💀...",
+Name = "Hacker Detection",
+Function = function(callback)
+if callback then
+getgenv().detect = true
+detec()
+else
+getgenv().detect = false
+end
+end
+})
+end)
