@@ -12407,17 +12407,30 @@ functionsave()
 end)
 
 
-local detectedhackers = {}
+local detectedfly = {}
 
-function isdetected(user)
-local detected = false
-for i, v in pairs(detectedhackers) do
+local detectedhighjump = {}
+
+function isdetectedfly(user)
+local detectedfly = false
+for i, v in pairs(detectedfly) do
 if v == user then
-detected = true
+detectedfly = true
 break
 end
 end
-return detected
+return detectedfly
+end
+
+function isdetectedhigh(user)
+local  = detectedhigh false
+for i, v in pairs(detectedhighjump) do
+if v == user then
+detectedhigh = true
+break
+end
+end
+return detectedhigh
 end
 
 function detec()
@@ -12426,10 +12439,14 @@ while getgenv().detect == true do
 wait()
 for i,v in pairs(game.Players:GetPlayers()) do
 if v.Character.HumanoidRootPart ~= nil then
-if v.Character.HumanoidRootPart.Position.Y > 900 and not isdetected(v.Name) then
+if v.Character.HumanoidRootPart.Position.Y > 900 and not isdetectedfly(v.Name) then
 name = v.Name
-table.insert(detectedhackers,name)
 warningNotification("Vape", ""..name.." is using inf fly!", 60)
+table.insert(detectedhackers,name)
+elseif v.Character.HumanoidRootPart.Velocity.Y > 50 and not isdetectedhigh(v.Name) then
+name = v.Name
+warningNotification("Vape", ""..name.." is using highjump,or normal fly!", 60)
+table.insert(detectedhackers,name)
 end
 end
 end
