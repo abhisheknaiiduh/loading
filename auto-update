@@ -12413,7 +12413,7 @@ local detectedhighjump = {}
 
 function isdetectedfly(user)
 local detectedfly = false
-for i, v in pairs(detectedfly) do
+for i, v in pairs(isdetectedfly) do
 if v == user then
 detectedfly = true
 break
