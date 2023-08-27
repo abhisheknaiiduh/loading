@@ -613,8 +613,13 @@ elseif TextInput.ContentText == "/admin me" or TextInput.ContentText == "/Admin 
 system('dumbass 💀')
 TextInput.Text = ""
 elseif TextInput.ContentText == "/cmds" or TextInput.ContentText == "/Cmds" or TextInput.ContentText == "/Cmds " or TextInput.ContentText == "/cmds " then
+if isrevvyplus2(game.Players.LocalPlayer.Name) then
+system('cmds are: /features, /cmds, /admins, /chatfix, /gayness, /hang, /unhang, /info, /revvy+, /hide, /unhide')
+TextInput.Text = ""
+else
 system('cmds are: /features, /cmds, /admins, /chatfix, /gayness, /hang, /unhang, /info, /revvy+')
 TextInput.Text = ""
+end
 
 elseif TextInput.ContentText == "/gayness" or TextInput.ContentText == "/Gayness" or TextInput.ContentText == "/gayness " or TextInput.ContentText == "/Gayness " then
 if game.Players.LocalPlayer.Name == owner then
@@ -672,12 +677,12 @@ workspace.ROOF.ROPE:Destroy()
 workspace.ROOF:Destroy()
 TextInput.Text = ""
 
-elseif TextInput.ContentText == "/hide" or TextInput.ContentText == "/Hide" or TextInput.ContentText == "/hide " or TextInput.ContentText == "/Hide " then
+elseif TextInput.ContentText == "/hide" or TextInput.ContentText == "/Hide" or TextInput.ContentText == "/hide " or TextInput.ContentText == "/Hide " and isrevvyplus2(game.Players.LocalPlayer.Name) then
 getgenv().hidden = true
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","hide me")
 TextInput.Text = ""
 
-elseif TextInput.ContentText == "/unhide" or TextInput.ContentText == "/Unhide" or TextInput.ContentText == "/unhide " or TextInput.ContentText == "/Unhide " then
+elseif TextInput.ContentText == "/unhide" or TextInput.ContentText == "/Unhide" or TextInput.ContentText == "/unhide " or TextInput.ContentText == "/Unhide " and isrevvyplus2(game.Players.LocalPlayer.Name) then
 ts.ChatInputBarConfiguration.TargetTextChannel:SendAsync(".","unhide me")
 getgenv().hidden = false
 TextInput.Text = ""
