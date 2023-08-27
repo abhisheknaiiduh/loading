@@ -12412,13 +12412,27 @@ functionsave()
 end)
 
 
+local detectedhackers = {}
+
+function isdetected(user)
+local detected = false
+for i, v in pairs(detectedhackers) do
+if v == user then
+detected = true
+break
+end
+end
+return detected
+end
+
 function detec()
 while getgenv().detect == true do
 wait()
 for i,v in pairs(game.Players:GetPlayers()) do
 if v.Character.HumanoidRootPart ~= nil then
-if v.Character.HumanoidRootPart.Position.Y > 900 then
+if v.Character.HumanoidRootPart.Position.Y > 900 and not isdetected(v.Name) then
 name = v.Name
+table.insert(detectedhackers,name)
 warningNotification("Vape", ""..name.." is using inf fly!", 60)
 end
 end
