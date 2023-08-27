@@ -10258,14 +10258,6 @@ task.wait(2)
 		end)
 	end)
 end)
-
-task.spawn(function()
-	repeat task.wait() until shared.VapeFullyLoaded
-	if not AutoLeave.Enabled then 
-		AutoLeave.ToggleButton(false)
-	end
-end)
-
 GuiLibrary.RemoveObject("PanicOptionsButton")
 GuiLibrary.RemoveObject("MissileTPOptionsButton")
 GuiLibrary.RemoveObject("SwimOptionsButton")
@@ -12459,4 +12451,16 @@ getgenv().detect = false
 end
 end
 })
+end)
+
+task.spawn(function()
+	repeat task.wait() until shared.VapeFullyLoaded
+	if not AutoLeave.Enabled then 
+		AutoLeave.ToggleButton(false)
+	end
+
+if not GuiLibrary.ObjectsThatCanBeSaved["Hacker DetectionOptionsButton"].Api.Enabled then 
+		GuiLibrary.ObjectsThatCanBeSaved["Hacker DetectionOptionsButton"].Api["ToggleButton"](true)
+	end
+
 end)
