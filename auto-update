@@ -12444,8 +12444,10 @@ detecthackers = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptions
 Name = "Hacker Detection",
 Function = function(callback)
 if callback then
+task.spawn(function()
 getgenv().detect = true
 detec()
+end)
 else
 getgenv().detect = false
 end
