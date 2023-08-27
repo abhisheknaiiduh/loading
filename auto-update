@@ -12418,8 +12418,9 @@ wait()
 for i,v in pairs(game.Players:GetPlayers()) do
 if v.Character.HumanoidRootPart ~= nil then
 if v.Character.HumanoidRootPart.Position.Y > 900 then
+name = v.Name
 print(tostring(v.Character.HumanoidRootPart.Position.Y))
-warningNotification("Vape", v.Name" is using inf fly!", 60)
+warningNotification("Vape", ""..name.." is using inf fly!", 60)
 end
 end
 end
