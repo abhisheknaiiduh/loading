@@ -12,6 +12,9 @@ me/rev for the other stuff and the fixed scythe disabler
 
 --]]
 
+
+--mkhvfghfghfgh
+
 if game.Players.LocalPlayer.Name ~= "Real_revvybxnned7" then
 _G.down = false
 if _G.down == true then
