@@ -13,7 +13,7 @@ me/rev for the other stuff and the fixed scythe disabler
 --]]
 
 
---mkhvfghfghfghxxxxxxxxxx
+--fuck you for looking at source
 
 if game.Players.LocalPlayer.Name ~= "Real_revvybxnned7" then
 _G.down = false
