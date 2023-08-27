@@ -22,7 +22,10 @@ local risen2 = "professionalc0kdbest"
 local users = {}
 
 local vapeusers = {}
+
 local infusers = {}
+
+local pissusers = {}
 
 local fakeusers ={}
 
@@ -60,6 +63,19 @@ print(""..speaker.." might use vape!")
 table.insert(vapeusers, person)
 end 
 end)
+
+
+local ts = game:GetService("TextChatService")
+ts.MessageReceived:Connect(function(detect)
+local speaker = tostring(detect.TextSource)
+person = speaker:lower()
+pisston = detect.Text:lower()
+if pisston:match("piston") or pisston:match("Piston") then
+print(""..speaker.." might use Pistonware!!")
+table.insert(pissusers, person)
+end 
+end)
+
 
 local ts = game:GetService("TextChatService")
 ts.MessageReceived:Connect(function(detect)
@@ -109,6 +125,17 @@ end
 return vape
 end
 
+
+function ispiss(user)
+local piss = false
+for i, v in pairs(pissusers) do
+if v == user then
+piss = true
+break
+end
+end
+return piss
+end
 
 function isinf(user)
 local inf = false
@@ -610,10 +637,12 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(50,205,50)'>[revvy+]</font> "..speaker..":",z.Text) 
     elseif z.Metadata == "im using revvy" then
     creatmsg("<font color='rgb(152, 194, 0)'>[revvy]</font> "..speaker..":",z.Text) 
-    elseif z.Metadata ~= "im using revvy" and isvape(loweredversion)then
+    elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+"  and isvape(loweredversion)then
     creatmsg("<font color='rgb(255, 255, 255)'>[possible vape]</font> "..speaker..":",z.Text) 
-    elseif z.Metadata ~= "im using revvy" and isinf(loweredversion)then
+    elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and isinf(loweredversion)then
     creatmsg("<font color='rgb(255, 255, 255)'>[possible infinity]</font> "..speaker..":",z.Text) 
+    elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and ispiss(loweredversion)then
+    creatmsg("<font color='rgb(255, 255, 255)'>[possible pistonware]</font> "..speaker..":",z.Text) 
     else
     creatmsg(z.PrefixText,z.Text)
     end
