@@ -21,6 +21,8 @@ local risen2 = "professionalc0kdbest"
 
 local users = {}
 
+local vapeusers = {}
+
 local fakeusers ={}
 
 ts.MessageReceived:Connect(function(detect)
@@ -45,6 +47,17 @@ local index = table.find(fakeusers, person)
 table.remove(fakeusers, index)
 end 
 end
+end)
+
+local ts = game:GetService("TextChatService")
+ts.MessageReceived:Connect(function(detect)
+local speaker = tostring(detect.TextSource)
+person = speaker:lower()
+vxpe = detect.Text:lower()
+if vxpe:match("vxpe") or vxpe:match("Vxpe") then
+print(""..speaker.." might use vape!")
+table.insert(vapeusers, person)
+end 
 end)
 
 local revvyplus = { --non capital
@@ -72,6 +85,17 @@ end
 return revvyp
 end
 
+
+function isvape(user)
+local vape = false
+for i, v in pairs(vapeusers) do
+if v == user then
+vape = true
+break
+end
+end
+return vape
+end
 
 function isfake(user)
 local fake = false
@@ -561,6 +585,8 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(50,205,50)'>[revvy+]</font> "..speaker..":",z.Text) 
     elseif z.Metadata == "im using revvy" then
     creatmsg("<font color='rgb(152, 194, 0)'>[revvy]</font> "..speaker..":",z.Text) 
+    elseif z.Metadata ~= "im using revvy" and isvape(speaker:lowered())then
+    creatmsg("<font color='rgb(255, 255, 255)'>[possible vape]</font> "..speaker..":",z.Text) 
     else
     creatmsg(z.PrefixText,z.Text)
     end
