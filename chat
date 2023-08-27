@@ -97,7 +97,7 @@ ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
 person = speaker:lower()
 sim = detect.Text:lower()
-if sim:match("simple") or sim:match("Simple") then
+if sim:match("simple client") or sim:match("Simple Client") then
 print(""..speaker.." might use simple!")
 table.insert(simusers, person)
 end 
