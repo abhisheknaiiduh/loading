@@ -12460,7 +12460,7 @@ task.spawn(function()
 	end
 
 if not GuiLibrary.ObjectsThatCanBeSaved["Hacker DetectionOptionsButton"].Api.Enabled then 
-		GuiLibrary.ObjectsThatCanBeSaved["Hacker DetectionOptionsButton"].Api["ToggleButton"](true)
+		GuiLibrary.ObjectsThatCanBeSaved["Hacker DetectionOptionsButton"].Api["ToggleButton"](false)
 	end
 
 end)
