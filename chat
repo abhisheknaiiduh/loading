@@ -27,6 +27,10 @@ local infusers = {}
 
 local pissusers = {}
 
+local velusers = {}
+
+local simusers = {}
+
 local fakeusers ={}
 
 ts.MessageReceived:Connect(function(detect)
@@ -82,9 +86,31 @@ ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
 person = speaker:lower()
 inf = detect.Text:lower()
-if inf:match("infinity") or vxpe:match("Infinity") then
+if inf:match("infinity") or inf:match("Infinity") then
 print(""..speaker.." might use infinity!")
 table.insert(infusers, person)
+end 
+end)
+
+local ts = game:GetService("TextChatService")
+ts.MessageReceived:Connect(function(detect)
+local speaker = tostring(detect.TextSource)
+person = speaker:lower()
+sim = detect.Text:lower()
+if sim:match("simple") or sim:match("Simple") then
+print(""..speaker.." might use simple!")
+table.insert(simusers, person)
+end 
+end)
+
+local ts = game:GetService("TextChatService")
+ts.MessageReceived:Connect(function(detect)
+local speaker = tostring(detect.TextSource)
+person = speaker:lower()
+vel = detect.Text:lower()
+if vel:match("velocity") or sim:match("Velocity") then
+print(""..speaker.." might use velocity!")
+table.insert(velusers, person)
 end 
 end)
 
@@ -125,6 +151,28 @@ end
 return vape
 end
 
+
+function isvel(user)
+local vel = false
+for i, v in pairs(velusers) do
+if v == user then
+vel = true
+break
+end
+end
+return vel
+end
+
+function issim(user)
+local sim = false
+for i, v in pairs(simusers) do
+if v == user then
+sim = true
+break
+end
+end
+return sim
+end
 
 function ispiss(user)
 local piss = false
@@ -643,6 +691,10 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(255, 255, 255)'>[possible infinity]</font> "..speaker..":",z.Text) 
     elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and ispiss(loweredversion)then
     creatmsg("<font color='rgb(255, 255, 255)'>[possible pistonware]</font> "..speaker..":",z.Text) 
+    elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and isvel(loweredversion)then
+    creatmsg("<font color='rgb(255, 255, 255)'>[possible velocity]</font> "..speaker..":",z.Text) 
+    elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and issim(loweredversion)then
+    creatmsg("<font color='rgb(255, 255, 255)'>[possible Simple]</font> "..speaker..":",z.Text) 
     else
     creatmsg(z.PrefixText,z.Text)
     end
