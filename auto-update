@@ -12408,13 +12408,13 @@ functionsave()
 end)
 
 
-local detectedfly = {}
+local detectedflyz = {}
 
 local detectedhighjump = {}
 
 function isdetectedfly(user)
 local detectedfly = false
-for i, v in pairs(detectedfly) do
+for i, v in pairs(detectedflyz) do
 if v == user then
 detectedfly = true
 break
@@ -12443,7 +12443,7 @@ if v.Character.HumanoidRootPart ~= nil then
 if v.Character.HumanoidRootPart.Position.Y > 900 and not isdetectedfly(v.Name) then
 name = v.Name
 warningNotification("Vape", ""..name.." is using inf fly!", 60)
-table.insert(detectedfly,name)
+table.insert(detectedflyz,name)
 elseif v.Character.HumanoidRootPart.Velocity.Y > 50 and not isdetectedhigh(v.Name) then
 name = v.Name
 warningNotification("Vape", ""..name.." is using highjump,or normal fly!", 60)
