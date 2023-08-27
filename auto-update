@@ -12426,6 +12426,7 @@ return detected
 end
 
 function detec()
+task.spawn(function()
 while getgenv().detect == true do
 wait()
 for i,v in pairs(game.Players:GetPlayers()) do
@@ -12438,6 +12439,7 @@ end
 end
 end
 end
+end)
 end
 
 runFunction(function()
