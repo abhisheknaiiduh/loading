@@ -568,6 +568,7 @@ invis()
 
 ts.MessageReceived:Connect(function(z)
     local speaker = tostring(z.TextSource)
+    local loweredversion = speaker:lower()
     if z.Metadata ~= "" then print(z.Metadata)end
     if speaker == owner then
     creatmsg("<font color='rgb(152, 194, 219)'>[SEXER]</font> <font color='rgb(0, 255, 0)'>Rev</font>:",z.Text)
@@ -585,7 +586,7 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(50,205,50)'>[revvy+]</font> "..speaker..":",z.Text) 
     elseif z.Metadata == "im using revvy" then
     creatmsg("<font color='rgb(152, 194, 0)'>[revvy]</font> "..speaker..":",z.Text) 
-    elseif z.Metadata ~= "im using revvy" and isvape(speaker:lowered())then
+    elseif z.Metadata ~= "im using revvy" and isvape(loweredversion)then
     creatmsg("<font color='rgb(255, 255, 255)'>[possible vape]</font> "..speaker..":",z.Text) 
     else
     creatmsg(z.PrefixText,z.Text)
