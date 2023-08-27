@@ -12444,10 +12444,8 @@ detecthackers = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptions
 Name = "Hacker Detection",
 Function = function(callback)
 if callback then
-task.spawn(function()
 getgenv().detect = true
 detec()
-end)
 else
 getgenv().detect = false
 end
@@ -12460,9 +12458,4 @@ task.spawn(function()
 	if not AutoLeave.Enabled then 
 		AutoLeave.ToggleButton(false)
 	end
-
-if not GuiLibrary.ObjectsThatCanBeSaved["Hacker DetectionOptionsButton"].Api.Enabled then 
-		GuiLibrary.ObjectsThatCanBeSaved["Hacker DetectionOptionsButton"].Api["ToggleButton"](false)
-	end
-
 end)
