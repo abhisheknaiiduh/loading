@@ -12457,7 +12457,7 @@ end
 runFunction(function()
 local detecthackers = {Enabled = false}
 detecthackers = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-["HoverText"] = "detects inf fly users",
+["HoverText"] = "detects inffly, highjump,and normal fly",
 Name = "Hacker Detection",
 Function = function(callback)
 if callback then
