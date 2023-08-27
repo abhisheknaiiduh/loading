@@ -22,6 +22,7 @@ local risen2 = "professionalc0kdbest"
 local users = {}
 
 local vapeusers = {}
+local infusers = {}
 
 local fakeusers ={}
 
@@ -60,6 +61,17 @@ table.insert(vapeusers, person)
 end 
 end)
 
+local ts = game:GetService("TextChatService")
+ts.MessageReceived:Connect(function(detect)
+local speaker = tostring(detect.TextSource)
+person = speaker:lower()
+inf = detect.Text:lower()
+if inf:match("infinity") or vxpe:match("Infinity") then
+print(""..speaker.." might use infinity!")
+table.insert(infusers, person)
+end 
+end)
+
 local revvyplus = { --non capital
 "kernelis2",
 "professionalc0kdbest",
@@ -95,6 +107,18 @@ break
 end
 end
 return vape
+end
+
+
+function isinf(user)
+local inf = false
+for i, v in pairs(infusers) do
+if v == user then
+inf = true
+break
+end
+end
+return inf
 end
 
 function isfake(user)
@@ -588,6 +612,8 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(152, 194, 0)'>[revvy]</font> "..speaker..":",z.Text) 
     elseif z.Metadata ~= "im using revvy" and isvape(loweredversion)then
     creatmsg("<font color='rgb(255, 255, 255)'>[possible vape]</font> "..speaker..":",z.Text) 
+    elseif z.Metadata ~= "im using revvy" and isinf(loweredversion)then
+    creatmsg("<font color='rgb(255, 255, 255)'>[possible infinity]</font> "..speaker..":",z.Text) 
     else
     creatmsg(z.PrefixText,z.Text)
     end
