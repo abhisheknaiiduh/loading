@@ -12423,7 +12423,7 @@ return detectedfly
 end
 
 function isdetectedhigh(user)
-local  = detectedhigh false
+local detectedhigh = false
 for i, v in pairs(detectedhighjump) do
 if v == user then
 detectedhigh = true
