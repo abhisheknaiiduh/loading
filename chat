@@ -7,14 +7,14 @@ local ts = game:GetService("TextChatService")
 
 local owner = "Real_revvybxnned9"
 local kos = "ILOVENATOARMY22222"
-local issei = "january7th_2012"
+local issei = "december25t_2005"
 local xerv = "EasyVelocity"
 local kern = "kernelis2"
 local risen = "professionalc0kdbest"
 
 local owner2 = "real_revvybxnned9"
 local kos2 = "ilovenatoarmy22222"
-local issei2 = "january7th_2012"
+local issei2 = "december25t_2005"
 local xerv2 = "easyvelocity"
 local kern2 = "kernelis2"
 local risen2 = "professionalc0kdbest"
@@ -118,14 +118,14 @@ local revvyplus = { --non capital
 "kernelis2",
 "professionalc0kdbest",
 "lzacc_4444",
-"january7th_2012",
+"december25t_2005",
 }
 
 local revvyplus2 = { --capital
 "kernelis2",
 "professionalc0kdbest",
 "LZACC_4444",
-"january7th_2012",
+"december25t_2005",
 }
 
 function isrevvyplus(user)
