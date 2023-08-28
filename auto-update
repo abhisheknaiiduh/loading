@@ -12421,7 +12421,7 @@ if root.Position.Y > 900 and not isdetectedfly(v.Name) then
 name = v.Name
 warningNotification("Vape", ""..name.." is using inf fly!", 60)
 table.insert(detectedflyz,name)
-elseif v.Character.HumanoidRootPart.Velocity.Y > 50 and not isdetectedhigh(v.Name) then
+elseif v.Character.HumanoidRootPart.Velocity.Y > 60 and not isdetectedhigh(v.Name) then
 name = v.Name
 warningNotification("Vape", ""..name.." is using highjump,or normal fly!", 60)
 table.insert(detectedhighjump,name)
