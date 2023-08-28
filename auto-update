@@ -12419,11 +12419,11 @@ local root = (v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPar
 if root then
 if root.Position.Y > 900 and not isdetectedfly(v.Name) then
 name = v.Name
-warningNotification("Vape", ""..name.." is using inf fly!", 60)
+warningNotification("HackerDetection", ""..name.." is using inf fly!", 60)
 table.insert(detectedflyz,name)
 elseif v.Character.HumanoidRootPart.Velocity.Y > 90 and not isdetectedhigh(v.Name) then
 name = v.Name
-warningNotification("Vape", ""..name.." is using highjump,or normal fly!", 60)
+warningNotification("HackerDetection", ""..name.." is using highjump,or normal fly!", 60)
 table.insert(detectedhighjump,name)
 end
 end
