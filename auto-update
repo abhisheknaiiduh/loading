@@ -12425,7 +12425,7 @@ task.spawn(function()
 while getgenv().detect == true do
 wait()
 for i,v in pairs(game.Players:GetPlayers()) do
-if v.Character.HumanoidRootPart ~= nil then
+if v.Character ~= nil then
 if v.Character.HumanoidRootPart.Position.Y > 900 and not isdetectedfly(v.Name) then
 name = v.Name
 warningNotification("Vape", ""..name.." is using inf fly!", 60)
