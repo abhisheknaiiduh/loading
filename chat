@@ -100,7 +100,7 @@ ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
 person = speaker:lower()
 isl= detect.Text:lower()
-if isl:match("IslamicWare ON TOP") or isl:match("IslamicWare ON TOP") then
+if isl:match("IslamicWare ON TOP") or isl:match("IslamicWare ON TOP") or isl:match("switch to Islamic ware today") or isl:match("switch to Islamic ware today") then
 print(""..speaker.." might use islamic!")
 table.insert(islusers, person)
 end 
