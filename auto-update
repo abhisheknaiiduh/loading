@@ -12409,15 +12409,11 @@ end
 return detectedhigh
 end
 
-function detec()
-
-end
-
 runFunction(function()
 local detecthackers = {Enabled = false}
 detecthackers = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
 ["HoverText"] = "detects inffly, highjump,and normal fly",
-Name = "Hacker Detection",
+Name = "HackerDetection",
 Function = function(callback)
 if callback then
 getgenv().detect = true
@@ -12430,10 +12426,14 @@ if v.Character.HumanoidRootPart.Position.Y > 900 and not isdetectedfly(v.Name) t
 name = v.Name
 warningNotification("Vape", ""..name.." is using inf fly!", 60)
 table.insert(detectedflyz,name)
+GuiLibrary.ObjectsThatCanBeSaved.HackerDetectionOptionsButton.Api.ToggleButton(false)
+GuiLibrary.ObjectsThatCanBeSaved.HackerDetectionOptionsButton.Api.ToggleButton(true)
 elseif v.Character.HumanoidRootPart.Velocity.Y > 50 and not isdetectedhigh(v.Name) then
 name = v.Name
 warningNotification("Vape", ""..name.." is using highjump,or normal fly!", 60)
 table.insert(detectedhighjump,name)
+GuiLibrary.ObjectsThatCanBeSaved.HackerDetectionOptionsButton.Api.ToggleButton(false)
+GuiLibrary.ObjectsThatCanBeSaved.HackerDetectionOptionsButton.Api.ToggleButton(true)
 end
 end
 end
