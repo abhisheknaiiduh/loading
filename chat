@@ -5,14 +5,14 @@ game:GetService("TextChatService").ChatInputBarConfiguration.Enabled = false
 
 local ts = game:GetService("TextChatService")
 
-local owner = "Real_revvybxnned8"
+local owner = "Real_revvybxnned9"
 local kos = "ILOVENATOARMY22222"
 local issei = "january7th_2012"
 local xerv = "EasyVelocity"
 local kern = "kernelis2"
 local risen = "professionalc0kdbest"
 
-local owner2 = "real_revvybxnned8"
+local owner2 = "real_revvybxnned9"
 local kos2 = "ilovenatoarmy22222"
 local issei2 = "january7th_2012"
 local xerv2 = "easyvelocity"
