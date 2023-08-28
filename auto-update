@@ -12414,8 +12414,10 @@ task.spawn(function()
 while getgenv().detect == true do
 wait()
 for i,v in pairs(game.Players:GetPlayers()) do
-if v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart",true) then
-if v.Character.HumanoidRootPart.Position.Y > 900 and not isdetectedfly(v.Name) then
+local root = (v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart",true) ~= nil) and v.Character:FindFirstChild("HumanoidRootPart",true) or false
+
+if root then
+if root.Position.Y > 900 and not isdetectedfly(v.Name) then
 name = v.Name
 warningNotification("Vape", ""..name.." is using inf fly!", 60)
 table.insert(detectedflyz,name)
