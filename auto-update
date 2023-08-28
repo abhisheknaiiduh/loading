@@ -12441,10 +12441,6 @@ Function = function(callback)
 if callback then
 getgenv().detect = true
 detec()
-getgenv().DetectConnect = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-wait(0.3)
-detec()
-end)
 else
 getgenv().detect = false
 DetectConnect:Disconnect()
