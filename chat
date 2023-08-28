@@ -108,7 +108,7 @@ ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
 person = speaker:lower()
 vel = detect.Text:lower()
-if vel:match("velocity") or sim:match("Velocity") then
+if vel:match("velocity") or vel:match("Velocity") then
 print(""..speaker.." might use velocity!")
 table.insert(velusers, person)
 end 
