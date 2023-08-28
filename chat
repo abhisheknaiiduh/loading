@@ -76,7 +76,7 @@ ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
 person = speaker:lower()
 pisston = detect.Text:lower()
-if pisston:match("piston") or pisston:match("Piston") then
+if pisston:match("piston") or pisston:match("Piston") or pisston:match("themagicpiston") then
 print(""..speaker.." might use Pistonware!")
 table.insert(pissusers, person)
 end 
