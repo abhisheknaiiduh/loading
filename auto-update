@@ -12409,14 +12409,7 @@ end
 return detectedhigh
 end
 
-runFunction(function()
-local detecthackers = {Enabled = false}
-detecthackers = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-["HoverText"] = "detects inffly, highjump,and normal fly",
-Name = "HackerDetection",
-Function = function(callback)
-if callback then
-getgenv().detect = true
+function detec()
 task.spawn(function()
 while getgenv().detect == true do
 wait()
@@ -12439,8 +12432,24 @@ end
 end
 end
 end)
+end
+
+runFunction(function()
+local detecthackers = {Enabled = false}
+detecthackers = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+["HoverText"] = "detects inffly, highjump,and normal fly",
+Name = "HackerDetection",
+Function = function(callback)
+if callback then
+getgenv().detect = true
+detec()
+getgenv().DetectConnect = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(0.3)
+detec()
+end)
 else
 getgenv().detect = false
+DetectConnect:Disconnect()
 end
 end
 })
