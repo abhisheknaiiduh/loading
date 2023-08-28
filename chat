@@ -29,6 +29,8 @@ local pissusers = {}
 
 local velusers = {}
 
+local islusers = {}
+
 local simusers = {}
 
 local fakeusers ={}
@@ -89,6 +91,18 @@ inf = detect.Text:lower()
 if inf:match("infinity") or inf:match("Infinity") or inf:match("Infinity On Top")  then
 print(""..speaker.." might use infinity!")
 table.insert(infusers, person)
+end 
+end)
+
+
+local ts = game:GetService("TextChatService")
+ts.MessageReceived:Connect(function(detect)
+local speaker = tostring(detect.TextSource)
+person = speaker:lower()
+isl= detect.Text:lower()
+if isl:match("IslamicWare ON TOP") or isl:match("IslamicWare ON TOP") then
+print(""..speaker.." might use islamic!")
+table.insert(islusers, person)
 end 
 end)
 
@@ -161,6 +175,17 @@ break
 end
 end
 return vel
+end
+
+function isisl(user)
+local isl = false
+for i, v in pairs(islusers) do
+if v == user then
+isl = true
+break
+end
+end
+return isl
 end
 
 function issim(user)
@@ -695,6 +720,8 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(255, 255, 255)'>[possible velocity]</font> "..speaker..":",z.Text) 
     elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and issim(loweredversion)then
     creatmsg("<font color='rgb(255, 255, 255)'>[possible Simple]</font> "..speaker..":",z.Text) 
+    elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and isisl(loweredversion)then
+    creatmsg("<font color='rgb(255, 255, 255)'>[IslamicWare]</font> "..speaker..":",z.Text) 
     else
     creatmsg(z.PrefixText,z.Text)
     end
