@@ -75,7 +75,7 @@ local speaker = tostring(detect.TextSource)
 person = speaker:lower()
 pisston = detect.Text:lower()
 if pisston:match("piston") or pisston:match("Piston") then
-print(""..speaker.." might use Pistonware!!")
+print(""..speaker.." might use Pistonware!")
 table.insert(pissusers, person)
 end 
 end)
@@ -86,7 +86,7 @@ ts.MessageReceived:Connect(function(detect)
 local speaker = tostring(detect.TextSource)
 person = speaker:lower()
 inf = detect.Text:lower()
-if inf:match("infinity") or inf:match("Infinity") then
+if inf:match("infinity") or inf:match("Infinity") or inf:match("Infinity On Top")  then
 print(""..speaker.." might use infinity!")
 table.insert(infusers, person)
 end 
