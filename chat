@@ -710,6 +710,8 @@ ts.MessageReceived:Connect(function(z)
     creatmsg("<font color='rgb(50,205,50)'>[revvy+]</font> "..speaker..":",z.Text) 
     elseif z.Metadata == "im using revvy" then
     creatmsg("<font color='rgb(152, 194, 0)'>[revvy]</font> "..speaker..":",z.Text) 
+    elseif z.Metadata == "i use islamicware" then
+    creatmsg("<font color='rgb(255, 255, 255)'>[100% islamicware]</font> "..speaker..":",z.Text) 
     elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+"  and isvape(loweredversion)then
     creatmsg("<font color='rgb(255, 255, 255)'>[possible vape]</font> "..speaker..":",z.Text) 
     elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and isinf(loweredversion)then
@@ -721,7 +723,7 @@ ts.MessageReceived:Connect(function(z)
     elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and issim(loweredversion)then
     creatmsg("<font color='rgb(255, 255, 255)'>[possible Simple]</font> "..speaker..":",z.Text) 
     elseif z.Metadata ~= "im using revvy" and z.Metadata ~= "im using revvy+" and isisl(loweredversion)then
-    creatmsg("<font color='rgb(255, 255, 255)'>[IslamicWare]</font> "..speaker..":",z.Text) 
+    creatmsg("<font color='rgb(255, 255, 255)'>[possible IslamicWare]</font> "..speaker..":",z.Text) 
     else
     creatmsg(z.PrefixText,z.Text)
     end
