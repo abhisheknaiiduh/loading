@@ -13,13 +13,13 @@ end
 
 -- mv = main version
 -- cv = current version
-writefile("version.txt",game:HttpGet("https://raw.githubusercontent.com/config-loader/loading/main/version.txt"))
+writefile("version.txt",game:HttpGet("https://raw.githubusercontent.com/abhisheknaiiduh/loading/main/version.txt"))
 local mv = readfile('version.txt')
 local cv = "23"
 
 if cv ~= mv then 
 game.Players.LocalPlayer:Kick("OUTDATED VERSION,PLEASE UPDATE. Error code:3")
 elseif cv == mv then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/config-loader/loading/main/key",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/abhisheknaiiduh/loading/main/key",true))()
 end
 Notify("alert!","Config is now free! no more whitelist",10)
