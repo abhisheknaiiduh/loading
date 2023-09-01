@@ -12295,18 +12295,18 @@ end
 end)
 
 
-function autowin()
+function autowin1()
 task.spawn(function()
 while getgenv().win == true do
 wait(0.1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3) 
 tweenToNearestBed()
 end)
 hasTeleported = false
 wait(11)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(0.3)
 tweenToNearestPlayer()
@@ -12324,7 +12324,7 @@ Name = "Duels autowin",
 Function = function(callback)
 if callback then
 getgenv().win = true
-autowin()
+autowin1()
 else
 getgenv().win = false
 end
